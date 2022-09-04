@@ -1,0 +1,7 @@
+{
+    "files.autoSave": "afterDelay", // 自动保存
+    "editor.fontSize": 15, // 代码字体大小
+    "editor.wordWrap": "on", // 代码自动换行
+    "editor.renderWhitespace": "all", // 空格的渲染方式
+    "editor.tabSize": 2, // 代码缩进
+}
