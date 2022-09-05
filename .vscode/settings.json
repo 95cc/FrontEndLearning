@@ -4,4 +4,5 @@
     "editor.wordWrap": "on", // 代码自动换行
     "editor.renderWhitespace": "all", // 空格的渲染方式
     "editor.tabSize": 2, // 代码缩进
+    "editor.linkedEditing": true
 }
