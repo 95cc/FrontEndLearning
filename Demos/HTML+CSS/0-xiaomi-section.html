@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小米商城商品单组demo</title>
+
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+
+  <style>
+    body {
+      padding-top: 100px;
+      background: #f5f5f5;
+    }
+
+    .mi_wrapper {
+      width: 1226px;
+      margin: 0 auto;
+    }
+
+    .dress .header {
+      height: 58px;
+      line-height: 58px;
+    }
+
+    .dress .header .title {
+      float: left;
+      font-size: 22px;
+      font-weight: 200;
+      color: #333;
+    }
+
+    .dress .header .more {
+      float: right;
+    }
+
+    .dress .header .more .tab-list .item {
+      display: inline-block;
+      height: 26px;
+      line-height: 26px;
+      margin-left: 30px;
+      box-sizing: border-box;
+    }
+
+    .dress .header .more .tab-list .item:hover,
+    .dress .header .more .tab-list .item.active {
+      color: #ff6700;
+      border-bottom: 2px solid #ff6700;
+    }
+
+    .dress .list {
+      margin-right: -14px;
+    }
+
+    .dress .list .item {
+      position: relative;
+      float: left;
+      width: 234px;
+      height: 300px;
+
+      margin-right: 14px;
+      margin-bottom: 14px;
+      background-color: #fff;
+
+      box-sizing: border-box;
+      padding: 20px 0;
+
+      /* 动画 */
+      transition: all 0.3s ease-in;
+    }
+    
+    .dress .list .item.item1 {
+      height: 614px;
+      padding: 0;
+    }
+    .dress .list .item9,
+    .dress .list .item10 {
+      height: 143px;
+      padding: 0;
+    }
+
+    .dress .list .item:hover {
+      box-shadow: 0 15px 30px rgb(0 0 0 / 10%);
+      /* top: -2px; */
+      transform: translateY(-2px);
+    }
+
+    .dress .list .item:not(.item1) a {
+      display: block;
+      height: 100%;
+    }
+
+    .dress .list .item1 img {
+      width: 234px;
+      height: 614px;
+    }
+
+    .dress .list .item .figure,
+    .dress .list .item .figure img {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 18px;
+    }
+
+    .dress .list .item .title {
+      margin: 0 10px 2px;
+
+      font-size: 14px;
+      font-weight: 400;
+      color: #333;
+    }
+
+    .title-center-ellipsis {
+      text-align: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .dress .list .item .desc {
+      height: 18px;
+      margin: 0 10px 10px;
+
+      font-size: 12px;
+      font-weight: 400;
+      color: #b0b0b0;
+    }
+
+    .dress .list .item .price {
+      margin: 0 10px 14px;
+
+      text-align: center;
+      color: #ff6700;
+    }
+
+    .dress .list .item .price del {
+      margin-left: 0.5em;
+      color: #b0b0b0;
+    }
+
+    .dress .list .item.item9 .title {
+      margin: 40px 110px 5px 30px;
+      color: #333;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .dress .list .item.item9 .price {
+      text-align: left;
+      margin: 0 110px 0 30px;
+      font-size: 12px;
+      color: #ff6700;
+    }
+
+    .dress .list .item.item9 img {
+      position: absolute;
+      right: 20px;
+      top: 32px;
+      width: 80px;
+      height: 80px;
+    }
+
+    .dress .list .item.item10 .more {
+      display: block;
+      margin: 50px 110px 0 30px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .dress .list .item.item10 .more small {
+      display: block;
+      font-size: 12px;
+      color: #757575;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="mi_wrapper dress">
+    <div class="header">
+      <h2 class="title">家电</h2>
+      <div class="more">
+        <ul class="tab-list">
+          <li class="item active">热门</li>
+          <li class="item">电视影音</li>
+        </ul>
+      </div>
+    </div>
+    <div class="content">
+      <ul class="list">
+        <li class="item item1">
+          <a href="https://www.mi.com/shop/buy?product_id=16511" target="_blank">
+            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/06d75467973ea188caa56e18a67647b4.png?thumb=1&w=468&h=1228&f=webp&q=90" alt="x">
+          </a>
+        </li>
+        <li class="item item2">
+          <a href="#">
+            <div class="figure">
+              <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f0408c24b677c7fe8b3cc402ec062334.png?thumb=1&w=400&h=400&f=webp&q=90" alt="">
+            </div>
+            <h3 class="titl title-center-ellipsis">Redmi G Pro 游戏本</h3>
+            <p class="desc title-center-ellipsis">狂风调校的高能电竞本</p>
+            <p class="price">
+              <span class="num">2799</span><span>元</span>
+              <del><span class="num">2999</span>元</del>
+            </p>
+          </a>
+        </li>
+        <li class="item item3">
+          <a href="#">
+            <div class="figure">
+              <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f0408c24b677c7fe8b3cc402ec062334.png?thumb=1&w=400&h=400&f=webp&q=90" alt="">
+            </div>
+            <h3 class="title title-center-ellipsis">Redmi G Pro 游戏本</h3>
+            <p class="desc title-center-ellipsis">狂风调校的高能电竞本</p>
+            <p class="price">
+              <span class="num">2799</span><span>元</span>
+              <del><span class="num">2999</span>元</del>
+            </p>
+          </a>
+        </li>
+        <li class="item item4">
+          <a href="#">
+            <div class="figure">
+              <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f0408c24b677c7fe8b3cc402ec062334.png?thumb=1&w=400&h=400&f=webp&q=90" alt="">
+            </div>
+            <h3 class="title title-center-ellipsis">Redmi G Pro 游戏本</h3>
+            <p class="desc title-center-ellipsis">狂风调校的高能电竞本</p>
+            <p class="price">
+              <span class="num">2799</span><span>元</span>
+              <del><span class="num">2999</span>元</del>
+            </p>
+          </a>
+        </li>
+        <li class="item item5">
+          <a href="#">
+            <div class="figure">
+              <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f0408c24b677c7fe8b3cc402ec062334.png?thumb=1&w=400&h=400&f=webp&q=90" alt="">
+            </div>
+            <h3 class="title title-center-ellipsis">Redmi G Pro 游戏本</h3>
+            <p class="desc title-center-ellipsis">狂风调校的高能电竞本</p>
+            <p class="price">
+              <span class="num">2799</span><span>元</span>
+              <del><span class="num">2999</span>元</del>
+            </p>
+          </a>
+        </li>
+        <li class="item item6">
+          <a href="#">
+            <div class="figure">
+              <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f0408c24b677c7fe8b3cc402ec062334.png?thumb=1&w=400&h=400&f=webp&q=90" alt="">
+            </div>
+            <h3 class="title title-center-ellipsis">Redmi G Pro 游戏本</h3>
+            <p class="desc title-center-ellipsis">狂风调校的高能电竞本</p>
+            <p class="price">
+              <span class="num">2799</span><span>元</span>
+              <del><span class="num">2999</span>元</del>
+            </p>
+          </a>
+        </li>
+        <li class="item item7">
+          <a href="#">
+            <div class="figure">
+              <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f0408c24b677c7fe8b3cc402ec062334.png?thumb=1&w=400&h=400&f=webp&q=90" alt="">
+            </div>
+            <h3 class="title title-center-ellipsis">Redmi G Pro 游戏本</h3>
+            <p class="desc title-center-ellipsis">狂风调校的高能电竞本</p>
+            <p class="price">
+              <span class="num">2799</span><span>元</span>
+              <del><span class="num">2999</span>元</del>
+            </p>
+          </a>
+        </li>
+        <li class="item item8">
+          <a href="#">
+            <div class="figure">
+              <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f0408c24b677c7fe8b3cc402ec062334.png?thumb=1&w=400&h=400&f=webp&q=90" alt="">
+            </div>
+            <h3 class="title title-center-ellipsis">Redmi G Pro 游戏本</h3>
+            <p class="desc title-center-ellipsis">狂风调校的高能电竞本</p>
+            <p class="price">
+              <span class="num">2799</span><span>元</span>
+              <del><span class="num">2999</span>元</del>
+            </p>
+          </a>
+        </li>
+        <li class="item item9">
+          <a href="#">
+            <h3 class="title">Redmi显示器23.8英寸</h3>
+            <p class="price"><span class="num">599</span>元</p>
+            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7c37478d8b3b553ba0a50adaec2fc775.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+          </a>
+        </li>
+        <li class="item item10">
+          <a href="#">
+            <div class="more">
+              浏览更多
+              <small>热门</small>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
