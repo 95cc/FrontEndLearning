@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS知识总结</title>
+  <style>
+    .section {
+      margin: 0 10px;
+      padding: 5px;
+      border: 3px solid antiquewhite;
+    }
+    h3 {
+      color: blue;
+    }
+    .small-section-container {
+      font-size: 20px;
+      padding: 0 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS文档网站</h1>
+  <div class="section">
+    <a href="https://www.w3.org/TR/?tag=css">CSS官方文档地址</a>
+    <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference#%E5%85%B3%E9%94%AE%E5%AD%97%E7%B4%A2%E5%BC%95">CSS推荐文档地址</a>
+    <a href="https://caniuse.com/">CSS兼容查询</a>
+  </div>
+
+  <!-- 文本 -->
+  <h2>文本</h2>
+  <div class="section">
+    <h3>text-decoration</h3>
+    <div>
+      <div style="text-decoration: none;">text-decoration - none</div>
+      <div style="text-decoration: overline;">text-decoration - overline</div>
+      <div style="text-decoration: underline;">text-decoration - underline</div>
+      <div style="text-decoration: line-through;">text-decoration - line-through</div>
+    </div>
+    <h3>text-transform</h3>
+    <div>
+      <div style="text-transform: none;">text-transform: none</div>
+      <div style="text-transform: uppercase;">text-transform: uppercase</div>
+      <div style="text-transform: lowercase;">Text-Transform: lowercase</div>
+      <div style="text-transform: capitalize;">text-transform: capitalize</div>
+    </div>
+    <h3>text-indent</h3>
+    <div>
+      <p style="text-indent: 2em;">
+        <span style="color: red;">text-indent: 2em</span>如果说1号公路环岛之旅是行走冰岛的经典路线，与动物为伴的生态游则是深入了解冰岛的“最佳打卡方式”。在人类踏足冰岛前，这片火山地区几乎没有陆地动物存在，唯一的例外就是北极狐。这种小型哺乳动物周身包裹着厚厚的皮毛，可以在最后一个冰河时期结束前穿越冰封的海洋，抵达冰岛安家，成为这里唯一的原生陆地哺乳动物。直到后来有人类踏上冰岛，兔子、羊、马、鹿等哺乳动物才走进了冰岛的生态系统。比如冰岛马，它们在1000多年前从挪威跟随冰岛第一批定居者来到冰岛并繁衍生存下来。成年冰岛马体型矮小，会被人误会为小马驹，但实际上冰岛马步伐稳健，善于行走在崎岖地带，哪怕是初学者也可驾驭，骑着冰岛马旅游已成为当地颇受欢迎的旅游项目。
+      </p>
+    </div>
+    <h3>text-align <br/> MDN: 定义行内内容(例如文字)如何相对它的块父元素对齐;</h3>
+    <div>
+      <div style="background-color: #f00; text-align: center;">文案居中</div>
+      <div style="text-align: center; position: relative;">
+        <span style="position: absolute; left: 0;">图片居中</span>
+        <img src="./demos/images/0-muxing.jpg" width="60px" alt="">
+      </div>
+      <div style="
+        width: 200px;
+        background-color: #f00;
+        color: white;
+        text-align: justify;
+        text-align-last: justify;
+      ">
+        This CSS module defines properties for text manipulation and specifies their processing model. It covers line breaking, justification and alignment, white space handling, and text transformation. why
+      </div>
+    </div>
+    <h3>letter-spacing / word-spacing</h3>
+    <div style="letter-spacing: 5px;">letter-spacing</div>
+    <div style="word-spacing: 5px;">word spacing</div>
+    <h3>字体</h3>
+    <div>
+      font-size:
+      <div class="small-section-container">
+        <div style="font-size: 20px;">20px</div>
+        <div style="font-size: 2em;">2em</div>
+        <div style="font-size: 50%;">50%</div>
+      </div>
+      font-family: 
+      <div class="small-section-container">
+        <div style="font-family: 'Courier New', Courier, monospace;">font-family: 'Courier New', Courier, monospace;</div>
+        <div style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;</div>
+        <div style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;</span>
+        </div>
+      </div>
+      font-weight
+      <div class="small-section-container">
+        <span style="font-weight: 100;">font-weight: 100</span>
+        <span style="font-weight: 200;">font-weight: 200</span>
+        <span style="font-weight: 300;">font-weight: 300</span>
+        <span style="font-weight: 400;">font-weight: 400</span>
+        <span style="font-weight: normal;">font-weight: normal</span>
+        <span style="font-weight: 500;">font-weight: 500</span>
+        <span style="font-weight: 600;">font-weight: 600</span>
+        <span style="font-weight: 700;">font-weight: 700</span>
+        <span style="font-weight: bold;">font-weight: bold</span>
+        <span style="font-weight: 800;">font-weight: 800</span>
+        <span style="font-weight: 900;">font-weight: 900</span>
+      </div>
+      font-style
+      <div class="small-section-container">
+        <span style="font-style: italic;">font-style: italic;</span>
+        <span style="font-style: oblique;">font-style: oblique;</span>
+      </div>
+      font-variant
+      <div class="small-section-container">
+        <span style="font-variant: small-caps;">small-caps:将小写字母替换为缩小过的大写字母 Small-Caps</span>
+      </div>
+      line-height
+      <div class="small-section-container" style="background-color: #f00; height: 50px; line-height: 50px;">
+        文字垂直居中
+      </div>
+      font缩写
+      <div style="font: italic small-caps 700 30px/1.5 serif ;">font缩写</div>
+    </div>
+  </div>
+
+  <h2>选择器</h2>
+  <div class="section">
+    <pre>
+    - A.1 基础选择器
+      - `tagname`：类型选择器或标签选择器。匹配目标元素的标签名。优先级：0,0,1。
+      - `.class`：类选择器。匹配class属性中有指定类名的元素。优先级：0,1,0。
+      - `#id`：ID选择器。匹配拥有指定ID属性的元素。优先级：1,0,0。
+      - `*`：通用选择器。匹配所有元素。优先级：0,0,0。
+    - A.2 组合器
+        - 后代选择器（空格）：基础选择器之间有空格。例如：.nav li。
+        - 子组合器（>）：匹配的目标元素是其他元素的直接后代。例如：ul > li。
+        - 相邻兄弟组合器（+）：匹配的目标元素紧跟在其他元素后面。例如：li + li。
+        - 通用兄弟选择器（~）：匹配所有跟随在指定元素之后的兄弟元素。注意：它不会选中目标元素之前的兄弟元素。例如：li.active ~ li。
+        - `复合（compound）选择器`：
+            
+            多个基础选择器可以连起来（无空格或其他组合器）组成一个复合选择器。例如：`h1.page-header`。复合选择器选中的元素将匹配其全部基础选择器。例如：`.a.b`能够选中`<div class=”a b”>`，但是无法选中`<div class=”a”>`。
+            
+    - A.3 伪类选择器（[MDN-伪类](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Pseudo-classes)）
+        
+        `伪类选择器用于选中处于某个特定状态的元素。`
+        
+        伪类选择器始终以一个冒号(:)开始。优先级等于一个类选择器（0,1,0）。
+        
+        - :first-child：匹配的元素是其父元素的第一个子元素。
+        - :last-child: 匹配的元素是其父元素的最后一个子元素。
+        - :only-child: 匹配的元素是其父元素的唯一一个子元素（没有兄弟元素）。
+        - :nth-child(an+b): 匹配的元素在兄弟元素中间有特定的位置。
+            
+            <img width="400px" src="./demos/images/other/nth-child(an+b).png" alt="nth-child(an+b)">
+            
+        - :nth-last-child(an + b): 类似于:nth-child()，但是是从最后一个元素往前数。
+        - :first-of-type: 根据拥有相同标签名的子元素中的数字顺序查找第一个元素。
+        - :last-of-type: 匹配某种类型的最后一个子元素。
+        - :only-of-type: 匹配的元素是满足该类型的唯一一个子元素。
+        - :nth-of-type(an + b)
+        - :nth-last-of-type(an + b)
+        - :not(<selector>): 括号内的选择器必须是基础选择器。
+        - :empty: 匹配的元素没有子元素（也不能有空格）。（:blank，选中仅包含空格的元素，目前没有浏览器支持）。
+        - :focus: 匹配通过鼠标点击、触摸屏幕、按Tab键导航而获得焦点的元素。
+        - :hover: 匹配鼠标指针正悬停在其上方的元素。
+        - `:root`: 匹配文档根元素。
+        - :disabled: 匹配以禁用的元素，包括input、select以及button元素。
+        - :enabled
+        - :checked
+        - :invalid
+        - :valid
+        - :required: 匹配设置了required属性的元素（Level4）。
+        - :optional: 匹配没有设置required属性的元素（Level4）。
+    - A.4 伪元素选择器
+        
+        `匹配在文档中没有直接对应HTML元素的特定部分。`
+        
+        伪类选择器始终以两个冒号(::)开始。优先级等于一个类选择器（0,0,1）。
+        
+        - ::before: 创建一个伪元素，使其成为匹配元素的第一个子元素。该元素默认是行内元素，可用于插入文字、图片或其他形状。必须指定content属性才能让元素出现。例如：.menu::before。
+        - ::after: 创建一个伪元素，使其成为匹配元素的最后一个子元素。该元素默认是行内元素，可用于插入文字、图片或其他形状。必须指定content属性才能让元素出现。例如：.menu::after。
+        - ::first-letter: 用于指定匹配元素的第一个文本字符的样式，例如：h2::first-letter。
+        - ::first-line: 用于指定匹配元素的第一行文本的样式。
+        - ::selection: 用于指定用户使用鼠标高亮选择的任意文本的样式。通常用于改变选中文本的background-color。只有少数属性可以使用，包括color、background-color、cursor、text-decoration。
+    - A.5 属性选择器
+        
+        用于根据HTML属性匹配元素。优先级同类选择（0,1,0）。
+        
+        - [attr]: 匹配的元素拥有指定属性attr，无论属性值是什么，例如：input[disabled]。
+        - [attr=”value”]: 匹配的元素拥有指定属性attr，且属性值等于指定的字符串值，例如：input[type=”radio”]。
+        - [attr^=”value”]: “开头”属性选择器。匹配元素拥有指定属性，且属性值的开头是指定的字符串值。例如：a[href^=https]。
+        - [attr$=”value”]: “结尾”属性选择器。例如：a[href$=”.pdf”]。
+        - [attr*=”value”]: “包含”属性选择器。例如：div[class*=”sprite-”]。
+        - [attr~=”value”]: “空格分隔的列表”属性选择器。属性值是一个空格分隔的值列表，列表中的某个值等于指定的字符串值。例如：a[rel~=”author”]。
+        - [attr|=”value”]: 属性值要么等于value，要么以“value-”开头。例如：div[lang|=”zh”]。
+        
+        **不区分大小写的属性选择器：**
+        
+        上面的属性选择器都区分大小写。input[value=”search”i]，可不区分大小写。但很多浏览器还不支持。
+    </pre>
+  </div>
+  
+</body>
+</html>

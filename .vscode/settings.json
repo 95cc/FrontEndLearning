@@ -4,5 +4,8 @@
     "editor.wordWrap": "on", // 代码自动换行
     "editor.renderWhitespace": "all", // 空格的渲染方式
     "editor.tabSize": 2, // 代码缩进
-    "editor.linkedEditing": true
+    "editor.linkedEditing": true,
+    // 显式大括号区间
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs":"active"
 }

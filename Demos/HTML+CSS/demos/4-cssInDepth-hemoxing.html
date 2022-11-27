@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>深入解析CSS - 盒模型</title>
+  <style>
+    body * + * {
+      margin-top: 1.5em;
+    }
+    :root {
+      box-sizing: border-box;
+    }
+    *,
+    ::before,
+    ::after {
+      box-sizing: inherit;
+    }
+    body {
+      background-color: #eee;
+    }
+    header {
+      /* 加上 上下内边距后，外边距就不会在容器外部折叠 */
+      padding: 1em 1.5em;
+      color: #fff;
+      background-color: #0072b0;
+      border-radius: .5em;
+    }
+    .sidebar {
+      margin-top: 0;
+    }
+    .demo1 .container {
+      height: 150px;
+    }
+    .demo1 .main {
+      float: left;
+      width: 70%;
+      background-color: #fff;
+      border-radius: .5em;
+    }
+    .demo1 .sidebar {
+      float: left;
+      margin-left: 1.5em;
+      width: calc(30% - 1.5em);
+      padding: 1.5em;
+      background-color: #fff;
+      border-radius: .5em;
+    }
+
+    .demo2 .wrapper {
+      margin-left: -1.5em;
+      margin-right: -1.5em;
+    }
+    .demo2 .container {
+      display: table;
+      width: 100%;
+      border-spacing: 1.5em 0;
+    }
+    .demo2 .main {
+      display: table-cell;
+      width: 70%;
+      background-color: #fff;
+      border-radius: .5em;
+    }
+    .demo2 .sidebar {
+      display: table-cell;
+      /* 表格布局，外边距不生效 */
+      margin-left: 1.5em; 
+      width: 30%;
+      padding: 1.5em;
+      background-color: #fff;
+      border-radius: .5em;
+    }
+
+    .demo3 .container {
+      display: flex;
+    }
+    .demo3 .main {
+      width: 70%;
+      background-color: #fff;
+      border-radius: .5em;
+    }
+    .demo3 .sidebar {
+      width: 30%;
+      padding: 1.5em;
+      margin-left: 1.5em;
+      background-color: #fff;
+      border-radius: .5em;
+    }
+
+    .demo4 .container {
+      display: flex;
+    }
+    .demo4 .main {
+      width: 70%;
+      background-color: #fff;
+      border-radius: .5em;
+    }
+    .demo4 .sidebar {
+      width: 30%;
+      padding: 1.5em;
+      margin-left: 1.5em;
+      background-color: #fff;
+      border-radius: .5em;
+    }
+    .demo4 .button-link {
+      display: block;
+      padding: .5em;
+      color: #fff;
+      background-color: #0090c9;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .demo4 .sponsor-link {
+      display: block;
+      color: #0072b0;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo1">
+    <header>
+      <h1>Flanklin Running Club (百分比宽度)</h1>
+    </header>
+    <div class="container">
+      <main class="main">
+        <h2>Come join us!</h2>
+        <p>
+          The Franklin Running Club meets at 6:00 every Thursday at the town square. Runs are three to five miles, at your own pace.
+        </p>
+      </main>
+      <aside class="sidebar">
+        <div class="widget"></div>
+        <div class="widget"></div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="demo2">
+    <header>
+      <h1>Flanklin Running Club (等高列 - 表格布局)</h1>
+    </header>
+    <div class="wrapper">
+      <div class="container">
+        <main class="main">
+          <h2>Come join us!</h2>
+          <p>
+            The Franklin Running Club meets at 6:00 every Thursday at the town square. Runs are three to five miles, at your own pace.
+          </p>
+        </main>
+        <aside class="sidebar">
+          <div class="widget"></div>
+          <div class="widget"></div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo3">
+    <header>
+      <h1>Flanklin Running Club (等高列 - Flexbox)</h1>
+    </header>
+    <div class="container">
+      <main class="main">
+        <h2>Come join us!</h2>
+        <p>
+          The Franklin Running Club meets at 6:00 every Thursday at the town square. Runs are three to five miles, at your own pace.
+        </p>
+      </main>
+      <aside class="sidebar">
+        <div class="widget"></div>
+        <div class="widget"></div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="demo4">
+    <header>
+      <h1>Flanklin Running Club (猫头鹰选择器)</h1>
+    </header>
+    <div class="container">
+      <main class="main">
+        <h2>Come join us!</h2>
+        <p>
+          The Franklin Running Club meets at 6:00 every Thursday at the town square. Runs are three to five miles, at your own pace.
+        </p>
+      </main>
+      <aside class="sidebar">
+        <a href="" class="button-link">Follow us on twitter</a>
+        <a href="" class="button-link">Like us on facebook</a>
+        <a href="" class="sponsor-link">become a sponsor</a>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>
