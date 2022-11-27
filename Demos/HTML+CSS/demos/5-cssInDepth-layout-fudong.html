@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>深入解析CSS - 第二部分 精通布局(浮动)</title>
+  <style>
+    :root {
+      box-sizing: border-box;
+    }
+    *,
+    ::before,
+    ::after {
+      box-sizing: inherit;
+    }
+    /* 清除浮动 */
+    /* 选中容器末尾的伪元素 */
+    .clearfix::after {
+      /* 将伪元素的display设置为非inline, 并给定一个content值，以便让伪元素出现在文档中 */
+      display: block;
+      content: " ";
+      /* 让伪元素清除容器中的所有浮动 */
+      clear: both;
+    }
+    /* 让::before和::after伪元素都显式出来 */
+    .clearfix2::before,
+    .clearfix2::after {
+      /* 防止伪元素外边距折叠 */
+      display: table;
+      content: " ";
+    }
+    .clearfix2::after {
+      /* 让伪元素清除容器中的所有浮动 */
+      clear: both;
+    }
+    body {
+      background-color: #eee;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    /* 用猫头鹰选择器设置全局外边距 */
+    body * + * {
+      margin-top: 1.5em;
+    }
+    header {
+      padding: 1em 1.5em;
+      color: #fff;
+      background-color: #0072b0;
+      border-radius: .5em;
+      margin-bottom: 1.5em;
+    }
+    .main {
+      padding: 0 1.5em;
+      background-color: #fff;
+      border-radius: .5em;
+    }
+    /* 双容器模式 */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .media {
+      float: left;
+      /* 重置猫头鹰选择器导致的第一行顶部不对齐问题 */
+      margin: 0 1.5em 1.5em 0;
+      /* 从宽度里减去外边距，防止出现不必要的换行 */
+      width: calc(50% - 1.5em);
+      padding: 1.5em;
+      background-color: #eee;
+      border-radius: .5em;
+    }
+    .media:nth-child(odd) {
+      /* 每个新行清除了上面一行的浮动 */
+      clear: left;
+    }
+    .media-image {
+      /* 将图片浮动到左侧 */
+      float: left;
+      /* 给图片添加一个外边距，让它与正文中间出现间隔 */
+      margin-right: 1.5em;
+    }
+    .media-body {
+      /* 创建一个新的BFC，这样正文就不会跟浮动的图片重叠 */
+      overflow: auto;
+      /* 删除猫头鹰选择器添加的顶部外边距 */
+      margin-top: 0;
+    }
+    .media-body h4 {
+      /* 覆盖用户代理样式所添加的顶部外边距 */
+      margin-top: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="demo1">
+    <div class="container">
+      <header>
+        <h1>Franklin Running Club (浮动)</h1>
+      </header>
+  
+      <main class="main clearfix2">
+        <h2>Running tips</h2>
+  
+        <div>
+          <div class="media">
+            <img class="media-image" src="./images/5-runner.png">
+            <div class="media-body">
+              <h4>Strength</h4>
+              <p>
+                Strength training is an important part of
+                injury prevention. Focus on your core&mdash;
+                especially your abs and glutes.
+              </p>
+            </div>
+          </div>
+  
+          <div class="media">
+            <img class="media-image" src="./images/5-shoes.png">
+            <div class="media-body">
+              <h4>Cadence</h4>
+              <p>
+                Check your stride turnover. The most efficient
+                runners take about 180 steps per minute.
+              </p>
+            </div>
+          </div>
+  
+          <div class="media">
+            <img class="media-image" src="./images/5-shoes.png">
+            <div class="media-body">
+              <h4>Change it up</h4>
+              <p>
+                Don't run the same every time you hit the
+                road. Vary your pace, and vary the distance
+                of your runs.
+              </p>
+            </div>
+          </div>
+  
+          <div class="media">
+            <img class="media-image" src="./images/5-runner.png">
+            <div class="media-body">
+              <h4>Focus on form</h4>
+              <p>
+                Run tall but relaxed. Your feet should hit
+                the ground beneath your hips, not out in
+                front of you.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- clear: both; 让该元素移动到浮动元素的下面。
+          不雅：添加了不必要的标记。有更好的办法。（使用css）
+         -->
+        <!-- <div style="clear: both;"></div> -->
+      </main>
+    </div>
+  </div>
+</body>
+</html>
