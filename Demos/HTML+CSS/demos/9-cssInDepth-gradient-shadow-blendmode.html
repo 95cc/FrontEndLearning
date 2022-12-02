@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>深入解析CSS - 第四部分 高级话题 (渐变、阴影、混合模式)</title>
+  <style>
+    body {
+      color: white;
+      background-color: #709b90;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+    .fade-box {
+      width: 100px;
+      height: 50px;
+    }
+    .fade {
+      background-image: linear-gradient(to right, white, blue);
+    }
+    .fade1 {
+      background-image: linear-gradient(90deg, white, blue);
+    }
+    .fade2 {
+      /* background-image: linear-gradient(90deg, red, white, blue); */
+      background-image: linear-gradient(90deg, red 0%, white 30%, blue 100%);
+    }
+    .fade3 {
+      background-image: linear-gradient(90deg, red 40%, white 40%, white 60%, blue 60%);
+    }
+    .fade4 {
+      width: 400px;
+      height: 1em;
+      background-image: linear-gradient(-45deg, #57b, #57b 10px, #148 10px, #148 20px, white 20px);
+      /* border-radius: .3em; */
+    }
+    .fade5 {
+      width: 400px;
+      height: 1em;
+      background-image: repeating-linear-gradient(-45deg, #57b, #57b 10px, #148 10px, #148 20px);
+      /* border-radius: .3em; */
+    }
+    .fade6 {
+      /* 从中心的白色过渡到边缘的蓝色 */
+      background-image: radial-gradient(white, blue);
+    }
+
+    /* 阴影相关 */
+    .button {
+      padding: 1em;
+      border: 0;
+      font-size: 0.8rem;
+      color: white;
+      border-radius: 0.5em;
+      /* 从浅蓝色到中蓝色的渐变 */
+      background-image: linear-gradient(to bottom, #57b, #148);
+      box-shadow: 0.1em 0.1em 0.5em #124;
+    }
+    .button:active {
+      box-shadow: inset 0 0 0.5em #124,
+                  inset 0 0.5em 1em rgba(0, 0, 0, 0.4);
+    }
+
+    .button1 {
+      padding: 1em;
+      border: 0;
+      color: white;
+      background-color: #57b;
+      font-size: 1rem;
+      box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.15);
+    }
+    .button1:hover {
+      background-color: #456ab6;
+    }
+    .button1:active {
+      background-color: #148;
+    }
+
+    .button2 {
+      padding: 0.8em;
+      border: 0;
+      font-size: 1rem;
+      color: white;
+      border-radius: 0.5em;
+      background-color: #57b;
+      box-shadow: 0 0.4em #148;
+      text-shadow: 1px 1px #148;
+    }
+    .button2:active {
+      background-color: #456ab5;
+      transform: translateY(0.1em);
+      box-shadow: 0 0.3em #148;
+    }
+    .button2:focus {
+      outline: none;
+    }
+
+    /* 混合模式 */
+    .blend {
+      min-height: 400px;
+      background-image: url(./images/9-bear.jpg), url(./images/9-bear.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: -30vw, 30vw;
+      background-blend-mode: multiply;
+    }
+    .blend1 {
+      min-height: 400px;
+      background-image: url("./images/9-bear.jpg");
+      background-color: #148;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-blend-mode: luminosity;
+    }
+    .blend2 {
+      min-height: 400px;
+      background-image: url("./images/9-scratches.png"), url("./images/9-bear.jpg");
+      background-size: 200px, cover;
+      background-repeat: repeat, no-repeat;
+      background-position: center center;
+      background-blend-mode: soft-light;
+    }
+    .blend3 {
+      background-image: url("./images/9-bear.jpg");
+      background-size: cover;
+      background-position: center;
+      padding: 15em 0 1em;
+    }
+
+    .blend3 > h1 {
+      margin: 0;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 6rem;
+      text-align: center;
+      mix-blend-mode: hard-light;
+      background-color: #c33;
+      color: #808080;
+      border: 0.1em solid #ccc;
+      border-width: 0.1em 0;
+    }
+  </style>
+</head>
+<body>
+  <h2>渐变</h2>
+  <div class="fade-box fade"></div>
+  <br/>
+  <div class="fade-box fade1"></div>
+  <br/>
+  <div class="fade-box fade2"></div>
+  <br/>
+  <div class="fade-box fade3">条纹</div>
+  <br/>
+  重复渐变
+  <div class="fade-box fade4"></div>
+  <div class="fade-box fade5"></div>
+  径向渐变
+  <div class="fade-box fade6"></div>
+  基础渐变
+  <div class="fade-box" style="background-image: radial-gradient(white, midnightblue);"></div>
+  圆形渐变
+  <div class="fade-box" style="background-image: radial-gradient(circle, white, midnightblue);"></div>
+  大小为2em, 中心点距离左侧和顶部边缘都为25%
+  <div class="fade-box" style="
+    width: 300px;
+    height: 100px;
+    background-image: radial-gradient(2em at 25% 25%, white, midnightblue);
+  "></div>
+  指定颜色节点位置的径向渐变
+  <div class="fade-box" style="
+    width: 300px;
+    height: 300px;
+    background-image: radial-gradient(circle, midnightblue 0%, white 75%, red 100%);
+  "></div>
+  重复渐变生成条纹效果
+  <div class="fade-box" style="
+    width: 300px;
+    height: 300px;
+    background-image: repeating-radial-gradient(circle, midnightblue 0%, midnightblue 1em, white 1em, white 2em);
+  "></div>
+
+  <h2>阴影</h2>
+  <p>使用渐变和阴影形成立体感</p>
+  <button class="button">Sign up now</button>
+  <p>使用扁平化设计创建元素</p>
+  <button class="button1">Sign up now</button>
+  <p>让按钮看起来更时尚</p>
+  <button class="button2">Sign up now</button>
+
+  <h2>混合模式</h2>
+  <div class="blend"></div>
+  <p>为图片着色</p>
+  <div class="blend1"></div>
+  <p>为图片添加纹理</p>
+  <div class="blend2"></div>
+  <p>使用混合融合模式</p>
+  <div class="blend3">
+    <h1>Ursa Major</h1>
+  </div>
+</body>
+</html>
