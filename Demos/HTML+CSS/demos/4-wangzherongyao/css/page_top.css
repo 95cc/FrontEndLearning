@@ -1,0 +1,108 @@
+.top {
+  border-bottom: 1px solid #f5f5f5;
+}
+
+/* wrapper中间包裹的区域 */
+.top_wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 980px;
+  height: 41px;
+  line-height: 41px;
+  margin: 0 auto;
+}
+
+.top .left-area {
+  display: flex;
+}
+
+.top .left-area .logo a {
+  display: block;
+  width: 150px;
+  text-indent: -9999px;
+  background: url('https://game.gtimg.cn/images/js/title/logo.png') no-repeat top center;
+}
+
+.top .left-area .recommend {
+  position: relative;
+}
+
+.top .left-area .recommend-ad {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: -150px;
+  display: none;
+}
+
+.top .left-area .recommend:hover .recommend-ad {
+  display: block;
+}
+
+.top .right-area {
+  display: flex;
+}
+
+.top .right-area .item a {
+  position: relative;
+  display: block;
+  font-size: 14px;
+  color: #464646;
+}
+
+.top .right-area .item a.growth {
+  padding-left: 30px;
+}
+
+.top .right-area .item a.growth:hover {
+  color: #ff4e00;
+}
+
+.top .right-area .item .icon_grow {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  background: url(../img/top_sprite.png) no-repeat -30px 0;
+}
+
+.top .right-area .item a.ranking {
+  margin-left: 20px;
+  padding-right: 25px;
+}
+
+.top .right-area .item a.ranking::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto 0;
+  background: url(../img/top_sprite.png) no-repeat 0 0;
+
+  opacity: 0.1;
+  transform: rotate(90deg);
+}
+
+.top .right-area .item a.ranking .dropdown {
+  position: absolute;
+  z-index: 9;
+  right: 0;
+  top: 41px;
+  display: none;
+}
+
+.top .right-area .item a.ranking:hover .dropdown {
+  display: block;
+  animation: opacityAnim 400ms ease forwards;
+}
+
+.top .right-area .item a.ranking .dropdown iframe {
+  width: 708px;
+  height: 582px;
+}
