@@ -1,0 +1,92 @@
+.page_header {
+  min-width: 1300px;
+  background: rgba(0,0,0,0.8);
+
+  .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 1300px;
+    height: 84px;
+    margin: 0 auto;
+
+    .left-area {
+      display: flex;
+
+      .logo a {
+        display: block;
+        width: 200px;
+        height: 54px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #0f0;
+        text-indent: -9999px;
+        background: url('https://game.gtimg.cn/images/yxzj/web201706/images/comm/logo.png') no-repeat center center;
+      }
+
+      .nav-list {
+        display: flex;
+        margin-left: 30px;
+
+        .item {
+          width: 110px;
+          
+          a {
+            display: block;
+            height: 100%;
+            box-sizing: border-box;
+            padding-top: 20px;
+            line-height: 30px;
+            color: #c9c9dd;
+            font-size: 18px;
+            text-align: center;
+
+            .desc {
+              display: block;
+              margin-top: 7px;
+              font-size: 12px;
+              line-height: 12px;
+              color: #858792
+            }
+          }
+
+          &:hover, &.active {
+            background: url(../img/main_sprite.png) no-repeat 0 0;
+
+            a {
+              color: #e4b653;
+
+              .desc {
+                color: #91763f;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .right-area {
+      display: flex;
+      align-items: center;
+
+      .image img {
+        border: 1px solid #d9ad50;
+        border-radius: 50%;
+      }
+
+      .info {
+        margin-left: 7px;
+
+        a {
+          font-size: 16px;
+          color: #fff;
+        }
+
+        p {
+          font-size: 14px;
+          color: #858792;
+        }
+      }
+    }
+  }
+}

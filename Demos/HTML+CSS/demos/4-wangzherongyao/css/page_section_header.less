@@ -1,0 +1,44 @@
+.section-header {
+  display: flex;
+  justify-content: space-between;  
+  align-items: center;
+  margin-bottom: 16px;
+
+  .header-left .title {
+    font-size: 22px;
+    color: #323235;
+    padding-left: 30px;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+
+    .more {
+      display: block;
+      padding-left: 22px;
+      background: url(../img/main_sprite.png) no-repeat -252px 4px;
+      color: #999;
+
+      &:hover {
+        color: #f3c258;
+      }
+    }
+  }
+
+  .title-icon {
+    background: url(../img/main_sprite.png) no-repeat;
+  
+    &.title-icon-content {
+      background-position: 0 -102px;
+    }
+  
+    &.title-icon-match {
+      background-position: 0 -180px;
+    }
+  
+    &.title-icon-hero {
+      background-position: 0 -139px;
+    }
+  }
+}

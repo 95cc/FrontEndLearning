@@ -1,0 +1,226 @@
+@import url(./variable.less);
+
+.main {
+  background: url(https://ossweb-img.qq.com/upload/webplat/info/yxzj/20221221/734241514592878.jpg) no-repeat center top;
+
+  .link {
+    display: block;
+    height: 440px;
+    margin: 8px auto 12px;
+  }
+
+  .wrapper_1200 {
+    width: 1200px;
+    margin: 0 auto;
+
+    .section-news {
+      display: flex;
+      height: 342px;
+      background: url(https://game.gtimg.cn/images/yxzj/web201706/images/comm/rotate_bg.png) no-repeat left top;
+
+      .banner {
+        width: 605px;
+
+        .image-list {
+          display: flex;
+          width: 604px;
+          overflow: hidden;
+
+          .item {
+            width: 100%;
+            flex-shrink: 0;
+
+            a {
+              display: block;
+
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+
+        .title-list {
+          display: flex;
+          height: 44px;
+          line-height: 44px;
+
+          .item {
+            flex: 1;
+            text-align: center;
+
+            a {
+              display: block;
+              color: #b1b2be;
+            }
+
+            &.active a,
+            a:hover {
+              color: #f3c258;
+              background-color: rgba(255,255,255,.15);
+            }
+          }
+        }
+      }
+
+      .news {
+        flex: 1;
+        padding: 0 17px;
+        overflow: hidden;
+
+        .title-list {
+          display: flex;
+          height: 48px;
+          line-height: 48px;
+          border-bottom: 1px solid #000;
+
+          .item {
+            width: 52px;
+            text-align: center;
+
+            a {
+              display: block;
+              color: #b8b9c5;
+              height: 48px;
+              box-sizing: border-box;
+              transition: border-bottom 200ms ease-in;
+            }
+
+            &.active a,
+            &:not(.more) a:hover {
+              color: #f3c258;
+              border-bottom: 3px solid #f3c258;
+            }
+
+            &.more a {
+              line-height: 40px;
+            }
+          }
+        }
+
+        .notice {
+          height: 36px;
+          line-height: 36px;
+          margin-top: 18px;
+          padding: 0 15px;
+          background: #414046;
+
+          a {
+            display: block;
+            font-size: 18px;
+            color: #f3c258;
+          }
+        }
+
+        .news-list {
+          margin-top: 12px;
+
+          .item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 11px;
+            color: #999;
+
+            .desc {
+              flex: 1;
+              color: inherit;  
+            }
+
+            .date {
+              padding: 0 8px;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+
+      .download {
+        width: 236px;
+        background-color: skyblue;
+        
+        a {
+          display: block;
+          background: url(../img/main_sprite.png) no-repeat;
+
+          &.download-btn {
+            position: relative;
+            height: 128px;
+            background-position: 0 -219px;
+            overflow: hidden;
+
+            @keyframes lightmove {
+              0% {
+                top: -120px;
+                left: -150px;
+              }
+              100% {
+                top: 120px;
+                left: 150px;
+              }
+            }
+
+            .download-btn-ani {
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 300px;
+              height: 50px;
+              background-color: rgba(255,255,255,0.8);
+              transform: rotate(-45deg);
+              animation: lightmove 1.6s ease-in infinite;
+              filter: blur(32px);
+            }
+          }
+
+          &.guard-btn {
+            height: 106px;
+            background-position: 0 -350px;
+          }
+
+          &.experience-btn {
+            height: 108px;
+            background-position: 0 -461px;
+          }
+        }
+      }
+    }
+
+    .section-entrance {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+
+      .item {
+        width: 291px;
+        height: 134px;
+      }
+
+      a {
+        display: block;
+        height: 100%;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          transition: transform 400ms ease;
+        }
+        
+        &:hover img {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .section-content {
+      .left {
+        width: @section-inner-left-width;
+      }
+
+      .right {
+        width: @section-inner-right-width;
+      }
+    }
+  }
+}

@@ -5,10 +5,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>王者荣耀官方网站-腾讯游戏</title>
+  
   <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet/less" href="./css/common.less">
   <link rel="stylesheet" href="./css/animation.css">
-  <link rel="stylesheet" href="./css/page_top.css">
+  
+  <link rel="stylesheet/less" href="./css/page_top.less"/>
+  <link rel="stylesheet/less" href="./css/page_main.less">
+  <link rel="stylesheet/less" href="./css/page_main_header.less"/>
+  <link rel="stylesheet/less" href="./css/page_section_header.less"/>
+  <link rel="stylesheet/less" href="./css/page_section_match_center.less">
+  <link rel="stylesheet/less" href="./css/video.less">
+
+  <!-- 引入less解析 -->
+  <script src="./js/less.min.js"></script>
 
 </head>
 <body>
@@ -39,6 +49,7 @@
         </li>
         <li class="item">
           <a class="ranking" href="#">
+            
             腾讯游戏排行榜
             
             <div class="dropdown">
@@ -48,6 +59,590 @@
         </li>
       </ul>
     </div>
+  </div>
+
+  <!-- main区域 -->
+  <div class="main">
+    <!-- header区域 -->
+    <div class="page_header">
+      <div class="header-wrapper">
+        <div class="left-area">
+          <h1 class="logo">
+            <a href="#">王者荣耀</a>
+          </h1>
+          <ul class="nav-list">
+            <li class="item active">
+              <a href="#">
+                游戏资料
+                <span class="desc">DATA</span>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#">
+                内容中心
+                <span class="desc">CONTENTS</span>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#">
+                赛事中心
+                <span class="desc">MATCH</span>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#">
+                百态王者
+                <span class="desc">CULTURE</span>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#">
+                社区互动
+                <span class="desc">COMMUNITY</span>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#">
+                玩家支持
+                <span class="desc">PLAYER</span>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#">
+                IP新游
+                <span class="desc">NEW GAMES</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="right-area">
+          <a class="image" href="#">
+            <img src="./img/header_login.png" alt="">
+          </a>
+          <div class="info">
+            <a href="#">欢迎登录</a>
+            <p>登录后查看游戏战绩</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#" class="link"></a>
+
+    <div class="wrapper_1200">
+      <div class="section-news">
+        <div class="banner">
+          <ul class="image-list">
+            <li class="item">
+              <a href="#">
+                <img src="https://ossweb-img.qq.com/upload/adw/image/194/20221114/09a4211c90f8c866e83daed74a2db3f3.jpeg" alt="">
+              </a>
+            </li>
+            <li class="item">
+              <a href="#">
+                <img src="https://ossweb-img.qq.com/upload/adw/image/194/20221214/26e3400c508ce9bb92a1a595652efcb9.jpeg" alt="">
+              </a>
+            </li>
+          </ul>
+          <ul class="title-list">
+            <li class="item active">
+              <a href="#">桑启的旅途故事</a>
+            </li>
+            <li class="item">
+              <a href="#">启示之音抢先听</a>
+            </li>
+            <li class="item">
+              <a href="#">谁成为版本之子</a>
+            </li>
+            <li class="item">
+              <a href="#">观赛体验升级</a>
+            </li>
+            <li class="item">
+              <a href="#">季后赛开战</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="news">
+          <ul class="title-list">
+            <li class="item active">
+              <a href="">热门</a>
+            </li>
+            <li class="item">
+              <a href="">新闻</a>
+            </li>
+            <li class="item">
+              <a href="">公告</a>
+            </li>
+            <li class="item">
+              <a href="">活动</a>
+            </li>
+            <li class="item">
+              <a href="">赛事</a>
+            </li>
+            <li class="item more">
+              <a href="">...</a>
+            </li>
+          </ul>
+
+          <p class="notice">
+            <a class="nowrap_ellipsis" href="#">2022年4月21日全服不停机更新公告信息</a>
+          </p>
+
+          <ul class="news-list">
+            <li class="item">
+              <a class="desc nowrap_ellipsis" href="#">
+                <i class="news_type news_type_hot"></i>
+                最新BUG修复进展【老亚瑟的答疑时间】
+              </a>
+              <span class="date">04/19</span>
+            </li>
+            <li class="item">
+              <a class="desc nowrap_ellipsis" href="#">
+                <i class="news_type news_type_hot"></i>
+                最新BUG修复进展【老亚瑟的答疑时间】
+              </a>
+              <span class="date">04/19</span>
+            </li>
+            <li class="item">
+              <a class="desc nowrap_ellipsis" href="#">
+                <i class="news_type news_type_notice"></i>
+                最新BUG修复进展【老亚瑟的答疑时间】
+              </a>
+              <span class="date">04/19</span>
+            </li>
+            <li class="item">
+              <a class="desc nowrap_ellipsis news_type news_type_hot" href="#">
+                最新BUG修复进展【老亚瑟的答疑时间】
+              </a>
+              <span class="date">04/19</span>
+            </li>
+            <li class="item">
+              <a class="desc nowrap_ellipsis news_type news_type_news" href="#">
+                最新BUG修复进展【老亚瑟的答疑时间】
+              </a>
+              <span class="date">04/19</span>
+            </li>
+            <li class="item">
+              <a class="desc nowrap_ellipsis news_type news_type_hot" href="#">
+                最新BUG修复进展【老亚瑟的答疑时间】
+              </a>
+              <span class="date">04/19</span>
+            </li>
+            <li class="item">
+              <a class="desc nowrap_ellipsis" href="#">
+                <i class="news_type news_type_notice"></i>
+                最新BUG修复进展【老亚瑟的答疑时间】
+              </a>
+              <span class="date">04/19</span>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="download">
+          <a class="download-btn" href="#">
+            <span class="download-btn-ani"</span>
+          </a>
+          <a class="guard-btn" href="#"></a>
+          <a class="experience-btn" href="#"></a>
+        </div>
+      </div>
+
+      <ul class="section-entrance">
+        <li class="item">
+          <a href="#">
+            <img src="https://ossweb-img.qq.com/upload/webplat/info/yxzj/20181210/86638782789061.jpg" alt="">
+          </a>
+        </li>
+        <li class="item">
+          <a href="#">
+            <img src="https://ossweb-img.qq.com/upload/webplat/info/yxzj/20210113/239381533097800.png" alt="">
+          </a>
+        </li>
+        <li class="item">
+          <a href="#">
+            <img src="https://ossweb-img.qq.com/upload/webplat/info/yxzj/20221221/959791259604380.jpg" alt="">
+          </a>
+        </li>
+        <li class="item">
+          <a href="#">
+            <img src="https://ossweb-img.qq.com/upload/webplat/info/yxzj/20221121/931781417452689.png" alt="">
+          </a>
+        </li>
+      </ul>
+
+      <div class="section-content">
+        <div class="left">
+          <!-- 内容中心 -->
+          <div class="content-center">
+            <div class="section-header">
+              <div class="header-left">
+                <h3 class="title title-icon title-icon-content">内容中心</h3>
+              </div>
+              <div class="header-right">
+                <a class="more" href="#">更多</a>
+              </div>
+            </div>
+            <div class="tab_control">
+              <div class="item active">精品栏目</div>
+              <div class="line"></div>
+              <div class="item">赛事精品</div>
+              <div class="line"></div>
+              <div class="item">英雄攻略</div>
+            </div>
+            <div class="tab_keyword">
+              <div class="item active">最新</div>
+              <div class="item">马菠萝奇闻录</div>
+              <div class="item">马菠萝奇</div>
+              <div class="item">王者克纸轮</div>
+              <div class="item">王者视角</div>
+              <div class="item">峡谷460</div>
+              <div class="item">百星王者带你非</div>
+              <div class="item">王者克纸轮</div>
+              <div class="item">王者视角</div>
+              <div class="item">峡谷460</div>
+              <div class="item">百星王者带你非</div>
+              <div class="item">王者克纸轮</div>
+              <div class="item">王者视角</div>
+              <div class="item">峡谷460</div>
+              <div class="item">百星王者带你非</div>
+            </div>
+            <div class="video_list">
+              <a class="video_item" href="#">
+                <div class="album">
+                  <img src="https://shp.qpic.cn/cfwebcap/0/9fa08552b59ec9573f310e2aca1582ec/0/?width=230&height=140" alt="">
+                  <div class="info">
+                    <span class="count">471.6万</span>
+                    <span class="date">2020-08-29</span>
+                  </div>
+                  <div class="cover">
+                    <i class="icon_play"></i>
+                  </div>
+                </div>
+                <div class="desc">
+                  【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+                </div>
+              </a>
+              <a class="video_item" href="#">
+                <div class="album">
+                  <img src="https://shp.qpic.cn/cfwebcap/0/9fa08552b59ec9573f310e2aca1582ec/0/?width=230&height=140" alt="">
+                  <div class="info">
+                    <span class="count">471.6万</span>
+                    <span class="date">2020-08-29</span>
+                  </div>
+                  <div class="cover">
+                    <i class="icon_play"></i>
+                  </div>
+                </div>
+                <div class="desc">
+                  【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+                </div>
+              </a>
+              <a class="video_item" href="#">
+                <div class="album">
+                  <img src="https://shp.qpic.cn/cfwebcap/0/9fa08552b59ec9573f310e2aca1582ec/0/?width=230&height=140" alt="">
+                  <div class="info">
+                    <span class="count">471.6万</span>
+                    <span class="date">2020-08-29</span>
+                  </div>
+                  <div class="cover">
+                    <i class="icon_play"></i>
+                  </div>
+                </div>
+                <div class="desc">
+                  【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+                </div>
+              </a>
+              <a class="video_item" href="#">
+                <div class="album">
+                  <img src="https://shp.qpic.cn/cfwebcap/0/9fa08552b59ec9573f310e2aca1582ec/0/?width=230&height=140" alt="">
+                  <div class="info">
+                    <span class="count">471.6万</span>
+                    <span class="date">2020-08-29</span>
+                  </div>
+                  <div class="cover">
+                    <i class="icon_play"></i>
+                  </div>
+                </div>
+                <div class="desc">
+                  【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+                </div>
+              </a>
+              <a class="video_item" href="#">
+                <div class="album">
+                  <img src="https://shp.qpic.cn/cfwebcap/0/9fa08552b59ec9573f310e2aca1582ec/0/?width=230&height=140" alt="">
+                  <div class="info">
+                    <span class="count">471.6万</span>
+                    <span class="date">2020-08-29</span>
+                  </div>
+                  <div class="cover">
+                    <i class="icon_play"></i>
+                  </div>
+                </div>
+                <div class="desc">
+                  【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+                </div>
+              </a>
+              <a class="video_item" href="#">
+                <div class="album">
+                  <img src="https://shp.qpic.cn/cfwebcap/0/9fa08552b59ec9573f310e2aca1582ec/0/?width=230&height=140" alt="">
+                  <div class="info">
+                    <span class="count">471.6万</span>
+                    <span class="date">2020-08-29</span>
+                  </div>
+                  <div class="cover">
+                    <i class="icon_play"></i>
+                  </div>
+                </div>
+                <div class="desc">
+                  【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+                </div>
+              </a>
+              <a class="video_item" href="#">
+                <div class="album">
+                  <img src="https://shp.qpic.cn/cfwebcap/0/9fa08552b59ec9573f310e2aca1582ec/0/?width=230&height=140" alt="">
+                  <div class="info">
+                    <span class="count">471.6万</span>
+                    <span class="date">2020-08-29</span>
+                  </div>
+                  <div class="cover">
+                    <i class="icon_play"></i>
+                  </div>
+                </div>
+                <div class="desc">
+                  【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+                </div>
+              </a>
+              <a class="video_item" href="#">
+                <div class="album">
+                  <img src="https://shp.qpic.cn/cfwebcap/0/9fa08552b59ec9573f310e2aca1582ec/0/?width=230&height=140" alt="">
+                  <div class="info">
+                    <span class="count">471.6万</span>
+                    <span class="date">2020-08-29</span>
+                  </div>
+                  <div class="cover">
+                    <i class="icon_play"></i>
+                  </div>
+                </div>
+                <div class="desc">
+                  【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- 赛事中心 -->
+          <div class="match-center">
+            <div class="section-header">
+              <div class="header-left">
+                <h3 class="title title-icon title-icon-match">赛事中心</h3>
+              </div>
+              <div class="header-right">
+                <a class="more" href="#">更多</a>
+              </div>
+            </div>
+            <div class="tab_control">
+              <div class="item item_wrap active">KPL</div>
+              <div class="line"></div>
+              <div class="item item_wrap">挑战者杯</div>
+              <div class="line"></div>
+              <div class="item item_wrap">K甲联赛</div>
+              <div class="line"></div>
+              <div class="item item_wrap">城市赛</div>
+              <div class="line"></div>
+              <div class="item item_wrap">高校联赛</div>
+              <div class="line"></div>
+              <div class="item item_wrap">TGA</div>
+              <div class="line"></div>
+              <div class="item item_wrap">微信游戏邀请赛</div>
+              <div class="line"></div>
+            </div>
+            <div class="match-news">
+              <a class="news-left" href="#">
+                <img src="https://ossweb-img.qq.com/upload/webplat/info/yxzj/20221121/789631543527666.jpg" alt="">
+              </a>
+              <div class="news-right">
+                <div class="title nowrap_ellipsis">
+                  K甲季后赛回顾：镇江VTG、火豹会师总决赛，MD止步四强总决赛，MD止步四强
+                </div>
+                <div class="subtitle nowrap_ellipsis">
+                  2022年K甲春季赛季后赛为期一周的比赛已经全部结束了：新秀MD位居四强；老牌劲旅CW斩获季军，镇江VTG和火豹冲进总决赛。一起来回顾下本周的精彩比赛吧！
+                </div>
+                <ul class="news-list">
+                  <li class="item">
+                    <span class="news_type_match">KPL</span>
+                    <a class="desc nowrap_ellipsis" href="#">
+                      2022年K甲春季赛季后赛为期一周的比赛已经全部结束了：新秀MD位居四强；老牌劲旅CW斩获季军，镇江VTG和火豹冲进总决赛。一起来回顾下本周的精彩比赛吧！
+                    </a>
+                    <span class="date">04-22</span>
+                  </li>
+                  <li class="item">
+                    <span class="news_type_match">KPL</span>
+                    <a class="desc nowrap_ellipsis" href="#">
+                      2022年K甲春季赛季后赛为期一周的比赛已经全部结束了：新秀MD位居四强；老牌劲旅CW斩获季军，镇江VTG和火豹冲进总决赛。一起来回顾下本周的精彩比赛吧！
+                    </a>
+                    <span class="date">04-22</span>
+                  </li>
+                  <li class="item">
+                    <span class="news_type_match">KPL</span>
+                    <a class="desc nowrap_ellipsis" href="#">
+                      2022年K甲春季赛季后赛为期一周的比赛已经全部结束了：新秀MD位居四强；老牌劲旅CW斩获季军，镇江VTG和火豹冲进总决赛。一起来回顾下本周的精彩比赛吧！
+                    </a>
+                    <span class="date">04-22</span>
+                  </li>
+                  <li class="item">
+                    <span class="news_type_match">KPL</span>
+                    <a class="desc nowrap_ellipsis" href="#">
+                      2022年K甲春季赛季后赛为期一周的比赛已经全部结束了：新秀MD位居四强；老牌劲旅CW斩获季军，镇江VTG和火豹冲进总决赛。一起来回顾下本周的精彩比赛吧！
+                    </a>
+                    <span class="date">04-22</span>
+                  </li>
+                  <li class="item">
+                    <span class="news_type_match">KPL</span>
+                    <a class="desc nowrap_ellipsis" href="#">
+                      2022年K甲春季赛季后赛为期一周的比赛已经全部结束了：新秀MD位居四强；老牌劲旅CW斩获季军，镇江VTG和火豹冲进总决赛。一起来回顾下本周的精彩比赛吧！
+                    </a>
+                    <span class="date">04-22</span>
+                  </li>
+                  <li class="item">
+                    <span class="news_type_match">KPL</span>
+                    <a class="desc nowrap_ellipsis" href="#">
+                      2022年K甲春季赛季后赛为期一周的比赛已经全部结束了：新秀MD位居四强；老牌劲旅CW斩获季军，镇江VTG和火豹冲进总决赛。一起来回顾下本周的精彩比赛吧！
+                    </a>
+                    <span class="date">04-22</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="video_list">
+              <a class="video_item" href="#">
+                <div class="album">
+                  <img src="https://shp.qpic.cn/cfwebcap/0/9fa08552b59ec9573f310e2aca1582ec/0/?width=230&height=140" alt="">
+                  <div class="info">
+                    <span class="count">471.6万</span>
+                    <span class="date">2020-08-29</span>
+                  </div>
+                  <div class="cover">
+                    <i class="icon_play"></i>
+                  </div>
+                </div>
+                <div class="desc">
+                  【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+                </div>
+              </a>
+              <a class="video_item" href="#">
+                <div class="album">
+                  <img src="https://shp.qpic.cn/cfwebcap/0/9fa08552b59ec9573f310e2aca1582ec/0/?width=230&height=140" alt="">
+                  <div class="info">
+                    <span class="count">471.6万</span>
+                    <span class="date">2020-08-29</span>
+                  </div>
+                  <div class="cover">
+                    <i class="icon_play"></i>
+                  </div>
+                </div>
+                <div class="desc">
+                  【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+                </div>
+              </a>
+              <a class="video_item" href="#">
+                <div class="album">
+                  <img src="https://shp.qpic.cn/cfwebcap/0/9fa08552b59ec9573f310e2aca1582ec/0/?width=230&height=140" alt="">
+                  <div class="info">
+                    <span class="count">471.6万</span>
+                    <span class="date">2020-08-29</span>
+                  </div>
+                  <div class="cover">
+                    <i class="icon_play"></i>
+                  </div>
+                </div>
+                <div class="desc">
+                  【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+                </div>
+              </a>
+              <a class="video_item" href="#">
+                <div class="album">
+                  <img src="https://shp.qpic.cn/cfwebcap/0/9fa08552b59ec9573f310e2aca1582ec/0/?width=230&height=140" alt="">
+                  <div class="info">
+                    <span class="count">471.6万</span>
+                    <span class="date">2020-08-29</span>
+                  </div>
+                  <div class="cover">
+                    <i class="icon_play"></i>
+                  </div>
+                </div>
+                <div class="desc">
+                  【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+                </div>
+              </a>
+              <a class="video_item" href="#">
+                <div class="album">
+                  <img src="https://shp.qpic.cn/cfwebcap/0/9fa08552b59ec9573f310e2aca1582ec/0/?width=230&height=140" alt="">
+                  <div class="info">
+                    <span class="count">471.6万</span>
+                    <span class="date">2020-08-29</span>
+                  </div>
+                  <div class="cover">
+                    <i class="icon_play"></i>
+                  </div>
+                </div>
+                <div class="desc">
+                  【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+                </div>
+              </a>
+              <a class="video_item" href="#">
+                <div class="album">
+                  <img src="https://shp.qpic.cn/cfwebcap/0/9fa08552b59ec9573f310e2aca1582ec/0/?width=230&height=140" alt="">
+                  <div class="info">
+                    <span class="count">471.6万</span>
+                    <span class="date">2020-08-29</span>
+                  </div>
+                  <div class="cover">
+                    <i class="icon_play"></i>
+                  </div>
+                </div>
+                <div class="desc">
+                  【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+                </div>
+              </a>
+              <a class="video_item" href="#">
+                <div class="album">
+                  <img src="https://shp.qpic.cn/cfwebcap/0/9fa08552b59ec9573f310e2aca1582ec/0/?width=230&height=140" alt="">
+                  <div class="info">
+                    <span class="count">471.6万</span>
+                    <span class="date">2020-08-29</span>
+                  </div>
+                  <div class="cover">
+                    <i class="icon_play"></i>
+                  </div>
+                </div>
+                <div class="desc">
+                  【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+                </div>
+              </a>
+              <a class="video_item" href="#">
+                <div class="album">
+                  <img src="https://shp.qpic.cn/cfwebcap/0/9fa08552b59ec9573f310e2aca1582ec/0/?width=230&height=140" alt="">
+                  <div class="info">
+                    <span class="count">471.6万</span>
+                    <span class="date">2020-08-29</span>
+                  </div>
+                  <div class="cover">
+                    <i class="icon_play"></i>
+                  </div>
+                </div>
+                <div class="desc">
+                  【狄仁杰封神榜】第82期 发生什么事了？全局例无虚发又双叒现峡谷ffdafadfda
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="right"></div>
+      </div>
+    </div>
+    
   </div>
 </body>
 </html>
