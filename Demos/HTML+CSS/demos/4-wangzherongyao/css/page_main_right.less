@@ -1,0 +1,67 @@
+.hero-skin {
+  .new-hero {
+    margin-top: 20px;
+
+    .album {
+      display: block;
+    }
+
+    .intro {
+      height: 47px;
+      padding: 10px 15px; 
+      border: 1px solid #e5e5e5;
+      border-top: none;
+      border-radius: 0 0 2px 2px;
+
+      .name {
+        color: #333;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .date {
+        margin-top: 5px;
+        color: #999;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .hero-list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    .item {
+      width: 68px;
+      height: 173px;
+
+      a {
+        position: relative;
+        display: block;
+
+        .cover {
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #f3c258;
+          background-color: rgba(0, 0, 0, 0.85);
+          writing-mode: vertical-lr;
+          letter-spacing: 0.3em;
+          word-break: break-all;
+          transition: opacity 300ms ease;
+        }
+
+        &:hover .cover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
