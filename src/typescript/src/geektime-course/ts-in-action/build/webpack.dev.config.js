@@ -1,3 +1,5 @@
+const path = require('path')
+
 // 开发环境配置
 module.exports = {
   /*
@@ -7,5 +9,5 @@ module.exports = {
   */
   // devtool: "chareap-module-eval-source-map",
   // 参考地址：https://www.webpackjs.com/configuration/devtool/#root
-  devtool: "eval-cheap-module-source-map",
-};
+  devtool: 'eval-cheap-module-source-map',
+}

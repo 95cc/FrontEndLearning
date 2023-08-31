@@ -1,13 +1,13 @@
 // 公共环境配置
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: "./src/index.ts",
+  entry: './src/index.ts',
   output: {
-    filename: "app.js",
+    filename: 'app.js',
   },
   resolve: {
-    extensions: [".js", ".ts", ".tsx"],
+    extensions: ['.js', '.ts', '.tsx'],
   },
   module: {
     rules: [
@@ -15,7 +15,7 @@ module.exports = {
         test: /\.tsx?$/i,
         use: [
           {
-            loader: "ts-loader",
+            loader: 'ts-loader',
           },
         ],
         exclude: /node_modules/,
@@ -24,7 +24,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/tpl/index.html",
+      template: './src/tpl/index.html',
     }),
   ],
-};
+}

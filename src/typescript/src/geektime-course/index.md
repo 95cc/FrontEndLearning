@@ -33,6 +33,6 @@
 ### 其他
 
 1. 课程中演示用到的在线编码平台：https://tool.lu/coderunner/
-2. 类型搜索地址：http://microsoft.github.io/TypeSearch/
+2. 类型搜索地址：https://www.typescriptlang.org/dt/search?search=
    [npm displays packages with bundled TypeScript declarations](https://github.blog/changelog/2020-12-16-npm-displays-packages-with-bundled-typescript-declarations/)
 3. ts RN 项目参考：https://github.com/akveo/react-native-ui-kitten
