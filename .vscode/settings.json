@@ -2,7 +2,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.fontSize": 18, // 代码字体大小
-  "editor.wordWrap": "off", // 代码自动换行
+  "editor.wordWrap": "on", // 代码自动换行
   "editor.renderWhitespace": "all", // 空格的渲染方式
   "editor.tabSize": 2, // 代码缩进
   "editor.linkedEditing": true,

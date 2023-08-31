@@ -1,4 +1,6 @@
 // https://www.typescriptlang.org/play
+
+/// --- 基础篇
 // 基本类型
 {
   // 原始类型
@@ -874,4 +876,11 @@
     // type T9 = string
     type T9 = ReturnType<() => string>
   }
+}
+
+/// --- 工程篇
+{
+  // 1. 使用命名空间 查看 src/namespace
+  // 2. 理解声明合并 查看 src/declaremerge
+  // 3. 如何编写声明文件
 }
