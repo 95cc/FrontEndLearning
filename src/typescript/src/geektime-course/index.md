@@ -55,6 +55,17 @@ babel-eslint 与 typescript-eslint
 - 两者底层机制不一样，不要一起使用。
 - Babel体系建议使用babel-eslint，否则可以使用typescript-eslint。
 
+### TypeScript工具体系
+
+- 编译工具：ts-loader、@babel/preset-typescript
+- 代码检查工具：eslint+typescript-eslint、babel-eslint
+- 单元测试工具：ts-jest、babel-jest
+
+### jest
+
+- npm i jest ts-jest @types/jest -D
+- npm i jest babel-jest @types/jest -D
+
 ### 其他
 
 1. 课程中演示用到的在线编码平台：https://tool.lu/coderunner/
