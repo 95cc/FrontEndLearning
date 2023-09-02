@@ -884,5 +884,22 @@
   // 2. 理解声明合并 查看 src/declaremerge
   // 3. 如何编写声明文件 查看 src/declare。针对3种模块
   // 4. 模块插件、全局插件（给类库增加自定义方法）
-  // 4.1 例如给moment增加自定义方法
+  //   4.1 给外部模块添加方法。例如给moment增加自定义方法
+  //   4.2 给全局变量添加方法。
+  // 5. 配置tsconfig.json
+  //   5.1 文件选项
+  //   5.2 编译选项
+  //   5.3 工程引用
+  // 6. 编译工具：ts-loader、Babel
+  //   6.1 使用ts-loading关闭类型检查: transpileOnly: true。单独使用 fork-ts-checker-webpack-plugin 进行检查
+  //   6.2 除了ts-loading，官方还推荐：awesome-typesript-loader
+  //     与ts-loader的主要区别
+  //     6.2.1 更适合与Babel集成，使用Babel的转移和缓存
+  //     6.2.2 不需要安装额外的插件，就可以把类型检查放在独立进程中进行 (内置CheckerPlugin: 类型检查有遗漏)
+  //    6.3 babel与tsc对别
+  /*
+    编译能力: 一致;
+    类型检查: tsc有、babel无
+    插件: tsc无，babel非常丰富 
+  */
 }
