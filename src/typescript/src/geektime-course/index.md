@@ -66,6 +66,24 @@ babel-eslint 与 typescript-eslint
 - npm i jest ts-jest @types/jest -D
 - npm i jest babel-jest @types/jest -D
 
+### 实战篇-react
+
+npm i react react-dom
+npm i -D @types/react @types/react-dom
+
+### 使用脚手架创建react项目
+
+https://create-react-app.dev/docs/getting-started#npx
+
+1. npx create-react-app ts-6-scaffold-react --template typescript
+2. 额外安装：
+
+- npm i antd axios react-router-dom
+- npm i -D @types/react-router-dom babel-plugin-import customize-cra react-app-rewired
+- npm i -D http-proxy-middleware http-server
+
+3. 创建config-override.js（实现antd的按需加载）
+
 ### 其他
 
 1. 课程中演示用到的在线编码平台：https://tool.lu/coderunner/
