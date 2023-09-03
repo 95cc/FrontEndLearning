@@ -22,8 +22,14 @@ import React from 'react'
 import ReactDom from 'react-dom'
 
 import Hello from './demo/Hello'
+import HelloFC from './demo/HelloFC'
+import HelloClass from './demo/HelloClass'
 
 ReactDom.render(
-  <Hello name="TypeScript" />,
+  <div>
+    <Hello name="TypeScript" />
+    <HelloFC name="TypeScript" />
+    <HelloClass name="类组件"></HelloClass>
+  </div>,
   document.querySelectorAll('.app')[0]
 )
