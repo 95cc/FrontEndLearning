@@ -24,12 +24,16 @@ import ReactDom from 'react-dom'
 import Hello from './demo/Hello'
 import HelloFC from './demo/HelloFC'
 import HelloClass from './demo/HelloClass'
+import HelloHoc from './demo/HelloHoc'
+import HelloHooks from './demo/HelloHooks'
 
 ReactDom.render(
   <div>
     <Hello name="TypeScript" />
     <HelloFC name="TypeScript" />
     <HelloClass name="类组件"></HelloClass>
+    <HelloHoc name="HelloHoc" loading={true} />
+    <HelloHooks name="TypeScript" />
   </div>,
   document.querySelectorAll('.app')[0]
 )
