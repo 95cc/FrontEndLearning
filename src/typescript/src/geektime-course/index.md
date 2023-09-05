@@ -66,7 +66,7 @@ babel-eslint 与 typescript-eslint
 - npm i jest ts-jest @types/jest -D
 - npm i jest babel-jest @types/jest -D
 
-### 实战篇-react
+### 实战篇 - React
 
 npm i react react-dom
 npm i -D @types/react @types/react-dom
@@ -104,6 +104,25 @@ https://create-react-app.dev/docs/getting-started#npx
   - 优势：代替class，多个Hooks互不影响，避免嵌套地域，开发效率高
   - 劣势：切换到新思维需要成本
   - 状态：React的未来
+
+### 数据请求
+
+可使用http-server、http-proxy-middleware 搭配来进行数据的mock
+
+### 实战篇 - API Server
+
+项目初始化步骤：
+
+- npm i -g express-generator
+- express ts-express
+- 修改所有`.js`文件为`.ts`
+- npm i -D @types/node @types/express
+
+```
+nodemon --watch routes/**/* -e ts --exec ts-node bin/server.ts 本地启动，本地开发的时候就不用去编译了，节省了编译的时间，发布的时候再去编译发布。
+```
+
+### 实战篇 - Vue
 
 ### 其他
 
