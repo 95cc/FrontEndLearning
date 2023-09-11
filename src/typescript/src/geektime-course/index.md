@@ -117,6 +117,8 @@ https://create-react-app.dev/docs/getting-started#npx
 - express ts-express
 - 修改所有`.js`文件为`.ts`
 - npm i -D @types/node @types/express
+- npm i mysql2
+- npm i -D @types/node
 
 ```
 nodemon --watch routes/**/* -e ts --exec ts-node bin/server.ts 本地启动，本地开发的时候就不用去编译了，节省了编译的时间，发布的时候再去编译发布。
