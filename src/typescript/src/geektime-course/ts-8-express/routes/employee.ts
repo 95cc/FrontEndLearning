@@ -1,6 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import query from '../models/query'
+import excelExport from 'excel-export'
 
 const router = express.Router()
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -58,6 +59,32 @@ router.post('/createEmployee', urlencodedParser, async (req, res) => {
       flag: 1,
       msg: (e as Error).toString(),
     })
+  }
+})
+
+let conf: excelExport.Config = {
+  cols: [
+    { caption: '员工ID', type: 'number' },
+    { caption: '姓名', type: 'string' },
+    { caption: '部门', type: 'string' },
+    { caption: '入职时间', type: 'string' },
+    { caption: '职级', type: 'string' },
+  ],
+  rows: [],
+}
+
+router.get('/downloadEmployee', async (req, res) => {
+  try {
+    let result = await query(queryAllSQL)
+    conf.rows = result.map((i: any) => {
+      return [i.id, i.name, i.department, i.hiredate, i.level]
+    })
+    let excel = excelExport.execute(conf)
+    res.setHeader('Content-Type', 'application/vnd.openxmlformats')
+    res.setHeader('Content-Disposition', 'attachment; filename=Employee.xlsx')
+    res.end(excel, 'binary')
+  } catch (e) {
+    res.send((e as Error).toString())
   }
 })
 

@@ -119,6 +119,8 @@ https://create-react-app.dev/docs/getting-started#npx
 - npm i -D @types/node @types/express
 - npm i mysql2
 - npm i -D @types/node
+- 导出excel
+  - npm i excel-export
 
 ```
 nodemon --watch routes/**/* -e ts --exec ts-node bin/server.ts 本地启动，本地开发的时候就不用去编译了，节省了编译的时间，发布的时候再去编译发布。
