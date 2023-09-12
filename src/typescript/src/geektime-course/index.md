@@ -147,7 +147,8 @@ nodemon --watch routes/**/* -e ts --exec ts-node bin/server.ts 本地启动，�
 
 ### 其他
 
-1. 课程中演示用到的在线编码平台：https://tool.lu/coderunner/
-2. 类型搜索地址：https://www.typescriptlang.org/dt/search?search=
+1. 课程及代码地址：https://gitee.com/geektime-geekbang/typescript-in-action
+2. 课程中演示用到的在线编码平台：https://tool.lu/coderunner/
+3. 类型搜索地址：https://www.typescriptlang.org/dt/search?search=
    [npm displays packages with bundled TypeScript declarations](https://github.blog/changelog/2020-12-16-npm-displays-packages-with-bundled-typescript-declarations/)
-3. ts RN 项目参考：https://github.com/akveo/react-native-ui-kitten
+4. ts RN 项目参考：https://github.com/akveo/react-native-ui-kitten
