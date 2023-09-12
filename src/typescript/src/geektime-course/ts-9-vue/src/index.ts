@@ -1,27 +1,23 @@
-import { defineCustomElement } from 'vue'
-import Hello from './components/hello.vue'
+import Vue from 'vue'
+import EmployeeQuery from './components/EmployeeQuery.vue'
 
-// https://cn.vuejs.org/guide/extras/web-components.html#building-custom-elements-with-vue
-const MyVueElement = defineCustomElement({
-  // 这里是同平常一样的 Vue 组件选项
-  // props: {},
-  // emits: {},
-  components: {},
-  template: `<div>ts vue</div>`,
-
-  // defineCustomElement 特有的：注入进 shadow root 的 CSS
-  // styles: [],
+let app = new Vue({
+  el: '.app',
+  components: {
+    EmployeeQuery,
+  },
+  template: `<employee-query @query="getParam" :department="department" />`,
+  data: {
+    department: [
+      { department: '技术部', departmentId: 1 },
+      { department: '产品部', departmentId: 2 },
+      { department: '市场部', departmentId: 3 },
+      { department: '运营部', departmentId: 4 },
+    ],
+  },
+  methods: {
+    getParam: function (param: any) {
+      console.log(param)
+    },
+  },
 })
-
-// 注册自定义元素
-// 注册之后，所有此页面中的 `<my-vue-element>` 标签
-// 都会被升级
-customElements.define('my-vue-element', MyVueElement)
-
-// 你也可以编程式地实例化元素：
-// （必须在注册之后）
-document.body.appendChild(
-  new MyVueElement({
-    // 初始化 props（可选）
-  })
-)

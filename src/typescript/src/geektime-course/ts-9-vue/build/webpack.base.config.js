@@ -1,46 +1,41 @@
-// 公共环境配置
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { VueLoaderPlugin } = require('vue-loader')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
-  entry: './src/index.ts',
-  output: {
-    filename: 'app.js',
-  },
-  resolve: {
-    extensions: ['.js', '.ts', '.tsx', 'vue'],
-    alias: {
-      // vue: 'vue/dist/vue.runtime.esm-bundler.js',
+    output: {
+        filename: 'employee-query.js'
     },
-  },
-  module: {
-    rules: [
-      {
-        test: /\.vue$/i,
-        loader: 'vue-loader',
-      },
-      {
-        test: /\.tsx?$/i,
-        use: [
-          {
-            loader: 'ts-loader',
-            options: {
-              appendTsSuffixTo: [/\.vue$/],
+    resolve: {
+        extensions: ['.js', '.ts', '.tsx', 'vue'],
+        alias: {
+            'vue': 'vue/dist/vue.esm.js'
+        }
+    },
+    module: {
+        rules: [
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
             },
-          },
-        ],
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.css$/i,
-        use: ['vue-style-loader', 'css-loader'],
-      },
-    ],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/tpl/index.html',
-    }),
-    new VueLoaderPlugin(),
-  ],
+            {
+                test: /\.tsx?$/,
+                use: [{
+                    loader: 'ts-loader',
+                    options: {
+                        appendTsSuffixTo: [/\.vue$/]
+                    }
+                }],
+                exclude: /node_modules/
+            },
+            {
+                test: /\.css$/,
+                use: [
+                  'vue-style-loader',
+                  'css-loader'
+                ]
+            }
+        ]
+    },
+    plugins: [
+        new VueLoaderPlugin()
+    ]
 }
