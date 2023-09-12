@@ -128,6 +128,9 @@ nodemon --watch routes/**/* -e ts --exec ts-node bin/server.ts 本地启动，�
 
 ### 实战篇 - Vue
 
+- npm i vue
+- npm i -D vue-loader vue-template-compiler css-loader
+
 ### 其他
 
 1. 课程中演示用到的在线编码平台：https://tool.lu/coderunner/
