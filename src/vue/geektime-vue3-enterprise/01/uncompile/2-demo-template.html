@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <script src="https://unpkg.com/vue@3.2.37/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      /*
+      [Vue warn]: Component provided template option but runtime compilation is not supported in this build of Vue. Use "vue.global.js" instead. 
+  at <App>
+
+    解决方法：将
+    https://unpkg.com/vue@3.2.37/dist/vue.runtime.global.js 
+    替换为
+    https://unpkg.com/vue@3.2.37/dist/vue.global.js
+      */
+      ;(function () {
+        const { createApp, ref } = window.Vue
+        const Counter = {
+          template: `
+        <div class="v-counter">
+          <div class="v-text">{{ num }}</div>
+          <button class="v-btn" @click="click">点击加1</button>
+        </div>
+        `,
+          setup() {
+            const num = ref(0)
+            const click = () => {
+              num.value += 1
+            }
+            return {
+              num,
+              click,
+            }
+          },
+        }
+
+        // 组件挂载渲染
+        const app = createApp({
+          template: `<v-counter />`,
+        })
+        app.component('v-counter', Counter)
+        app.mount('#app')
+      })()
+    </script>
+  </body>
+</html>
