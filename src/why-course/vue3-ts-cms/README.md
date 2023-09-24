@@ -161,3 +161,6 @@ npm run lint
         export default router
 
       ```
+
+  - 状态管理(vuex/pinia; 推荐pinia)
+    - `npm install pinia`
