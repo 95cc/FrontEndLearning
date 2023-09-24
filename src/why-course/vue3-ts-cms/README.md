@@ -101,6 +101,7 @@ npm run lint
     - 安装vscode插件、下载prettier npm包(在package.json中scripts添加："prettier": "prettier --write .")、设置vscode的default formatter为prettier
 
   - eslint配置
+
     - 让eslint读取prettier的代码格式风格，安装
       `npm install -D eslint-plugin-prettier`
       `npm install -D eslint-config-prettier`
@@ -120,3 +121,10 @@ npm run lint
           "source.fixAll.eslint": true
         },
       ```
+
+  - css重置
+    - `npm install normalize.css`
+    - Preprocessor dependency "less" not found. Did you install it? Try `npm install -D less`.
+      `npm install -D less`
+  - 路由配置
+    - `npm install vue-router`

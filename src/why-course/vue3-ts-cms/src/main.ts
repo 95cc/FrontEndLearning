@@ -1,4 +1,5 @@
-import './assets/main.css'
+import 'normalize.css'
+import './assets/css/index.less'
 
 import { createApp } from 'vue'
 import App from './App.vue'
