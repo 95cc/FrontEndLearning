@@ -164,3 +164,17 @@ npm run lint
 
   - 状态管理(vuex/pinia; 推荐pinia)
     - `npm install pinia`
+  - 网络请求封装(axios)
+    - `npm install axios`
+  - 环境区分
+    - import.meta.env.MODE
+    - import.meta.env.DEV/import.meta.env.PROD/import.meta.env.SSR
+    - 通过环境变量文件 (内容以VITE\_开头才会被vite加载)
+
+      - .env: 所有情况都会加载
+      - .env.[mode]:`.env.development`,`.env.production`; 指定模式加载
+      - `.env.[mode].local`/`.env.local`: 会被git忽略
+
+      ```
+        VITE_xxx
+      ```
