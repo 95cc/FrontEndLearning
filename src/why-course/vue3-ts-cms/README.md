@@ -167,6 +167,7 @@ npm run lint
   - 网络请求封装(axios)
     - `npm install axios`
   - 环境区分
+
     - import.meta.env.MODE
     - import.meta.env.DEV/import.meta.env.PROD/import.meta.env.SSR
     - 通过环境变量文件 (内容以VITE\_开头才会被vite加载)
@@ -178,3 +179,17 @@ npm run lint
       ```
         VITE_xxx
       ```
+
+- 217 Element-Plus/图标/登录页
+  - Element-Plus集成
+    - [按需导入](https://element-plus.org/zh-CN/guide/quickstart.html#%E6%8C%89%E9%9C%80%E5%AF%BC%E5%85%A5)
+      - 安装:
+        - `npm install element-plus`
+        - `npm install -D unplugin-vue-components unplugin-auto-import`
+      - vite配置
+      - tsconfig.json配置
+        ```
+          {
+            "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "auto-imports.d.ts", "components.d.ts"]
+          }
+        ```
