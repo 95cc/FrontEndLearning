@@ -204,3 +204,35 @@ npm run lint
           app.component(key, component)
         }
     ```
+
+  - 引入ElMessage、ElLoading样式
+
+    - 单独import
+      ```
+        import 'element-plus/theme-chalk/el-message.css'
+        import 'element-plus/theme-chalk/el-loading.css'
+      ```
+    - 通过插件`npm install -D vite-plugin-style-import`、`npm install -D consola`
+
+      ```
+        import { createStyleImportPlugin, ElementPlusResolve } from 'vite-plugin-style-import'
+
+        createStyleImportPlugin({
+          resolves: [ElementPlusResolve()],
+          libs: [
+            {
+              libraryName: 'element-plus',
+              esModule: true,
+              resolveStyle: (name: string) => {
+                return `element-plus/theme-chalk/${name}.css`
+              }
+            }
+          ]
+        })
+      ```
+
+- 218 登录逻辑、类型编写
+- 219 路由守卫、退出登录、获取用户信息
+  - RBAC: role based access control (基于角色的访问控制)
+    登录 -> 获取角色 -> 获取权限
+    https://transform.tools/json-to-typescript
