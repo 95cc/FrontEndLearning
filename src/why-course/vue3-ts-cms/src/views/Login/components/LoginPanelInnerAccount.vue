@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 // ---
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
+import type { FormInstance, FormRules } from 'element-plus'
 // ---
 import type { IAccount } from '@/types'
 import { localCache } from '@/utils/cache'
@@ -9,20 +10,42 @@ const CACHE_NAME = 'name'
 const CACHE_PASSWORD = 'password'
 
 // 1.定义account数据
-const account = reactive<IAccount>({
+const accountRuleForm = reactive<IAccount>({
 	name: localCache.getCache(CACHE_NAME) ?? '',
 	password: localCache.getCache(CACHE_PASSWORD) ?? ''
 })
+
+// 2.定义校验规则
+const accountRules = reactive<FormRules<IAccount>>({
+	name: [
+		{ required: true, message: '必须输入帐号信息~', trigger: 'blur' },
+		{
+			pattern: /^[a-z0-9]{6,20}$/,
+			message: '必须是6~20数字或字母组成~',
+			trigger: 'blur'
+		}
+	],
+	password: [
+		{ required: true, message: '必须输入密码信息~', trigger: 'blur' },
+		{
+			pattern: /^[a-z0-9]{3,}$/,
+			message: '必须是3位以上数字或字母组成',
+			trigger: 'blur'
+		}
+	]
+})
+
+const ruleFormRef = ref<FormInstance>()
 </script>
 
 <template>
-	<div class="panel-account">
-		<el-form>
-			<el-form-item label="账号" porp="name">
-				<el-input v-model="account.name"></el-input>
+	<div>
+		<el-form ref="ruleFormRef" :model="accountRuleForm" :rules="accountRules">
+			<el-form-item label="账号" prop="name">
+				<el-input v-model="accountRuleForm.name"></el-input>
 			</el-form-item>
-			<el-form-item label="密码" porp="name">
-				<el-input v-model="account.password" show-password></el-input>
+			<el-form-item label="密码" prop="password">
+				<el-input v-model="accountRuleForm.password" show-password></el-input>
 			</el-form-item>
 		</el-form>
 	</div>

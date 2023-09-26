@@ -1,5 +1,5 @@
 <template>
-	<div class="panel-phone">
+	<div>
 		<el-form>
 			<el-form-item label="手机号">
 				<el-input />
@@ -17,10 +17,6 @@
 <script setup lang="ts"></script>
 
 <style lang="less" scoped>
-.panel-phone {
-	color: red;
-}
-
 .verify-code {
 	display: flex;
 

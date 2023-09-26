@@ -15,7 +15,7 @@ const activeName = ref('account')
 				<template #label>
 					<div class="tab">
 						<el-icon><UserFilled /></el-icon>
-						<span class="text">立即登录</span>
+						<span class="text">账号登录</span>
 					</div>
 				</template>
 
