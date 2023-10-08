@@ -1,13 +1,15 @@
 <script lang="ts" setup>
-// ---
 import { reactive, ref } from 'vue'
-import type { FormInstance, FormRules } from 'element-plus'
+import { ElMessage, type FormInstance, type FormRules } from 'element-plus'
 // ---
 import type { IAccount } from '@/types'
 import { localCache } from '@/utils/cache'
+import useLoginStore from '@/store/other/login'
 
 const CACHE_NAME = 'name'
 const CACHE_PASSWORD = 'password'
+const loginStore = useLoginStore()
+const ruleFormRef = ref<FormInstance>()
 
 // 1.定义account数据
 const accountRuleForm = reactive<IAccount>({
@@ -35,7 +37,28 @@ const accountRules = reactive<FormRules<IAccount>>({
 	]
 })
 
-const ruleFormRef = ref<FormInstance>()
+function doLogin(isRemPwd: boolean) {
+	ruleFormRef.value?.validate((valid) => {
+		if (!valid) {
+			ElMessage.error('Oops, 请您输入正确的格式后再操作~~.')
+			return false
+		}
+
+		const name = accountRuleForm.name
+		const password = accountRuleForm.password
+
+		loginStore
+			.loginAccountAction({ name, password })
+			.then(() => {})
+			.catch(() => {
+				ElMessage.error('Oops, 登录失败了.')
+			})
+	})
+}
+
+defineExpose({
+	doLogin
+})
 </script>
 
 <template>

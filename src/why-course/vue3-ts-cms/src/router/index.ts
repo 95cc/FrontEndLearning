@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { localCache } from '@/utils/cache'
-import { LOGIN_TOKEN } from '@/global/constants'
+import GlobalContants from '@/global/GlobalContants'
 
 const router = createRouter({
 	history: createWebHashHistory(),
@@ -26,7 +26,7 @@ const router = createRouter({
 
 // 导航守卫
 router.beforeEach((to) => {
-	const token = localCache.getCache(LOGIN_TOKEN)
+	const token = localCache.getCache(GlobalContants.LOGIN_TOKEN)
 	if (to.path == '/main' && !token) {
 		return '/login'
 	}

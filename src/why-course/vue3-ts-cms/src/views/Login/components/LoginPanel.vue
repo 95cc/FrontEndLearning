@@ -5,6 +5,14 @@ import LoginPanelInnerAccount from './LoginPanelInnerAccount.vue'
 import LoginPanelInnerPhone from './LoginPanelInnerPhone.vue'
 
 const activeName = ref('account')
+// ⚠️⚠️⚠️ <InstanceType<typeof LoginPanelInnerAccount>>
+const accountPanelRef = ref<InstanceType<typeof LoginPanelInnerAccount>>()
+
+function loginBtnClick() {
+	if (activeName.value == 'account') {
+		accountPanelRef.value?.doLogin(false)
+	}
+}
 </script>
 
 <template>
@@ -19,7 +27,7 @@ const activeName = ref('account')
 					</div>
 				</template>
 
-				<LoginPanelInnerAccount />
+				<LoginPanelInnerAccount ref="accountPanelRef" />
 			</el-tab-pane>
 			<el-tab-pane name="name">
 				<template #label>
@@ -33,7 +41,9 @@ const activeName = ref('account')
 			</el-tab-pane>
 		</el-tabs>
 		<div class="controls"></div>
-		<el-button class="login-btn" type="primary">立即登录</el-button>
+		<el-button class="login-btn" type="primary" size="large" @click="loginBtnClick"
+			>立即登录</el-button
+		>
 	</div>
 </template>
 
