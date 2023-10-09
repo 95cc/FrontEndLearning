@@ -16,7 +16,7 @@ function foldIconClick() {
 
 <template>
 	<div class="header">
-		<el-icon size="28px" @click="foldIconClick">
+		<el-icon size="24px" color="rgba(0,0,0,0.85)" @click="foldIconClick">
 			<component :is="isFold ? 'Expand' : 'Fold'"></component>
 		</el-icon>
 
