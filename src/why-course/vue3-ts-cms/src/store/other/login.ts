@@ -27,10 +27,12 @@ const useLoginStore = defineStore('login', {
 			const id = loginResult.data.id
 			this.token = loginResult.data.token
 			localCache.setCache(GlobalContants.LOGIN_TOKEN, this.token)
+
 			// 获取用户信息
 			const userInfoResult = await getUserInfoById(id)
 			const userInfo = userInfoResult.data
 			this.userInfo = userInfo
+
 			// 获取用户权限菜单
 			const userMenuResult = await getUserMenusByRoleId(this.userInfo?.role?.id)
 			const userMenus = userMenuResult.data
@@ -41,9 +43,30 @@ const useLoginStore = defineStore('login', {
 			localCache.setCache('userMenus', userMenus)
 
 			router.push('/main')
-			console.log(userMenuResult)
 		},
-		loadLocalCacheAction() {}
+		loadLocalCacheAction() {
+			// 1.用户进行刷新默认加载数据
+			const token = localCache.getCache(GlobalContants.LOGIN_TOKEN)
+			const userInfo = localCache.getCache('userInfo')
+			const userMenus = localCache.getCache('userMenus')
+			if (token && userInfo && userMenus) {
+				this.token = token
+				this.userInfo = userInfo
+				this.userMenus = userMenus
+
+				// // 1..请求所有roles/departments数据
+				// const mainStore = useMainStore()
+				// mainStore.fetchEntireDataAction()
+
+				// // 2.获取按钮的权限
+				// const permissions = mapMenusToPermissions(userMenus)
+				// this.permissions = permissions
+
+				// // 3.动态添加路由
+				// const routes = mapMenusToRoutes(userMenus)
+				// routes.forEach((route) => router.addRoute('main', route))
+			}
+		}
 	}
 })
 

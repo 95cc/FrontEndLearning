@@ -10,7 +10,7 @@ const isFold = ref(false)
 	<div class="wrapper">
 		<el-container class="main">
 			<el-aside class="aside" :width="isFold ? '60px' : '210px'">
-				<MainMenu />
+				<MainMenu :is-fold="isFold" />
 			</el-aside>
 			<el-container>
 				<el-header height="50px"></el-header>
