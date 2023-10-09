@@ -49,7 +49,15 @@ function doLogin(isRemPwd: boolean) {
 
 		loginStore
 			.loginAccountAction({ name, password })
-			.then(() => {})
+			.then(() => {
+				if (isRemPwd) {
+					localCache.setCache(CACHE_NAME, name)
+					localCache.setCache(CACHE_PASSWORD, password)
+				} else {
+					localCache.rmCache(CACHE_NAME)
+					localCache.rmCache(CACHE_PASSWORD)
+				}
+			})
 			.catch(() => {
 				ElMessage.error('Oops, 登录失败了.')
 			})

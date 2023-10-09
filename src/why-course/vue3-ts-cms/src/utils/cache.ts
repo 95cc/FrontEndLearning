@@ -21,11 +21,11 @@ class HYCache {
 		}
 	}
 
-	deleteCache(key: string) {
+	rmCache(key: string) {
 		this.storage.removeItem(key)
 	}
 
-	clearCache() {
+	clear() {
 		this.storage.clear()
 	}
 }

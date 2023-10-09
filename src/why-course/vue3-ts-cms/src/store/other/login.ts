@@ -35,6 +35,11 @@ const useLoginStore = defineStore('login', {
 			const userMenuResult = await getUserMenusByRoleId(this.userInfo?.role?.id)
 			const userMenus = userMenuResult.data
 			this.userMenus = userMenus
+
+			// 本地缓存
+			localCache.setCache('userInfo', userInfo)
+			localCache.setCache('userMenus', userMenus)
+
 			router.push('/main')
 			console.log(userMenuResult)
 		},
