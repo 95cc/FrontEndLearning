@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 // ---
 import MainMenu from './components/MainMenu.vue'
+import MainHeader from './components/MainHeader.vue'
 
 const isFold = ref(false)
 </script>
@@ -13,7 +14,12 @@ const isFold = ref(false)
 				<MainMenu :is-fold="isFold" />
 			</el-aside>
 			<el-container>
-				<el-header height="50px"></el-header>
+				<el-header height="50px">
+					<MainHeader />
+				</el-header>
+				<el-main class="content">
+					<RouterView />
+				</el-main>
 			</el-container>
 		</el-container>
 	</div>
@@ -28,6 +34,10 @@ const isFold = ref(false)
 		.aside {
 			background-color: orange;
 		}
+	}
+
+	.content {
+		background-color: #f0f2f5;
 	}
 }
 </style>
