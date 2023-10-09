@@ -5,6 +5,10 @@ import MainMenu from './components/MainMenu.vue'
 import MainHeader from './components/MainHeader.vue'
 
 const isFold = ref(false)
+
+function handleFoldChanged(value: boolean) {
+	isFold.value = value
+}
 </script>
 
 <template>
@@ -15,7 +19,7 @@ const isFold = ref(false)
 			</el-aside>
 			<el-container>
 				<el-header height="50px">
-					<MainHeader />
+					<MainHeader @fold-changed="handleFoldChanged" />
 				</el-header>
 				<el-main class="content">
 					<RouterView />
@@ -32,7 +36,13 @@ const isFold = ref(false)
 	.main {
 		height: 100%;
 		.aside {
-			background-color: orange;
+			transition: width 0.3s ease;
+
+			scrollbar-width: none; /* firefox */
+			-ms-overflow-style: none; /* IE 10+ */
+			&::-webkit-scrollbar {
+				display: none;
+			}
 		}
 	}
 

@@ -31,7 +31,12 @@ function handleItemClick(item: any) {
 		</div>
 
 		<div class="menu">
-			<el-menu>
+			<el-menu
+				:collapse="isFold"
+				text-color="#b7bdc3"
+				active-text-color="#fff"
+				background-color="#001529"
+			>
 				<template v-for="item in userMenus" :key="item.id">
 					<el-sub-menu :index="String(item.id)">
 						<template #title>
