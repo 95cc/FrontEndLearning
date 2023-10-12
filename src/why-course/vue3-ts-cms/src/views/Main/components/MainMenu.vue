@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 // ---
 import useLoginStore from '@/store/other/login'
+import { mapPathToMenu } from '@/utils/MapMenus'
 
 defineProps({
 	isFold: {
@@ -14,12 +15,14 @@ defineProps({
 const loginStore = useLoginStore()
 const route = useRoute()
 const router = useRouter()
-
 const userMenus = loginStore.userMenus
+const defautActiveMenuItem = computed(() => {
+	const pathMenu = mapPathToMenu(route.path, userMenus)
+	return String(pathMenu.id)
+})
 
 function handleItemClick(item: any) {
-	const url = item.url
-	router.push(url)
+	router.push(item.url)
 }
 </script>
 
@@ -32,6 +35,7 @@ function handleItemClick(item: any) {
 
 		<div class="menu">
 			<el-menu
+				:default-active="defautActiveMenuItem"
 				:collapse="isFold"
 				text-color="#b7bdc3"
 				active-text-color="#fff"

@@ -70,8 +70,6 @@ const useLoginStore = defineStore('login', {
 				// // 3.动态添加路由
 				const routes = mapMenusToRoutes(userMenus)
 				routes.forEach((route) => router.addRoute('main', route))
-
-				console.log('loadLocalCacheAction', router.getRoutes())
 			}
 		}
 	}
