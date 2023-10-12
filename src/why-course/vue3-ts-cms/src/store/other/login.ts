@@ -5,6 +5,7 @@ import { localCache } from '@/utils/cache'
 import router from '@/router'
 import GlobalContants from '@/global/GlobalContants'
 import { accountLoginRequest, getUserInfoById, getUserMenusByRoleId } from '@/service/other/login'
+import { mapMenusToRoutes } from '@/utils/MapMenus'
 
 interface ILoginState {
 	token: string
@@ -42,6 +43,9 @@ const useLoginStore = defineStore('login', {
 			localCache.setCache('userInfo', userInfo)
 			localCache.setCache('userMenus', userMenus)
 
+			const routes = mapMenusToRoutes(userMenus)
+			routes.forEach((route) => router.addRoute('main', route))
+
 			router.push('/main')
 		},
 		loadLocalCacheAction() {
@@ -49,6 +53,7 @@ const useLoginStore = defineStore('login', {
 			const token = localCache.getCache(GlobalContants.LOGIN_TOKEN)
 			const userInfo = localCache.getCache('userInfo')
 			const userMenus = localCache.getCache('userMenus')
+
 			if (token && userInfo && userMenus) {
 				this.token = token
 				this.userInfo = userInfo
@@ -63,8 +68,10 @@ const useLoginStore = defineStore('login', {
 				// this.permissions = permissions
 
 				// // 3.动态添加路由
-				// const routes = mapMenusToRoutes(userMenus)
-				// routes.forEach((route) => router.addRoute('main', route))
+				const routes = mapMenusToRoutes(userMenus)
+				routes.forEach((route) => router.addRoute('main', route))
+
+				console.log('loadLocalCacheAction', router.getRoutes())
 			}
 		}
 	}

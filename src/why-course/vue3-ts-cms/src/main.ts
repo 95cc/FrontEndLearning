@@ -1,10 +1,11 @@
 import { createApp } from 'vue'
+// ---
 import App from './App.vue'
 import router from './router'
 import pinia from './store'
+import useLoginStore from './store/other/login'
 // 注册elementplus图标
 import registerIcons from '@/global/register-icons'
-
 // 样式相关
 import 'normalize.css'
 import './assets/css/index.less'
@@ -19,11 +20,17 @@ import './assets/css/index.less'
 
 */
 
+console.log('刷新')
+
 const app = createApp(App)
-// 路由管理
-app.use(router)
 // 状态管理
 app.use(pinia)
+
+// 加载本地的数据
+useLoginStore().loadLocalCacheAction()
+
+// 路由管理
+app.use(router)
 // element-plus图标
 app.use(registerIcons)
 
