@@ -51,3 +51,25 @@ export function mapPathToMenu(path: string, userMenus: any[]) {
 		}
 	}
 }
+
+interface IBreadcrumbs {
+	name: string
+	path: string
+}
+export function mapPathToBreadcrumbs(path: string, userMenus: any[]) {
+	// 1.定义面包屑
+	const breadcrumbs: IBreadcrumbs[] = []
+
+	// 2.遍历获取面包屑层级
+	for (const menu of userMenus) {
+		for (const submenu of menu.children) {
+			if (submenu.url === path) {
+				// 1.顶层菜单
+				breadcrumbs.push({ name: menu.name, path: menu.url })
+				// 2.匹配菜单
+				breadcrumbs.push({ name: submenu.name, path: submenu.url })
+			}
+		}
+	}
+	return breadcrumbs
+}
