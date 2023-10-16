@@ -5,6 +5,7 @@ import { localCache } from '@/utils/cache'
 import router from '@/router'
 import GlobalContants from '@/global/GlobalContants'
 import { accountLoginRequest, getUserInfoById, getUserMenusByRoleId } from '@/service/other/login'
+import useMainStore from '@/store/main/main'
 import { mapMenusToRoutes } from '@/utils/MapMenus'
 
 interface ILoginState {
@@ -59,9 +60,9 @@ const useLoginStore = defineStore('login', {
 				this.userInfo = userInfo
 				this.userMenus = userMenus
 
-				// // 1..请求所有roles/departments数据
-				// const mainStore = useMainStore()
-				// mainStore.fetchEntireDataAction()
+				// 1..请求所有roles/departments数据
+				const mainStore = useMainStore()
+				mainStore.fetchEntireDataAction()
 
 				// // 2.获取按钮的权限
 				// const permissions = mapMenusToPermissions(userMenus)

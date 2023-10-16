@@ -2,6 +2,8 @@
 import { reactive, ref } from 'vue'
 import type { ElForm } from 'element-plus'
 
+const emit = defineEmits(['queryClick', 'resetClick'])
+
 // 定义form的数据
 const searchForm = reactive({
 	name: '',
