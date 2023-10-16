@@ -3,7 +3,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import pinia from './store'
-import useLoginStore from './store/other/login'
+import useLoginStore from './store/login/login'
 // 注册elementplus图标
 import registerIcons from '@/global/register-icons'
 // 样式相关

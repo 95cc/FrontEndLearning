@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 // ---
-import useLoginStore from '@/store/other/login'
+import useLoginStore from '@/store/login/login'
 import { mapPathToBreadcrumbs } from '@/utils/MapMenus'
 
 const route = useRoute()

@@ -4,7 +4,7 @@ import { ElMessage, type FormInstance, type FormRules } from 'element-plus'
 // ---
 import type { IAccount } from '@/types'
 import { localCache } from '@/utils/cache'
-import useLoginStore from '@/store/other/login'
+import useLoginStore from '@/store/login/login'
 
 const CACHE_NAME = 'name'
 const CACHE_PASSWORD = 'password'

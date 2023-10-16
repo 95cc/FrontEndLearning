@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 // ---
-import useLoginStore from '@/store/other/login'
+import useLoginStore from '@/store/login/login'
 import { mapPathToMenu } from '@/utils/MapMenus'
 
 defineProps({
