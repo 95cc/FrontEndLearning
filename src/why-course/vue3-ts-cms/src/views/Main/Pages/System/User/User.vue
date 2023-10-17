@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 // ---
-import UserSearch from './Components/UserSearch.vue'
-import UserSearchContent from './Components/UserSearchContent.vue'
-import UserEditModal from './Components/UserEditModal.vue'
+import UserSearch from './components/UserSearch.vue'
+import UserSearchContent from './components/UserSearchContent.vue'
+import UserEditModal from './components/UserEditModal.vue'
 
 const contentRef = ref<InstanceType<typeof UserSearchContent>>()
 const modalRef = ref<InstanceType<typeof UserEditModal>>()

@@ -40,6 +40,7 @@ function setModalVisible(isNew: boolean = true, itemData?: any) {
 
 function handleConfirmClick() {
 	dialogVisible.value = false
+
 	if (!isNewRef.value && editData.value) {
 		// 编辑用户的数据
 		systemStore.editUserDataAction(editData.value.id, formData)
