@@ -1,3 +1,46 @@
+<script setup lang="ts">
+import { reactive, ref } from 'vue'
+import type { ElForm } from 'element-plus'
+// ---
+// import usePermissions from '@/hooks/usePermissions'
+
+// 定义自定义事件/接收的属性
+interface IProps {
+	searchConfig: {
+		pageName: string
+		labelWidth?: string
+		formItems: any[]
+	}
+}
+const emit = defineEmits(['queryClick', 'resetClick'])
+const props = defineProps<IProps>()
+
+// 获取权限
+// const isQuery = usePermissions(`${props.searchConfig.pageName}:query`)
+const isQuery = true
+
+// 定义form的数据
+const initialForm: any = {}
+for (const item of props.searchConfig.formItems) {
+	initialForm[item.prop] = item.initialValue ?? ''
+}
+const searchForm = reactive(initialForm)
+
+// 重置操作
+const formRef = ref<InstanceType<typeof ElForm>>()
+function handleResetClick() {
+	// 1.form中的数据全部重置
+	formRef.value?.resetFields()
+
+	// 2.将事件出去, content内部重新发送网络请求
+	emit('resetClick')
+}
+
+function handleQueryClick() {
+	emit('queryClick', searchForm)
+}
+</script>
+
 <template>
 	<div class="search" v-if="isQuery">
 		<!-- 1.输入搜索关键字的表单 -->
@@ -47,49 +90,6 @@
 		</div>
 	</div>
 </template>
-
-<script setup lang="ts">
-import { reactive, ref } from 'vue'
-import type { ElForm } from 'element-plus'
-// ---
-// import usePermissions from '@/hooks/usePermissions'
-
-// 定义自定义事件/接收的属性
-interface IProps {
-	searchConfig: {
-		pageName: string
-		labelWidth?: string
-		formItems: any[]
-	}
-}
-const emit = defineEmits(['queryClick', 'resetClick'])
-const props = defineProps<IProps>()
-
-// 获取权限
-// const isQuery = usePermissions(`${props.searchConfig.pageName}:query`)
-const isQuery = true
-
-// 定义form的数据
-const initialForm: any = {}
-for (const item of props.searchConfig.formItems) {
-	initialForm[item.prop] = item.initialValue ?? ''
-}
-const searchForm = reactive(initialForm)
-
-// 重置操作
-const formRef = ref<InstanceType<typeof ElForm>>()
-function handleResetClick() {
-	// 1.form中的数据全部重置
-	formRef.value?.resetFields()
-
-	// 2.将事件出去, content内部重新发送网络请求
-	emit('resetClick')
-}
-
-function handleQueryClick() {
-	emit('queryClick', searchForm)
-}
-</script>
 
 <style lang="less" scoped>
 .search {
