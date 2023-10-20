@@ -45,7 +45,7 @@ npm run build
 npm run lint
 ```
 
-### Video 215~xxx
+### Video 215~228
 
 - 215 初始化工程：npm init vue@latest
 - 216 EditorConfig、Prettier、ESLint集成、其他第三库集成
