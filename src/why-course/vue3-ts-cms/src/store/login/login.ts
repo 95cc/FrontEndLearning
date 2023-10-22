@@ -6,7 +6,7 @@ import router from '@/router'
 import GlobalContants from '@/global/GlobalContants'
 import { accountLoginRequest, getUserInfoById, getUserMenusByRoleId } from '@/service/other/login'
 import useMainStore from '@/store/main/main'
-import { mapMenusToRoutes } from '@/utils/MapMenus'
+import { mapMenusToPermissions, mapMenusToRoutes } from '@/utils/MapMenus'
 
 interface ILoginState {
 	token: string
@@ -24,29 +24,39 @@ const useLoginStore = defineStore('login', {
 	}),
 	actions: {
 		async loginAccountAction(account: IAccount) {
-			// 获取id、token
+			// 1. 获取id、token
 			const loginResult = await accountLoginRequest(account)
 			const id = loginResult.data.id
 			this.token = loginResult.data.token
 			localCache.setCache(GlobalContants.LOGIN_TOKEN, this.token)
 
-			// 获取用户信息
+			// 2. 获取用户信息
 			const userInfoResult = await getUserInfoById(id)
 			const userInfo = userInfoResult.data
 			this.userInfo = userInfo
 
-			// 获取用户权限菜单
+			// 3. 获取用户权限菜单
 			const userMenuResult = await getUserMenusByRoleId(this.userInfo?.role?.id)
 			const userMenus = userMenuResult.data
 			this.userMenus = userMenus
 
-			// 本地缓存
+			// 4. 本地缓存
 			localCache.setCache('userInfo', userInfo)
 			localCache.setCache('userMenus', userMenus)
 
+			// 5.请求所有roles/departments数据
+			const mainStore = useMainStore()
+			mainStore.fetchEntireDataAction()
+
+			// 6. 重要: 获取登录用户的所有按钮的权限
+			const permissions = mapMenusToPermissions(userMenus)
+			this.permissions = permissions
+
+			// 7. 重要：动态的添加路由
 			const routes = mapMenusToRoutes(userMenus)
 			routes.forEach((route) => router.addRoute('main', route))
 
+			// 8. 默认调整到main页面
 			router.push('/main')
 		},
 		loadLocalCacheAction() {
@@ -64,11 +74,12 @@ const useLoginStore = defineStore('login', {
 				const mainStore = useMainStore()
 				mainStore.fetchEntireDataAction()
 
-				// // 2.获取按钮的权限
-				// const permissions = mapMenusToPermissions(userMenus)
-				// this.permissions = permissions
+				// 2.获取按钮的权限
+				const permissions = mapMenusToPermissions(userMenus)
+				this.permissions = permissions
+				console.log(this.permissions)
 
-				// // 3.动态添加路由
+				// 3.动态添加路由
 				const routes = mapMenusToRoutes(userMenus)
 				routes.forEach((route) => router.addRoute('main', route))
 			}

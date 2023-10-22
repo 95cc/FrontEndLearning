@@ -4,20 +4,16 @@ import { ref } from 'vue'
 // ---
 import { formatUTC } from '@/utils/Format'
 import useSystemStore from '@/store/main/system/system'
-// import usePermissions from '@/hooks/usePermissions'
+import usePermissions from '@/hooks/usePermissions'
 
 // 定义事件
 const emit = defineEmits(['newClick', 'editClick'])
 
 // 用户的权限判断
-// const isCreate = usePermissions('users:create')
-// const isDelete = usePermissions('users:delete')
-// const isUpdate = usePermissions('users:delete')
-// const isQuery = usePermissions('users:query')
-const isCreate = true
-const isDelete = true
-const isUpdate = true
-const isQuery = true
+const isCreate = usePermissions('users:create')
+const isDelete = usePermissions('users:delete')
+const isUpdate = usePermissions('users:delete')
+const isQuery = usePermissions('users:query')
 
 // 1.发起action，请求usersList的数据
 const systemStore = useSystemStore()

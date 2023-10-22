@@ -2,7 +2,7 @@
 import { reactive, ref } from 'vue'
 import type { ElForm } from 'element-plus'
 // ---
-// import usePermissions from '@/hooks/usePermissions'
+import usePermissions from '@/hooks/usePermissions'
 
 // 定义自定义事件/接收的属性
 interface IProps {
@@ -16,8 +16,7 @@ const emit = defineEmits(['queryClick', 'resetClick'])
 const props = defineProps<IProps>()
 
 // 获取权限
-// const isQuery = usePermissions(`${props.searchConfig.pageName}:query`)
-const isQuery = true
+const isQuery = usePermissions(`${props.searchConfig.pageName}:query`)
 
 // 定义form的数据
 const initialForm: any = {}
