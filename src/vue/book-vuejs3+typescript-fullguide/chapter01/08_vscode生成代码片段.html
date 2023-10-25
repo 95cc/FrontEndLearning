@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="./js/unpkg.com_vue@3.2.36_dist_vue.global.js"></script>
+    <template id="my-app">
+      <div>{{message}}</div>
+    </template>
+    <script>
+      const cc = {
+        template: '#my-app',
+        data: function () {
+          return {
+            message: 'Hello World',
+          }
+        },
+        // 定义各种各样的方法
+        methods: {},
+      }
+      Vue.createApp(cc).mount('#app')
+    </script>
+  </body>
+</html>
