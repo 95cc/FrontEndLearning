@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h2 {
+        color: coral;
+      }
+      h3 {
+        padding-left: 20px;
+      }
+      div {
+        padding-left: 40px;
+      }
+      .abc {
+        color: orange;
+      }
+      .abc2 {
+        color: aqua;
+      }
+      .active {
+        color: cadetblue;
+        font-style: italic;
+        font-weight: 900;
+      }
+      .title {
+        border: 1px solid darkgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="./js/unpkg.com_vue@3.2.36_dist_vue.global.js"></script>
+
+    <template id="my-app">
+      <h2>1. 绑定基本属性</h2>
+      <!-- v-bind基本使用 -->
+      <img v-bind:src="imgUrl" style="width: 50px" alt="" />
+      <a v-bind:href="link">Vue.js 官网</a>
+      <!-- v-bind语法糖 -->
+      <img :src="imgUrl" style="width: 50px" alt="" />
+      <!-- 错误写法: 直接使用字符串 -->
+      <img src="imgUrl" style="width: 50px" alt="" />
+
+      <h2>2. 绑定class属性: 支持 字符串、对象、数组</h2>
+      <!-- 绑定字符串语法 -->
+      <h3>2.1 绑定字符串类型</h3>
+      <div :class="'abc'">class绑定字符串</div>
+      <div :class="className1">class绑定字符串</div>
+
+      <!-- 绑定对象类型 -->
+      <h3>2.2 绑定对象类型</h3>
+      <div :class="{active: isActive}">
+        绑定对象，支持{ 'active': boolean } 或 { active: boolean } 写法
+      </div>
+      <div :class="{active: isActive, title: true}">
+        对象可以有多个键值对 {active: isActive, title: true}
+      </div>
+      <div class="abc" :class="{title: true}">
+        默认的class和动态的class结合使用
+      </div>
+      <div
+        :class="{
+        active: isActive,
+        title: true
+      }"
+      >
+        将对象放到一个单独的class属性中
+      </div>
+      <div :class="getClassObj()">
+        将返回的对象放到一个methods(或computed)中
+      </div>
+      <button @click="isActive = !isActive">切换class isActive</button>
+
+      <h3>2.3 绑定数组类型</h3>
+      <div
+        :class="['abc', className1, isActive ? 'active' : '', {title: true}]"
+      >
+        v-bind绑定class-数组语法
+      </div>
+
+      <h2>3. 绑定style属性</h2>
+      <h3>3.1 绑定对象类型</h3>
+      <div :style="{color: 'red', 'font-size': '20px', fontWeight: 'bold'}">
+        v-bind绑定style
+      </div>
+      <div :style="style1">v-bind绑定style: data中的一个属性</div>
+      <div :style="getStyle2()">v-bind绑定style: methods方法返回的对象</div>
+
+      <h3>3.2 绑定数组</h3>
+      <div :style="[{color: red}, {fontSize: '20px'}, {fontStyle: 'italic'}]">
+        绑定style-数组语法
+      </div>
+      <div :style="[style2, getStyle3()]">绑定style-数组语法</div>
+
+      <h2>4. 动态绑定属性</h2>
+      <div :[name]="value">v-bind动态绑定属性名称和值:</div>
+      <div v-bind:[name]="value">v-bind动态绑定属性名称和值:</div>
+
+      <h2>5. 绑定一个对象</h2>
+      <div v-bind="info">v-bind动态绑定一个对象</div>
+      <div :="info">v-bind动态绑定一个对象</div>
+    </template>
+    <script>
+      const cc = {
+        template: '#my-app',
+        data: function () {
+          return {
+            imgUrl: 'https://v2.cn.vuejs.org/images/logo.svg',
+            link: 'https://cn.vuejs.org/',
+            className1: 'abc2',
+            isActive: true,
+            style1: {
+              color: 'orange',
+              fontWeight: 'bold',
+              'font-size': '25px',
+            },
+            style2: {
+              color: 'orange',
+            },
+            name: 'username',
+            value: 'kobe',
+            info: {
+              name: 'cc',
+              age: '18',
+              height: '1.88',
+            },
+          }
+        },
+        // 定义各种各样的方法
+        methods: {
+          getStyle3() {
+            return {
+              fontWeight: 'bold',
+              'font-style': 'italic',
+            }
+          },
+          getStyle2() {
+            return {
+              color: 'blue',
+              fontWeight: 'bold',
+              'font-size': '30px',
+            }
+          },
+          getClassObj() {
+            return {
+              active: this.isActive,
+              title: true,
+            }
+          },
+        },
+      }
+      Vue.createApp(cc).mount('#app')
+    </script>
+  </body>
+</html>

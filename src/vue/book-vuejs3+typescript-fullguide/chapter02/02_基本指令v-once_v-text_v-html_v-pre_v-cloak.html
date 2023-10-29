@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *[v-cloak] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="./js/unpkg.com_vue@3.2.36_dist_vue.global.js"></script>
+
+    <template id="my-app">
+      <h2>v-once</h2>
+      <div>{{message}}</div>
+      <div v-once>v-once {{message}}</div>
+      <button @click="updateMessage">更新message</button>
+
+      <h2>v-text</h2>
+      <div v-text="message"></div>
+
+      <h2>v-html</h2>
+      <div>{{v_pre_samplecode}}</div>
+      <div
+        v-html="'<span style=\'color: orange;\'>你好呀，Vue.js 3</span>'"
+      ></div>
+
+      <h2>v-pre</h2>
+      <div v-pre>{{message}}</div>
+
+      <h2>v-cloak: 隐藏未编译的 mustache 语法的标签</h2>
+      <!-- v-cloak指令会一直保留在元素上，等到该组件完成编译后就会移除 -->
+      <div v-cloak>{{message}}</div>
+    </template>
+    <script>
+      const cc = {
+        template: '#my-app',
+        data: function () {
+          return {
+            message: 'Hello World',
+            v_pre_samplecode:
+              "<div v-html=\"'<span style='color: orange;'>你好呀，Vue.js 3</span>'\"></div>",
+          }
+        },
+        // 定义各种各样的方法
+        methods: {
+          updateMessage() {
+            this.message = 'test text.'
+          },
+        },
+      }
+      Vue.createApp(cc).mount('#app')
+    </script>
+  </body>
+</html>
