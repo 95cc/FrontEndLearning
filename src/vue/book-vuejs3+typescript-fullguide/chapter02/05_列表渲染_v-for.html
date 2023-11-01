@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="./js/unpkg.com_vue@3.2.36_dist_vue.global.js"></script>
+
+    <template id="my-app">
+      <h2>1. v-for的基本使用</h2>
+      <h4>1. 电影列表 (遍历数组[])</h4>
+      <ul>
+        <li v-for="movie in movies">{{movie}}</li>
+      </ul>
+      <h4>2. 电影列表 (遍历数组[])</h4>
+      <ul>
+        <li v-for="(movie, index) in movies">{{index + 1}}. {{movie}}</li>
+      </ul>
+
+      <h2>2. v-for支持的类型</h2>
+      <h4>1. 个人信息 (遍历对象{})</h4>
+      <ul>
+        <li v-for="(value, key, index) in {name: 'cc', age: 18, height: 1.88}">
+          {{value}}-{{key}}-{{index}}
+        </li>
+      </ul>
+      <h4>2. 遍历数字 number</h4>
+      <ul>
+        <li v-for="(num, index) in 3">{{num}}-{{index}}</li>
+      </ul>
+
+      <h2>3. v-for和template结合使用</h2>
+      <ul>
+        <template v-for="(value, key) in {name: 'cc', age: 18, height: 1.88}">
+          <li>{{key}}</li>
+          <li>{{value}}</li>
+          <li style="height: 2px; background-color: #ddd"></li>
+        </template>
+      </ul>
+
+      <h2>4. 数组的更新检测</h2>
+      <h4>电影列表</h4>
+      <ul>
+        <li v-for="(movie, index) in movies">{{index+1}}.{{movie}}</li>
+      </ul>
+      <input type="text" v-model="newMovie" />
+      <div><button @click="addMovie">添加电影</button></div>
+      <div><button @click="showTopThreeMovie">显示top3</button></div>
+    </template>
+    <script>
+      const cc = {
+        template: '#my-app',
+        data: function () {
+          return {
+            newMovie: '',
+            movies: ['星际穿越', '盗梦空间', '少年派'],
+          }
+        },
+        // 定义各种各样的方法
+        methods: {
+          addMovie() {
+            this.movies.push(this.newMovie)
+            this.newMovie = ''
+          },
+          showTopThreeMovie() {
+            this.movies = this.movies.filter((item, index) => index < 3)
+          },
+        },
+      }
+      Vue.createApp(cc).mount('#app')
+    </script>
+  </body>
+</html>
