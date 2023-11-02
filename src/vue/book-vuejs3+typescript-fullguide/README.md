@@ -51,3 +51,66 @@
 7. **key和diff算法**
    - 有key: [patchKeyedChildren](https://github.com/vuejs/core/blob/main/packages/runtime-core/src/renderer.ts)
    - 无key: [patchUnKeyedChildren](https://github.com/vuejs/core/blob/main/packages/runtime-core/src/renderer.ts)
+
+## 第3章 Vue.js3的Options API
+
+1. 计算属性 (有缓存)
+   ```
+   computed: {
+    fullName() {
+      return this.firstName + this.lastName
+    },
+    fullName2: {
+      get: function() {
+        return this.firstName + this.lastName
+      },
+      set: functino(newVal) {
+        const names = newVal.split(' ')
+        this.firstName = names[0]
+        this.lastName = names[1]
+      }
+    }
+   }
+   ```
+2. 监听器watch
+
+   ```
+   created() {
+    // 使用watchAPI监听
+    this.$watch('f',
+      function(newVal, oldVal) {},
+      {
+        deep: true,
+        immediate: true
+      }
+    )
+   },
+   watch: {
+    // funtion语法
+    a: function(newVal, oldVal) {},
+    // 对象语法
+    b: {
+      handler(newVal, oldVal) {}
+    }
+    // 配置选项
+    c: {
+      handler(newVal, oldVal) {},
+      // 是否深度监听对象或数组中每个属性的变换，默认false
+      deep: true,
+      // 是否立即执行回调函数，默认false
+      immediate: true
+    },
+    // 字符串语法: d发生变化时，调用 someMethod 方法
+    d: 'someMethod',
+    // 数组语法: 传入回调数组，依次调用
+    e: [
+      'handler1',
+      function handler2(newVal, oldVal) {},
+      {
+        handler: function(newVal, oldVal) {}
+      }
+    ],
+    // 监听对象中的某个属性
+    'g.h': function(newVal, oldVal) {}
+   }
+   ```
