@@ -23,3 +23,31 @@
   已不再维护。已集成到vscode中。打开方式：打开设置，输入 `@id:editor.bracketPairColorization.enabled @id:editor.guides.bracketPairs`
 
 - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer): 启动本地开发服务器，为静态和动态页面提供实时加载功能。
+
+## 第2章 模板语法和内置指令
+
+1. 插值语法 {{}}
+2. 基本指令
+   1. v-once: 指定元素或组件只渲染一次
+   2. v-text: 用于更新元素的textContent。(等价于插值语法)
+   3. v-html: 解析html字符串
+   4. v-pre: 跳过元素及其子元素的编译过程，加快编译速度
+   5. v-cloak: 隐藏未编译的mustache语法的标签，直到组件实例完成编译
+3. v-bind
+   v-bind:xxx
+   :xxx
+   v-bind:[name]
+   :[name]
+   v-bind:"xxxObj"
+   :="xxxObj"
+4. v-on
+   v-on:click
+   @click
+   @click.stop // 修饰符
+   v-on:keyup.enter
+   @keyup.enter
+5. 条件渲染: v-if、v-else-if、v-else、v-show
+6. 列表渲染: v-for
+7. **key和diff算法**
+   - 有key: [patchKeyedChildren](https://github.com/vuejs/core/blob/main/packages/runtime-core/src/renderer.ts)
+   - 无key: [patchUnKeyedChildren](https://github.com/vuejs/core/blob/main/packages/runtime-core/src/renderer.ts)

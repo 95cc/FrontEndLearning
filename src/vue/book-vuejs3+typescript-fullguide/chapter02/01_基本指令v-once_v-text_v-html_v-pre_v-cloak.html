@@ -28,6 +28,7 @@
       <div
         v-html="'<span style=\'color: orange;\'>你好呀，Vue.js 3</span>'"
       ></div>
+      <div v-html="v_pre_samplecode"></div>
 
       <h2>v-pre</h2>
       <div v-pre>{{message}}</div>
@@ -43,7 +44,7 @@
           return {
             message: 'Hello World',
             v_pre_samplecode:
-              "<div v-html=\"'<span style='color: orange;'>你好呀，Vue.js 3</span>'\"></div>",
+              '<span style="color: orange;">你好呀，Vue.js 3</span>',
           }
         },
         // 定义各种各样的方法
