@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .comps-a,
+      .comps-b {
+        border: 1px solid #999;
+        margin: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="../js/unpkg.com_vue@3.2.36_dist_vue.global.js"></script>
+
+    <template id="my-app">
+      <h1>{{message}}</h1>
+      <h2>1. 全局组件</h2>
+      <component-a></component-a>
+      <component-b></component-b>
+      <component-c></component-c>
+
+      <h2>2. 局部组件</h2>
+      <component-d></component-d>
+    </template>
+
+    <template id="component-a">
+      <div class="comps-a">
+        <h4>{{title}}</h4>
+        <p>{{desc}}</p>
+        <button @click="btnClick">按钮点击</button>
+      </div>
+    </template>
+
+    <template id="component-b">
+      <div class="comps-b">
+        <input type="text" v-model="message" />
+        <h4>{{message}}</h4>
+      </div>
+    </template>
+
+    <template id="component-c"> ComponentC </template>
+
+    <template id="component-d">
+      <p style="border: 1px solid #999">{{content}}</p>
+    </template>
+    <script>
+      // 局部组件
+      const ComponentD = {
+        template: '#component-d',
+        data() {
+          return {
+            content:
+              '我是在根组件App中局部注册的ComponentD组件 (ComponentD组件只能在当前根组件的template中使用)',
+          }
+        },
+      }
+
+      const app = Vue.createApp({
+        template: '#my-app',
+        components: {
+          ComponentD: ComponentD,
+        },
+        data: function () {
+          return {
+            message: '我是根组件',
+          }
+        },
+        // 定义各种各样的方法
+        methods: {},
+      })
+
+      // 注册全局组件
+      app.component('component-a', {
+        template: '#component-a',
+        data() {
+          return {
+            title: '我的标题',
+            desc: '内容显示区域...',
+          }
+        },
+        methods: {
+          btnClick() {
+            console.log('按钮的单击')
+          },
+        },
+      })
+      app.component('component-b', {
+        template: '#component-b',
+        data() {
+          return {
+            message: 'Hello',
+          }
+        },
+        methods: {},
+      })
+      app.component('ComponentC', {
+        template: '#component-c',
+      })
+
+      app.mount('#app')
+    </script>
+  </body>
+</html>
