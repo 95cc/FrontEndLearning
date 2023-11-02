@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>第4章. v-model和表单输入</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="../js/unpkg.com_vue@3.2.36_dist_vue.global.js"></script>
+
+    <template id="my-app">
+      <h2>1. v-model基本使用</h2>
+      <div>{{message}}</div>
+      <input type="text" v-model="message" />
+
+      <h2>2. v-model实现原理</h2>
+      <pre>
+<textarea style="width: 400px; height: 100px;">
+<input
+  type="text"
+  :value="message"
+  @input="message = $event.target.value"
+/>
+</textarea>
+      </pre>
+      <input
+        type="text"
+        :value="message"
+        @input="message = $event.target.value"
+      />
+
+      <h2>3. v-model绑定其他表单</h2>
+      <div>1. 自我介绍</div>
+      <textarea cols="30" rows="10" v-model="intro"></textarea>
+      <p>{{intro}}</p>
+
+      <span>2.</span>
+      <label for="agree">
+        <input id="agree" type="checkbox" v-model="isAgree" />同意协议
+      </label>
+      <p>单选框的值: {{isAgree}}</p>
+
+      <span>3. 爱好: </span>
+      <label for="basketball">
+        <input
+          id="basketball"
+          type="checkbox"
+          value="basketball"
+          v-model="hobbies"
+        />篮球
+      </label>
+      <label for="football">
+        <input
+          id="football"
+          type="checkbox"
+          value="football"
+          v-model="hobbies"
+        />足球
+      </label>
+      <label for="tennis">
+        <input
+          id="tennis"
+          type="checkbox"
+          value="tennis"
+          v-model="hobbies"
+        />网球
+      </label>
+      <p>多选框的值: {{hobbies}}</p>
+
+      <span>4. 性别: </span>
+      <label for="male">
+        <input id="male" type="radio" v-model="gender" value="male" />男
+      </label>
+      <label for="female">
+        <input id="female" type="radio" v-model="gender" value="female" />女
+      </label>
+      <p>单选按钮的值: {{gender}}</p>
+
+      <span>5. 喜欢的水果 </span>
+      <select v-model="fruit" multiple size="3">
+        <option value="apple">苹果</option>
+        <option value="orange">橘子</option>
+        <option value="banana">香蕉</option>
+      </select>
+      <p>选择的值: {{fruit}}</p>
+
+      <h2>4. v-model的值的绑定</h2>
+      <pre>
+<textarea id="" cols="100" rows="1">
+<input id="male" type="radio" v-model="gender" :value="xxxValue">男
+</textarea>
+      </pre>
+
+      <h2>5. v-model的修饰符</h2>
+      <div>常见的修饰符:</div>
+      <ol>
+        <li>
+          .lazy:
+          将输入内容的更新延迟到change事件触发时再进行，而不是每次输入内容都进行更新
+          <div>键入enter更新：<input type="text" v-model.lazy="m1" /></div>
+          <div>{{m1}}</div>
+        </li>
+        <li>
+          .number: 自动将输入内容转换为数字类型
+          <div>
+            <input type="number" v-model.number="m2" />
+          </div>
+          <div>{{m2}} -> {{typeof this.m2}} 类型</div>
+        </li>
+        <li>
+          .trim: 去除输入内容的首尾空格
+          <div>
+            v-model.trim='m3':
+            <input type="text" v-model.trim="m3" />
+          </div>
+          <div>
+            v-model='m3':
+            <input type="text" v-model="m3" />
+          </div>
+          <div>'{{m3}}'</div>
+        </li>
+      </ol>
+    </template>
+    <script>
+      const cc = {
+        template: '#my-app',
+        data: function () {
+          return {
+            m1: '',
+            m2: '',
+            m3: '',
+            message: 'Hello World',
+            intro: '你好啊，李银河',
+            isAgree: false,
+            hobbies: ['basketball', 'football', 'tennis'],
+            gender: 'male',
+            fruit: ['apple', 'banana'],
+          }
+        },
+        // 定义各种各样的方法
+        methods: {},
+      }
+      Vue.createApp(cc).mount('#app')
+    </script>
+  </body>
+</html>
