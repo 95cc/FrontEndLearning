@@ -1,5 +1,7 @@
 # 【读书笔记】[《Vue.js 3 + TypeScript 完全指南》](https://book.douban.com/subject/36560742/) 王红元、刘军 著
 
+## Vue.js CDN: https://unpkg.com/vue@3/dist/vue.global.js
+
 ## 第1章 邂逅和初体验 Vue.js
 
 ### vscode插件推荐

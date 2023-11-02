@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="../js/unpkg.com_vue@3.2.36_dist_vue.global.js"></script>
+
+    <template id="my-app">
+      <h2>1. watch的基本使用</h2>
+      请输入问题 <input type="text" v-model="question" />
+      <div>{{ answer }}</div>
+
+      <h2>2. watch配置选项</h2>
+      <div>{{info.name}}</div>
+      <div>{{info.book.name}}</div>
+      <button @click="changeInfo">改变info</button>
+      <button @click="changeInfoName">改变info.name</button>
+      <button @click="changeInfoBookName">改变info.book.name</button>
+
+      <h2>3. watch字符串、数组和API语法</h2>
+      <div>b: {{b}}</div>
+      <div>f: {{f}}</div>
+      <div><button @click="b++">修改b的值</button></div>
+      <div><button @click="f--">修改f的值</button></div>
+
+      <h2>4. watch深度监听</h2>
+      <div>{{friends}}</div>
+      <div>
+        <button @click="friends.push({name: 'xiaobai', age: 20})">
+          增加friends
+        </button>
+      </div>
+      <div>
+        <button @click="friends[0].name = 'xiaoming111'">
+          修改第一个friends的名字
+        </button>
+      </div>
+    </template>
+    <script>
+      const cc = {
+        template: '#my-app',
+        created() {
+          this.$watch(
+            'f',
+            (newVal, oldVal) => {
+              console.log('handler4 f改变了', 'new', newVal, 'old', oldVal)
+            },
+            {
+              deep: true,
+              immediate: true,
+            }
+          )
+        },
+        data: function () {
+          return {
+            friends: [
+              { name: 'xiaoming', age: 18 },
+              { name: 'xiaohong', age: 19 },
+            ],
+            b: 2,
+            f: 5,
+            question: '',
+            answer: '',
+            info: {
+              name: 'cc',
+              age: 18,
+              book: {
+                name: 'Vue.js 3+TS',
+              },
+            },
+          }
+        },
+        watch: {
+          // --- function语法
+          // question: function (newVal, oldVal) {
+          //   console.log('新问题', newVal, ' 旧问题', oldVal)
+          //   this.queryAnswer()
+          // },
+          // --- 与上面等价
+          // question(newVal, oldVal) {
+          //   console.log('新问题', newVal, ' 旧问题', oldVal)
+          //   this.queryAnswer()
+          // },
+          // --- 对象语法
+          question: {
+            handler(newVal, oldVal) {
+              console.log('新问题', newVal, ' 旧问题', oldVal)
+              this.queryAnswer()
+            },
+          },
+          info: {
+            handler(newVal, oldVal) {
+              console.log('new', newVal, '\n', 'old', oldVal, newVal == oldVal)
+            },
+            // 深度监听info对象的更新，info内部属性发生的改变都可被监听到
+            deep: true,
+            // 让 handler 中定义的函数立即执行一次
+            immediate: true, // newVal 和 oldVal 为同一个对象
+          },
+          // b改变时，触发 someMethod
+          b: 'someMethod',
+          f: [
+            'handler1', // f改变触发 handler1函数
+            function handler2(newVal, oldVal) {
+              console.log('handler2 f改变了', 'new', newVal, 'old', oldVal)
+            },
+            {
+              handler(newVal, oldVal) {
+                console.log('handler3 f改变了', 'new', newVal, 'old', oldVal)
+              },
+            },
+          ],
+          // 4.1 仅侦听对象中的某个属性
+          'info.book.name': {
+            handler(newVal, oldVal) {
+              console.log('info.book.name 改变了', 'new', newVal, 'old', oldVal)
+            },
+          },
+          // 4.2 监听函数的新值和旧值
+          // info: {
+          //   handler(newVal, oldVal) {
+          //     console.log('new', newVal, '\n', 'old', oldVal, newVal == oldVal)
+          //   },
+          //   // 深度监听info对象的更新，info内部属性发生的改变都可被监听到
+          //   deep: true,
+          // },
+          // 4.3 监听数组内部属性的变化
+          friends: {
+            handler(newVal, oldVal) {
+              console.log(newVal, oldVal)
+            },
+            deep: true,
+          },
+        },
+        // 定义各种各样的方法
+        methods: {
+          handler1(newVal, oldVal) {
+            console.log('handler1 f改变了', 'new', newVal, 'old', oldVal)
+          },
+          someMethod() {
+            console.log('b改变了', this.b)
+          },
+          queryAnswer() {
+            this.answer = `你的问题是: ${this.question}? 答案：哈哈哈`
+          },
+          changeInfo() {
+            this.info = {
+              name: 'kobe',
+              age: 18,
+              book: { name: 'Vue.js 3+TS' },
+            }
+          },
+          changeInfoName() {
+            this.info.name = 'rose'
+          },
+          changeInfoBookName() {
+            this.info.book.name = 'React+TS'
+          },
+        },
+      }
+      Vue.createApp(cc).mount('#app')
+    </script>
+  </body>
+</html>
