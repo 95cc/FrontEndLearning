@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="./js/unpkg.com_vue@3.2.36_dist_vue.global.js"></script>
+
+    <template id="my-app">
+      <h2>1. 基本使用</h2>
+      <div>{{fullName}}</div>
+      <div>{{result}}</div>
+      <div>{{reverseMessage}}</div>
+
+      <h2>2. 计算属性会基于它的依赖关系对计算结果进行缓存，而methods不会</h2>
+      <div>{{getFullName()}}</div>
+      <div>{{getFullName()}}</div>
+      <div>{{getFullName()}}</div>
+      <div>{{fullName}}</div>
+      <div>{{fullName}}</div>
+      <div>{{fullName}}</div>
+      <div>
+        <button @click="firstName = firstName + '1'">修改firstName</button>
+      </div>
+
+      <h2>3. setter和getter</h2>
+      <div>{{newFullName}}</div>
+      <div>
+        <button @click="newFullName = 'coder cc'">修改firstName</button>
+      </div>
+    </template>
+    <script>
+      const cc = {
+        template: '#my-app',
+        data: function () {
+          return {
+            firstName: 'Kobe',
+            lastName: 'Bryant',
+            score: 80,
+            message: 'Hello World',
+          }
+        },
+        computed: {
+          newFullName: {
+            get: function () {
+              return this.firstName + ' ' + this.lastName
+            },
+            set: function (newVal) {
+              console.log(newVal)
+              const names = newVal.split(' ')
+              this.firstName = names[0]
+              this.lastName = names[1]
+            },
+          },
+          fullName() {
+            console.log('computed: fullName')
+            return this.firstName + ' ' + this.lastName
+          },
+          result() {
+            return this.score >= 60 ? '及格' : '不及格'
+          },
+          reverseMessage() {
+            return this.message.split('').reverse().join(' ')
+          },
+        },
+        // 定义各种各样的方法
+        methods: {
+          getFullName() {
+            console.log('methods: getFullName')
+            return this.firstName + ' ' + this.lastName
+          },
+        },
+      }
+      Vue.createApp(cc).mount('#app')
+    </script>
+  </body>
+</html>
