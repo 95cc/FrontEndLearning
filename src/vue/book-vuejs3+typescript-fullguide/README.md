@@ -34,18 +34,18 @@
    4. v-pre: 跳过元素及其子元素的编译过程，加快编译速度
    5. v-cloak: 隐藏未编译的mustache语法的标签，直到组件实例完成编译
 3. v-bind
-   v-bind:xxx
-   :xxx
-   v-bind:[name]
-   :[name]
-   v-bind:"xxxObj"
-   :="xxxObj"
+   - v-bind:xxx
+   - :xxx
+   - v-bind:[name]
+   - :[name]
+   - v-bind:"xxxObj"
+   - :="xxxObj"
 4. v-on
-   v-on:click
-   @click
-   @click.stop // 修饰符
-   v-on:keyup.enter
-   @keyup.enter
+   - v-on:click
+   - @click
+   - @click.stop // 修饰符
+   - v-on:keyup.enter
+   - @keyup.enter
 5. 条件渲染: v-if、v-else-if、v-else、v-show
 6. 列表渲染: v-for
 7. **key和diff算法**
