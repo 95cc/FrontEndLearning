@@ -2,6 +2,28 @@
 
 ## Vue.js CDN: https://unpkg.com/vue@3/dist/vue.global.js
 
+## 章节概览
+
+- 1. 邂逅和初体验 Vue.js
+- 2. 模板语法和内置指令
+- 3. Vue.js 3 的Options API
+- 4. v-model和表单输入
+- 5. Vue.js 3 组件化开发
+- 6. 前端工程化
+- 7. Vue.js 3 组件化基础详解
+- 8. Vue.js 3 组件化进阶详解
+- 9. Vue.js 3 实现过渡动画
+- 10. Vue.js 3 Composition API 详解
+- 11. Vue.js 3 组件化高级详解
+- 12. Vue Router 路由
+- 13. Vuex 状态管理
+- 14. TypeScript 的基础详解
+- 15. TypeScript 的进阶详解
+- 16. 第三方库的集成与使用
+- 17. 后天管理系统
+- 18. 自动化部署
+- 19. 手写 Mini-Vue.js 3 框架
+
 ## 第1章 邂逅和初体验 Vue.js
 
 ### vscode插件推荐
