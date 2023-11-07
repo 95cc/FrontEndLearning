@@ -7,6 +7,7 @@ import NoPropAttribute2_inheritAttrs_false from './5_NoPropAttribute2_inheritAtt
 import NoPropAttribute3 from './6_NoPropAttribute3.vue'
 import CounterOperation from './7_CounterOperation.vue'
 import CounterOperation2 from './8_CounterOperation2.vue'
+import TabControl from './9_TabControl'
 
 export default {
   components: {
@@ -17,6 +18,7 @@ export default {
     NoPropAttribute3,
     CounterOperation,
     CounterOperation2,
+    TabControl,
   },
   data() {
     return {
@@ -27,12 +29,18 @@ export default {
         content: '我的内容message.content',
       },
       counter: 1,
+      titles: ['衣服', '鞋子', '裤子'],
+      contents: ['衣服页面', '鞋子页面', '裤子页面'],
+      curIndex: 0,
     }
   },
   methods: {
     addNNum(num, name, age) {
       console.log(name, age)
       this.counter += num
+    },
+    titleClick(index) {
+      this.curIndex = index
     },
   },
 }
@@ -79,5 +87,11 @@ export default {
     <h4>当前计数：{{ counter }}</h4>
     <CounterOperation @add="counter++" @sub="counter--" @addN="addNNum" />
     <CounterOperation2 @add="counter++" @sub="counter--" @addN="addNNum" />
+
+    <h2>TabControl案例</h2>
+    <div>
+      <TabControl :titles="titles" @titleClick="titleClick" />
+      <h3>{{ contents[curIndex] }}</h3>
+    </div>
   </div>
 </template>
