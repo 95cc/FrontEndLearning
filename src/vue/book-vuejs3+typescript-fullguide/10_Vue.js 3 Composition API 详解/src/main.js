@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 // import App from './App.vue'
-import App from './1_Options_API代码的复用/App.vue'
+// import App from './1_Options_API代码的复用/App.vue'
+import App from './2_Compostion_API/App.vue'
 
 const app = createApp(App)
 
