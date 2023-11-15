@@ -90,6 +90,9 @@
   <button @click="changeShallowRef1NameWithTriggerRef">
     使用triggerRef，修改shallowRef1.name
   </button>
+
+  <h2>5. computed计算属性</h2>
+  <ComputedAPI />
 </template>
 
 <script>
@@ -115,6 +118,7 @@ import refAPI from './4_refAPI'
 import ReadonlyAPI from './5_ReadonlyAPI'
 import ToRefsAPI from './6_ToRefsAPI'
 import CustomRefAPI from './7_CustomRefAPI'
+import ComputedAPI from './8_ComputedAPI'
 
 export default {
   name: 'App',
@@ -126,6 +130,7 @@ export default {
     ReadonlyAPI,
     ToRefsAPI,
     CustomRefAPI,
+    ComputedAPI,
   },
   setup() {
     const ref1 = ref('a')
