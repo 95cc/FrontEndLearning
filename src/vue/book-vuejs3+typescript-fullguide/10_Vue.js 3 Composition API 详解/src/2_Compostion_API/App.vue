@@ -72,6 +72,24 @@
     isReadonly of shallowReadonly1.nested
     {{ isReadonly(shallowReadonly1.nested) }}
   </div>
+
+  <h2>4. 响应式工具 ref</h2>
+  <h3>1. toRefs, toRef</h3>
+  <ToRefsAPI />
+  <h3>2. isRef</h3>
+  <div>isRef of ref('a') {{ isRef(ref('a')) }}</div>
+  <h3>3. unRef</h3>
+  <div>unRef of ref('a') {{ unref(ref('a')) }}</div>
+  <h3>4. customRef</h3>
+  <CustomRefAPI />
+  <h3>5. shallowRef</h3>
+  <div>shallowRef1.name: {{ shallowRef1.name }}</div>
+  <button @click="changeShallowRef1Name">修改shallowRef1.name</button>
+  <h3>6. triggerRef</h3>
+  <div>shallowRef1.name: {{ shallowRef1.name }}</div>
+  <button @click="changeShallowRef1NameWithTriggerRef">
+    使用triggerRef，修改shallowRef1.name
+  </button>
 </template>
 
 <script>
@@ -85,16 +103,30 @@ import {
   toRaw,
   shallowReactive,
   shallowReadonly,
+  isRef,
+  unref,
+  shallowRef,
+  triggerRef,
 } from 'vue'
 import SetupProps from './1_SetupProps'
 import SetupReturn from './2_SetupReturn'
 import ReactiveAPI from './3_ReactiveAPI'
 import refAPI from './4_refAPI'
 import ReadonlyAPI from './5_ReadonlyAPI'
+import ToRefsAPI from './6_ToRefsAPI'
+import CustomRefAPI from './7_CustomRefAPI'
 
 export default {
   name: 'App',
-  components: { SetupProps, SetupReturn, ReactiveAPI, refAPI, ReadonlyAPI },
+  components: {
+    SetupProps,
+    SetupReturn,
+    ReactiveAPI,
+    refAPI,
+    ReadonlyAPI,
+    ToRefsAPI,
+    CustomRefAPI,
+  },
   setup() {
     const ref1 = ref('a')
     const reactive1 = reactive({ name: 'why' })
@@ -111,6 +143,21 @@ export default {
         bar: 2,
       },
     })
+    const shallowRef1 = shallowRef({
+      name: 'why',
+    })
+    const changeShallowRef1Name = () => {
+      shallowRef1.value.name = 'abc'
+
+      console.log(shallowRef1.value)
+    }
+
+    const changeShallowRef1NameWithTriggerRef = () => {
+      shallowRef1.value.name = 'test'
+      // 通过手动触发，实现响应式
+      triggerRef(shallowRef1)
+      console.log(shallowRef1.value)
+    }
 
     return {
       ref1,
@@ -118,6 +165,9 @@ export default {
       readonly1,
       shallowReactive1,
       shallowReadonly1,
+      shallowRef1,
+      changeShallowRef1Name,
+      changeShallowRef1NameWithTriggerRef,
       // ---
       isProxy,
       isReactive,
@@ -125,6 +175,9 @@ export default {
       toRaw,
       shallowReactive,
       shallowReadonly,
+      ref,
+      isRef,
+      unref,
     }
   },
 }
