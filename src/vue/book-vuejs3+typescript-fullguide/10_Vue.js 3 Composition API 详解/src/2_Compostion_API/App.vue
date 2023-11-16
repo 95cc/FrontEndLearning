@@ -113,6 +113,10 @@
   <WatchAPIMult />
   <h3>7.3 监听响应式对象</h3>
   <WatchAPIDeep />
+
+  <h2>8. 组件生命周期</h2>
+  <LifeCycle v-if="showLifeCycleCpm" />
+  <button @click="showLifeCycleCpm = !showLifeCycleCpm">显示/隐藏</button>
 </template>
 
 <script>
@@ -145,6 +149,7 @@ import WatchEffectAPIFlush from './11_WatchEffectAPIFlush'
 import WatchAPI from './12_WatchAPI'
 import WatchAPIMult from './13_WatchAPIMult'
 import WatchAPIDeep from './14_WatchAPIDeep'
+import LifeCycle from './15_LifeCycle'
 
 export default {
   name: 'App',
@@ -163,8 +168,10 @@ export default {
     WatchAPI,
     WatchAPIMult,
     WatchAPIDeep,
+    LifeCycle,
   },
   setup() {
+    const showLifeCycleCpm = ref(true)
     const ref1 = ref('a')
     const reactive1 = reactive({ name: 'why' })
     const readonly1 = readonly(reactive1)
@@ -197,6 +204,7 @@ export default {
     }
 
     return {
+      showLifeCycleCpm,
       ref1,
       reactive1,
       readonly1,
@@ -231,6 +239,7 @@ export default {
 h2,
 h3 {
   text-decoration: underline;
+  color: orange;
 }
 
 .gray-border {
