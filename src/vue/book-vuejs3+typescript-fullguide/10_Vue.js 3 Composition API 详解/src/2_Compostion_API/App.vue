@@ -105,6 +105,14 @@
   <WatchEffectAPIClear />
   <h3>3. watchEffect的执行时机 (flush)</h3>
   <WatchEffectAPIFlush />
+
+  <h2>7. watch监听</h2>
+  <h3>7.1 监听单个数据源</h3>
+  <WatchAPI />
+  <h3>7.2 监听多个数据源</h3>
+  <WatchAPIMult />
+  <h3>7.3 监听响应式对象</h3>
+  <WatchAPIDeep />
 </template>
 
 <script>
@@ -134,6 +142,9 @@ import ComputedAPI from './8_ComputedAPI'
 import WatchEffectAPI from './9_WatchEffectAPI'
 import WatchEffectAPIClear from './10_WatchEffectAPIClear'
 import WatchEffectAPIFlush from './11_WatchEffectAPIFlush'
+import WatchAPI from './12_WatchAPI'
+import WatchAPIMult from './13_WatchAPIMult'
+import WatchAPIDeep from './14_WatchAPIDeep'
 
 export default {
   name: 'App',
@@ -149,6 +160,9 @@ export default {
     WatchEffectAPI,
     WatchEffectAPIClear,
     WatchEffectAPIFlush,
+    WatchAPI,
+    WatchAPIMult,
+    WatchAPIDeep,
   },
   setup() {
     const ref1 = ref('a')
