@@ -93,6 +93,18 @@
 
   <h2>5. computed计算属性</h2>
   <ComputedAPI />
+
+  <h2>6. watchEffect监听</h2>
+  <p>
+    watchEffect函数用于自动收集响应式数据的依赖; <br />
+    watch函数需要手动指定监听的数据源
+  </p>
+  <h3>1. watchEffect基本使用、停止监听</h3>
+  <WatchEffectAPI />
+  <h3>2. watchEffect清除副作用</h3>
+  <WatchEffectAPIClear />
+  <h3>3. watchEffect的执行时机 (flush)</h3>
+  <WatchEffectAPIFlush />
 </template>
 
 <script>
@@ -119,6 +131,9 @@ import ReadonlyAPI from './5_ReadonlyAPI'
 import ToRefsAPI from './6_ToRefsAPI'
 import CustomRefAPI from './7_CustomRefAPI'
 import ComputedAPI from './8_ComputedAPI'
+import WatchEffectAPI from './9_WatchEffectAPI'
+import WatchEffectAPIClear from './10_WatchEffectAPIClear'
+import WatchEffectAPIFlush from './11_WatchEffectAPIFlush'
 
 export default {
   name: 'App',
@@ -131,6 +146,9 @@ export default {
     ToRefsAPI,
     CustomRefAPI,
     ComputedAPI,
+    WatchEffectAPI,
+    WatchEffectAPIClear,
+    WatchEffectAPIFlush,
   },
   setup() {
     const ref1 = ref('a')
