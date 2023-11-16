@@ -117,6 +117,9 @@
   <h2>8. 组件生命周期</h2>
   <LifeCycle v-if="showLifeCycleCpm" />
   <button @click="showLifeCycleCpm = !showLifeCycleCpm">显示/隐藏</button>
+
+  <h2>9.Provide/Inject 依赖注入</h2>
+  <Provide_Inject />
 </template>
 
 <script>
@@ -150,6 +153,7 @@ import WatchAPI from './12_WatchAPI'
 import WatchAPIMult from './13_WatchAPIMult'
 import WatchAPIDeep from './14_WatchAPIDeep'
 import LifeCycle from './15_LifeCycle'
+import Provide_Inject from './16_Provide_Inject'
 
 export default {
   name: 'App',
@@ -169,6 +173,7 @@ export default {
     WatchAPIMult,
     WatchAPIDeep,
     LifeCycle,
+    Provide_Inject,
   },
   setup() {
     const showLifeCycleCpm = ref(true)
