@@ -120,6 +120,14 @@
 
   <h2>9.Provide/Inject 依赖注入</h2>
   <Provide_Inject />
+
+  <h2>10. Composition API的实战</h2>
+  <h3>10.1 使用Options API实现计数器</h3>
+  <OptionsAPIExample />
+  <h3>10.2 使用Compotison API实现计数器</h3>
+  <CompositionAPIExample />
+  <h3>10.3 Compostion API计算器 代码逻辑的封装和复用</h3>
+  <CompositionAPIExampleMixin />
 </template>
 
 <script>
@@ -154,6 +162,9 @@ import WatchAPIMult from './13_WatchAPIMult'
 import WatchAPIDeep from './14_WatchAPIDeep'
 import LifeCycle from './15_LifeCycle'
 import Provide_Inject from './16_Provide_Inject'
+import OptionsAPIExample from './18_OptionsAPIExample'
+import CompositionAPIExample from './19_CompositionAPIExample'
+import CompositionAPIExampleMixin from './20_CompositionAPIExampleMixin'
 
 export default {
   name: 'App',
@@ -174,6 +185,9 @@ export default {
     WatchAPIDeep,
     LifeCycle,
     Provide_Inject,
+    OptionsAPIExample,
+    CompositionAPIExample,
+    CompositionAPIExampleMixin,
   },
   setup() {
     const showLifeCycleCpm = ref(true)
