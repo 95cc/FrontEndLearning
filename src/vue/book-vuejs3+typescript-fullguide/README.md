@@ -136,3 +136,24 @@
     'g.h': function(newVal, oldVal) {}
    }
    ```
+
+## 第10章 Vue.js 3 Composition API详解
+
+本章小结
+
+1. Mixin混入
+   是Vue.js 2和Vue.js 3都支持的一种组件逻辑复用的功能，一个Mixin对象可以包含任何组件选项。当组件使用Mixin对象时，所有Mixin对象的选项将被混合到该组件本身的选项中。
+2. setup函数
+   Vue.js 3新增的选项，可以用于替代之前大部分选项，比如 methods、computed、watch、data、生命周期等。
+3. 数据响应式API
+   在setup函数中定义响应式数据时，需要使用Vue.js 3提供的响应式API: reactive和ref。
+4. 计算属性
+   在Options API中，使用computed选项编写计算属性；在Composition API中，需在setup函数中使用computed函数编写一个计算属性。
+5. 监听器
+   在Options API中，使用watch选项编写监听器；在Composition API中，需在setup函数中使用watchEffect和watch函数编写监听器。其中，watchEffect函数用于自动收集响应式数据，watch函数需手动指定监听源。
+6. 生命周期
+   在setup中编写生命周期函数时，需从vue中导入onBeforeMount、onMounted、onUpdated、onUnmounted等。
+7. Provide/Inject
+   在Options API中，非父子间通信可使用provide/inject选项来实现；在Composition API中，需在setup函数中使用provide/inject函数来实现。
+8. <script setup>语法
+   在Vue.js 3中，除了可在setup函数中使用Composition API，还可以使用<script setup>语法糖，在script顶层编写setup相关的代码。
