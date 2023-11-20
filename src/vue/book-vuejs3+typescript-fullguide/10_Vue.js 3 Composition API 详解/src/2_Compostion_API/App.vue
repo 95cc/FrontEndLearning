@@ -128,6 +128,13 @@
   <CompositionAPIExample />
   <h3>10.3 Compostion API计算器 代码逻辑的封装和复用</h3>
   <CompositionAPIExampleMixin />
+
+  <h2>11. &ltscript setup&gt 语法</h2>
+  <ScriptSetupExample
+    ref="defineExposeAPIRef"
+    message="App传递过来的message"
+    @increment="getCounter"
+  />
 </template>
 
 <script>
@@ -145,6 +152,7 @@ import {
   unref,
   shallowRef,
   triggerRef,
+  watchEffect,
 } from 'vue'
 import SetupProps from './1_SetupProps'
 import SetupReturn from './2_SetupReturn'
@@ -165,6 +173,7 @@ import Provide_Inject from './16_Provide_Inject'
 import OptionsAPIExample from './18_OptionsAPIExample'
 import CompositionAPIExample from './19_CompositionAPIExample'
 import CompositionAPIExampleMixin from './20_CompositionAPIExampleMixin'
+import ScriptSetupExample from './21_ScriptSetupExample'
 
 export default {
   name: 'App',
@@ -188,6 +197,7 @@ export default {
     OptionsAPIExample,
     CompositionAPIExample,
     CompositionAPIExampleMixin,
+    ScriptSetupExample,
   },
   setup() {
     const showLifeCycleCpm = ref(true)
@@ -222,6 +232,24 @@ export default {
       console.log(shallowRef1.value)
     }
 
+    const getCounter = (number) => {
+      console.log('App组件拿到子组件传递过来的number:', number)
+    }
+
+    // defineExpose相关示例代码
+    const defineExposeAPIRef = ref(null)
+    watchEffect(
+      () => {
+        console.log('defineExposeAPIRef:', defineExposeAPIRef.value) // 组件实例
+        console.log(defineExposeAPIRef.value.age)
+        console.log(defineExposeAPIRef.value.name)
+        defineExposeAPIRef.value.showMessage()
+      },
+      {
+        flush: 'post',
+      }
+    )
+
     return {
       showLifeCycleCpm,
       ref1,
@@ -232,6 +260,8 @@ export default {
       shallowRef1,
       changeShallowRef1Name,
       changeShallowRef1NameWithTriggerRef,
+      getCounter,
+      defineExposeAPIRef,
       // ---
       isProxy,
       isReactive,

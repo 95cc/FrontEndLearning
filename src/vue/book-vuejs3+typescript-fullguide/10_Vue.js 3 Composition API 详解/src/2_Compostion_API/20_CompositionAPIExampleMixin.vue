@@ -47,8 +47,8 @@ export default {
   </div>
   <div style="border: 1px solid gray">
     <h4>3. 显示页面滚动位置</h4>
-    <p style="width: 3000px; height: 5000px">
-      width: 3000px; height: 5000px，模拟页面滚动
+    <p style="width: 3003px; height: 500px">
+      width: 3003px; height: 500px，模拟页面滚动
     </p>
     <div style="position: fixed; top: 20px; right: 20px">
       <div>scrollX: {{ scrollX }}</div>
