@@ -157,3 +157,18 @@
    在Options API中，非父子间通信可使用provide/inject选项来实现；在Composition API中，需在setup函数中使用provide/inject函数来实现。
 8. <script setup>语法
    在Vue.js 3中，除了可在setup函数中使用Composition API，还可以使用<script setup>语法糖，在script顶层编写setup相关的代码。
+
+## 第11章 Vue.js 3 组件化高级详解
+
+本章小结
+
+1. render函数
+   Vue.js 3支持在render函数中用jsx语法编写页面
+2. 自定义指令
+   使用directive方法注册全局指令，在组件中用directives选择注册局部指令。
+3. teleport组件
+   teleport为Vue.js 3内置组件，使用to属性，可将组件挂载到id='app'之外的元素上。
+4. Vue.js 3 插件
+   插件可以向Vue.js 3全局添加一些功能。如：全局方法、属性、指令、mixin和组件等。插件支持对象类型(必须有一个install函数)和函数类型
+5. nextTick的实现原理
+   nextTick可将回调推迟到下一个DOM更新周期之后执行。nextTick内部用Promise包裹回调函数，将回调函数加入微任务队列中。
