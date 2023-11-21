@@ -12,16 +12,50 @@
     <RenderSlot />
     <h3>1.5 组件的JSX语法</h3>
     <RenderJSX />
+
+    <h2>2. 自定义指令</h2>
+    <h3>2.1 自定义指令的基本使用</h3>
+    <h4>2.1.1 默认方式</h4>
+    <DefaultImp />
+    <h4>2.1.2 自定义一个v-focus局部指令</h4>
+    <CustomLocalDirective />
+    <h4>2.1.3 自定义一个v-focus全局指令</h4>
+    <div style="border: 1px solid #ddd; margin: 8px">
+      <p>自定义全局指令</p>
+      <input type="text" v-focus />
+    </div>
+    <h3>2.2 自定义指令的生命周期函数</h3>
+    <DirectiveLifeCycle />
+    <h3>2.3 自定义指令的参数和修饰符</h3>
+    <DirectiveParamAndModifier />
+    <h3>2.4 案例：自定义时间格式化指令</h3>
+    <h4 v-format-time>{{ Number(1645710167) }}</h4>
+    <!-- prettier-ignore -->
+    <h4 v-format-time="'YYYY/MM/DD'">{{ Number(1645710167) }}</h4>
+
+    <h2>3. teleport内置组件</h2>
+    <TeleportExample />
+
+    <h2>4. Vue.js 3 的插件开发</h2>
+    <p>全局属性$name: {{ $name }}</p>
+    <p>全局属性$age: {{ $age }}</p>
   </div>
 </template>
 
 <script>
+import { getCurrentInstance } from 'vue'
+// ---
 import RenderExample from './01_render函数的使用/01_RenderExample'
 import RenderExample_Setup from './01_render函数的使用/02_RenderExample_Setup'
 import RenderCounter from './01_render函数的使用/03_RenderCounter'
 import RenderSetupCounter from './01_render函数的使用/04_RenderSetupCounter'
 import RenderSlot from './01_render函数的使用/05_RenderSlot'
 import RenderJSX from './02_JSX语法的使用/01_RenderJSX'
+import DefaultImp from './03_自定义指令/1_DefaultImp'
+import CustomLocalDirective from './03_自定义指令/2_CustomLocalDirective'
+import DirectiveLifeCycle from './03_自定义指令/3_DirectiveLifeCycle'
+import DirectiveParamAndModifier from './03_自定义指令/4_DirectiveParamAndModifier'
+import TeleportExample from './04_teleport内置组件/1_teleport'
 
 export default {
   name: 'App',
@@ -32,6 +66,23 @@ export default {
     RenderSetupCounter,
     RenderSlot,
     RenderJSX,
+    DefaultImp,
+    CustomLocalDirective,
+    DirectiveLifeCycle,
+    DirectiveParamAndModifier,
+    TeleportExample,
+  },
+  setup() {
+    // 获取组件实例，相当于this
+    const instance = getCurrentInstance()
+    // 通过组件实例访问全局属性 $name
+    console.log(
+      'setup name=',
+      instance.appContext.config.globalProperties.$name
+    )
+  },
+  mounted() {
+    console.log('mounted name=', this.$name)
   },
 }
 </script>
