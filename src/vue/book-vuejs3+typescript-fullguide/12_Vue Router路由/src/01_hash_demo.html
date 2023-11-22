@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="app">
+      <a href="#/home">home</a>
+      <a href="#/about">about</a>
+      <div class="content">Default</div>
+    </div>
+
+    <script>
+      const contentEl = document.querySelector('.content')
+      changePage()
+
+      window.addEventListener('hashchange', () => {
+        changePage()
+      })
+
+      function changePage() {
+        switch (location.hash) {
+          case '#/home': {
+            contentEl.innerHTML = 'home'
+            break
+          }
+          case '#/about': {
+            contentEl.innerHTML = 'about'
+            break
+          }
+          default:
+            contentEl.innerHTML = 'Default'
+        }
+      }
+    </script>
+  </body>
+</html>
