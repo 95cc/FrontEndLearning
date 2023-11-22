@@ -13,6 +13,10 @@ const routes = [
     redirect: '/home',
   },
   {
+    path: '/login',
+    component: () => import('../pages/Login.vue'),
+  },
+  {
     path: '/home',
     // 路由懒加载 (import函数正好可以动态导入组件并返回一个Promise对象)
     // 分包魔法注释
@@ -111,5 +115,24 @@ router.addRoute('home', {
 console.log(router)
 console.log(router.hasRoute('home'))
 console.log(router.getRoutes())
+
+// 🇨🇳🇨🇳🇨🇳 导航守卫三种实现方法：全局路由守卫、单个路由独享的守卫、组件内的守卫
+router.beforeEach((to, form) => {
+  /*
+  返回值的作用：
+    1. false: 取消当前导航
+    2. undefined或不返回: 进行默认导航
+    3. 字符串: 一个路由路径
+    4. 对象: 如{path: '/login', query: {}, params: {}} 
+   */
+  console.log(to, form)
+
+  if (to.path != '/login') {
+    const token = window.sessionStorage.getItem('token')
+    if (!token) {
+      return '/login'
+    }
+  }
+})
 
 export default router

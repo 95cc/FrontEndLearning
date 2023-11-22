@@ -172,3 +172,11 @@
    插件可以向Vue.js 3全局添加一些功能。如：全局方法、属性、指令、mixin和组件等。插件支持对象类型(必须有一个install函数)和函数类型
 5. nextTick的实现原理
    nextTick可将回调推迟到下一个DOM更新周期之后执行。nextTick内部用Promise包裹回调函数，将回调函数加入微任务队列中。
+
+## 第12章 Vue Router 路由
+
+本章小结
+
+1. 前端路由实现2种方式：hash模式、history模式。
+2. Vue Router基本使用：通过createRouter函数创建路由对象，接收routes路由数组及history路由模式对象。通过app.use安装路由对象。通过<router-view>占位，来显示路由组件。
+3. 进阶使用：动态路由、动态添加路由、动态删除路由、嵌套路由、编程式导航、导航守卫等。
