@@ -31,8 +31,13 @@
     <useStateEncapSulation/>
 
     <h3>2.2 getters</h3>
+    <mapGetters_computed/>
+    <useGettersEncapSulation/>
+
     <h3>2.3 mutations</h3>
+
     <h3>2.4 actions</h3>
+
     <h3>2.5 modules</h3>
   </div>
 </template>
@@ -43,13 +48,17 @@ import { useStore } from 'vuex'
 import mapState_computed from './pages/01_mapState_computed'
 import mapState_setup from './pages/02_mapState_setup'
 import useStateEncapSulation from './pages/03_useState封装后使用'
+import mapGetters_computed from './pages/04_mapGetters_computed'
+import useGettersEncapSulation from './pages/05_useGetters封装后使用'
 
 export default {
   name: 'App',
   components: {
     mapState_computed,
     mapState_setup,
-    useStateEncapSulation
+    useStateEncapSulation,
+    mapGetters_computed,
+    useGettersEncapSulation
   },
   methods: {
     increment() {

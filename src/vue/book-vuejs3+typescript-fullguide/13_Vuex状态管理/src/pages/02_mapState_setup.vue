@@ -1,5 +1,5 @@
 <template>
-  <div style="border: 1px solid #ddd">
+  <div class="border">
     <h4>Home: {{ $store.state.counter }}</h4>
     <h4>Home: {{ counter }}</h4>
     <h4>Name: {{ name }}</h4>
