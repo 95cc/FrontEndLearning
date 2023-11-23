@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>12 Vue Router路由</h1>
+    <h1>12 Vue Router路由 (npm install vue-router)</h1>
     <div>
       <!-- <router-link class="tab" to="/home">首页</router-link> -->
       <!-- 等价于上面的 -->
