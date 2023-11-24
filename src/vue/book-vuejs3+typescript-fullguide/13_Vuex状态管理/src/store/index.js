@@ -1,4 +1,6 @@
 import { createStore } from 'vuex'
+// ---
+import { INCREMENT_N } from './mutationTypes'
 
 const store = createStore({
   // 1. 定义全局共享的状态
@@ -25,6 +27,10 @@ const store = createStore({
     },
     decrement(state) {
       state.counter--
+    },
+    // payload为对象类型
+    [INCREMENT_N](state, payload) {
+      state.counter += payload.num
     },
   },
   getters: {

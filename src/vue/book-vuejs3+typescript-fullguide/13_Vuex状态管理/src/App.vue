@@ -35,6 +35,8 @@
     <useGettersEncapSulation/>
 
     <h3>2.3 mutations</h3>
+    <mutationBaseUse/>
+    <mapMutations/>
 
     <h3>2.4 actions</h3>
 
@@ -50,6 +52,8 @@ import mapState_setup from './pages/02_mapState_setup'
 import useStateEncapSulation from './pages/03_useState封装后使用'
 import mapGetters_computed from './pages/04_mapGetters_computed'
 import useGettersEncapSulation from './pages/05_useGetters封装后使用'
+import mutationBaseUse from './pages/06_mutation的基本使用'
+import mapMutations from './pages/07_mapMutations辅助函数'
 
 export default {
   name: 'App',
@@ -58,7 +62,9 @@ export default {
     mapState_setup,
     useStateEncapSulation,
     mapGetters_computed,
-    useGettersEncapSulation
+    useGettersEncapSulation,
+    mutationBaseUse,
+    mapMutations
   },
   methods: {
     increment() {
