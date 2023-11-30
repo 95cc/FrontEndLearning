@@ -17,6 +17,7 @@ const store = createStore({
       ],
       // 书籍打9折
       discount: 0.9,
+      uuid: null,
     }
   },
   // 2. 在 mutations 中修改全局状态
@@ -32,7 +33,11 @@ const store = createStore({
     [INCREMENT_N](state, payload) {
       state.counter += payload.num
     },
+    addUUID(state, payload) {
+      state.uuid = payload
+    },
   },
+  // 3. 在getters中根据state中派生出一些状态
   getters: {
     // 计算购买的书籍总价
     // 参数1: state对象
@@ -57,6 +62,37 @@ const store = createStore({
         }
         return totalPrice
       }
+    },
+  },
+  // 4. actions用于异步更改store中的状态
+  actions: {
+    incrementAction(context) {
+      // 模拟异步操作
+      setTimeout(() => {
+        // 提交一个type为increment的mutation
+        context.commit('increment')
+      })
+    },
+    decrementAction(context) {
+      // ES6解构context对象
+      let { commit, dispatch, state, rootState, getters, rootGetters } = context
+      commit('decrement')
+    },
+    incrementNAction(context, payload) {
+      context.commit(INCREMENT_N, payload)
+    },
+    getUUIDAction({ commit }) {
+      return new Promise((resolve, reject) => {
+        fetch('http://httpbin.org/uuid')
+          .then((res) => res.json())
+          .then((data) => {
+            commit('addUUID', data.uuid)
+            resolve(data)
+          })
+          .catch((err) => {
+            reject(err)
+          })
+      })
     },
   },
 })

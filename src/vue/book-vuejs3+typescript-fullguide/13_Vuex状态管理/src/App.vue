@@ -39,6 +39,9 @@
     <mapMutations/>
 
     <h3>2.4 actions</h3>
+    <ActionsDemo/>
+    <ActionsDemo1/>
+    <ActionsDemo2/>
 
     <h3>2.5 modules</h3>
   </div>
@@ -54,6 +57,9 @@ import mapGetters_computed from './pages/04_mapGetters_computed'
 import useGettersEncapSulation from './pages/05_useGetters封装后使用'
 import mutationBaseUse from './pages/06_mutation的基本使用'
 import mapMutations from './pages/07_mapMutations辅助函数'
+import ActionsDemo from './pages/08_actions的使用和细节补充'
+import ActionsDemo1 from './pages/09_actions的辅助函数'
+import ActionsDemo2 from './pages/10_actions的返回Promise'
 
 export default {
   name: 'App',
@@ -64,7 +70,10 @@ export default {
     mapGetters_computed,
     useGettersEncapSulation,
     mutationBaseUse,
-    mapMutations
+    mapMutations,
+    ActionsDemo,
+    ActionsDemo1,
+    ActionsDemo2
   },
   methods: {
     increment() {
