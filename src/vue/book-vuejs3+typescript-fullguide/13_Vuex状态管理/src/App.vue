@@ -44,6 +44,9 @@
     <ActionsDemo2/>
 
     <h3>2.5 modules</h3>
+    <ModulesDemo/>
+    <ModulesDemo1/>
+    <ModulesDemo2/>
   </div>
 </template>
 
@@ -60,6 +63,9 @@ import mapMutations from './pages/07_mapMutations辅助函数'
 import ActionsDemo from './pages/08_actions的使用和细节补充'
 import ActionsDemo1 from './pages/09_actions的辅助函数'
 import ActionsDemo2 from './pages/10_actions的返回Promise'
+import ModulesDemo from './pages/11_module的基本使用'
+import ModulesDemo1 from './pages/12_module的局装状态'
+import ModulesDemo2 from './pages/13_module的命名空间'
 
 export default {
   name: 'App',
@@ -73,7 +79,10 @@ export default {
     mapMutations,
     ActionsDemo,
     ActionsDemo1,
-    ActionsDemo2
+    ActionsDemo2,
+    ModulesDemo,
+    ModulesDemo1,
+    ModulesDemo2
   },
   methods: {
     increment() {
