@@ -180,3 +180,13 @@
 1. 前端路由实现2种方式：hash模式、history模式。
 2. Vue Router基本使用：通过createRouter函数创建路由对象，接收routes路由数组及history路由模式对象。通过app.use安装路由对象。通过<router-view>占位，来显示路由组件。
 3. 进阶使用：动态路由、动态添加路由、动态删除路由、嵌套路由、编程式导航、导航守卫等。
+
+## 第13章 VueX 状态管理
+
+本章小结
+
+1. state: 可通过$store.state或useStore获取状态，也可通过mapState辅助函数获取。
+2. getters: 类似store的计算属性，可通过$store.getters 或 mapGetters辅助函数获取。
+3. mutations: 更改store状态的唯一方法是提交mutation, 可通过$store.commit 或 mapMutations辅助函数触发提交mutation。
+4. actions: action提交的是mutation，并支持异步操作，可通过$store.dispatch或mapActions辅助函数触发action。
+5. modules: Vuex允许将store分割成多个模块。每个模块拥有自己的state、mutation、action、getter，甚至嵌套子模块，这样可以更好地组织和管理状态。
