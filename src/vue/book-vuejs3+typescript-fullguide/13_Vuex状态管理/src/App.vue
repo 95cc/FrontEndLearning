@@ -47,6 +47,7 @@
     <ModulesDemo/>
     <ModulesDemo1/>
     <ModulesDemo2/>
+    <ModulesDemo3/>
   </div>
 </template>
 
@@ -66,6 +67,7 @@ import ActionsDemo2 from './pages/10_actions的返回Promise'
 import ModulesDemo from './pages/11_module的基本使用'
 import ModulesDemo1 from './pages/12_module的局装状态'
 import ModulesDemo2 from './pages/13_module的命名空间'
+import ModulesDemo3 from './pages/14_modules辅助函数'
 
 export default {
   name: 'App',
@@ -82,7 +84,8 @@ export default {
     ActionsDemo2,
     ModulesDemo,
     ModulesDemo1,
-    ModulesDemo2
+    ModulesDemo2,
+    ModulesDemo3
   },
   methods: {
     increment() {
