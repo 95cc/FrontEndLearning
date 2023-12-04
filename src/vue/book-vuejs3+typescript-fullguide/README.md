@@ -190,3 +190,21 @@
 3. mutations: 更改store状态的唯一方法是提交mutation, 可通过$store.commit 或 mapMutations辅助函数触发提交mutation。
 4. actions: action提交的是mutation，并支持异步操作，可通过$store.dispatch或mapActions辅助函数触发action。
 5. modules: Vuex允许将store分割成多个模块。每个模块拥有自己的state、mutation、action、getter，甚至嵌套子模块，这样可以更好地组织和管理状态。
+
+## 第14章 TypeScript的基础详解 (npm i typescript -g)
+
+1. 使用webpack搭建TypeScript运行环境 (看链接14-1中的文章)
+2. 使用ts-node库搭建TypeScript运行环境
+   ```
+   1. 全局安装ts-node工具库
+      npm install ts-node -g
+   2. ts-node依赖 tslib和@types/node
+      npm install tslib @types/node -g
+   ```
+
+本章小结
+
+1. JavaScript数据类型: number、boolean、string、array、object、null、undefined、symbol
+2. TypeScript数据类型: any、unknown、void、never、tuple
+3. TypeScript类型补充: 函数参数、返回值、对象类型、联合类型、类型断言、字面量类型、类型缩小
+4. TypeScript函数: 函数类型、函数参数、可选参数、默认参数、剩余参数、this的类型、函数重载
