@@ -267,6 +267,15 @@ console.log(Time.name) // coder
 console.log(Time.format(['2023', '12', '11'])) // 2023-12-11
 console.log(Price.format(2999.7834)) // 2999.78
 
+// 6. 类型的声明
+// 1. 类型的查找
+/*
+在TypeScript中，有三种声明类型的位置
+1. 内置类型声明（如lib.dom.d.ts）
+2. 外部定义类型声明 （如@types/xxx、asios/index.d.ts）
+3. 自定义类型声明（如src/shims-vue.d.ts、global.d.ts）
+*/
+
 console.log('------ 1. TypeScript类的使用 ------')
 console.log('1. 类的定义')
 console.log('2. 类的继承')
@@ -302,5 +311,15 @@ console.log('4. 泛型约束')
 console.log('------ 5. 模块和命名空间 ------')
 console.log('1. 模块化开发')
 console.log('2. 命名空间')
+console.log('------ 6. 类型的声明 ------')
+console.log('1. 类型的查找')
+console.log('2. 创建Vue.js3 + TypeScript项目')
+console.log('3. declare声明变量')
+console.log('4. declare声明函数')
+console.log('5. declare声明类')
+console.log('6. declare声明文件')
+console.log('7. declare声明模块')
+console.log('8. declare声明命名空间')
+console.log('------ 7. tsconfig.json的解析 ------')
 
 export {}

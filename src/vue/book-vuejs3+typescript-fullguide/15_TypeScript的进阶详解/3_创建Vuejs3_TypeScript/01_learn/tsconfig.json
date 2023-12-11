@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "target": "es5", // 目标代码
+    "module": "CommonJS", // 生成代码使用的模块化
+    "strict": true, // 启用严格模式
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true, // 跳过整个库进行类型检查，只检查用到的类型
+    "esModuleInterop": true, // 让 ES Module和 CommonJS 相互调用
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true, // 强制使用大小写一致的文件名
+    "useDefineForClassFields": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "types": [
+      "webpack-env"
+    ],
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
