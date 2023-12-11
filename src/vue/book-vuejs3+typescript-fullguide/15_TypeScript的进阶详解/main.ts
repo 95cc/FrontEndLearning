@@ -256,6 +256,17 @@ getLength([1, 2])
 // Argument of type 'number' is not assignable to parameter of type 'ILength'.ts(2345)
 // getLength(1)
 
+// 5. 模块和命名空间
+// 5.1 模块化开发
+import { add, sub } from './1_math_esm'
+console.log(add(1, 2))
+console.log(sub(2, 1))
+// 5.2 命名空间
+import { Time, Price } from './2_format_namespace'
+console.log(Time.name) // coder
+console.log(Time.format(['2023', '12', '11'])) // 2023-12-11
+console.log(Price.format(2999.7834)) // 2999.78
+
 console.log('------ 1. TypeScript类的使用 ------')
 console.log('1. 类的定义')
 console.log('2. 类的继承')
@@ -288,5 +299,8 @@ console.log('1. 认识泛型')
 console.log('2. 泛型接口')
 console.log('3. 泛型类')
 console.log('4. 泛型约束')
+console.log('------ 5. 模块和命名空间 ------')
+console.log('1. 模块化开发')
+console.log('2. 命名空间')
 
 export {}
