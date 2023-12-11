@@ -208,3 +208,14 @@
 2. TypeScript数据类型: any、unknown、void、never、tuple
 3. TypeScript类型补充: 函数参数、返回值、对象类型、联合类型、类型断言、字面量类型、类型缩小
 4. TypeScript函数: 函数类型、函数参数、可选参数、默认参数、剩余参数、this的类型、函数重载
+
+## 第15章 TypeScript的进阶详解
+
+本章小结
+
+1. TypeScirpt类的使用: 类的定义、继承、多态、成员修饰符、只读属性、访问器等
+2. TypeScript接口的使用: 接口的声明、索引类型、函数类型、接口继承、交叉类型等
+3. TypeScript枚举和泛型: 枚举类型的使用、认识泛型、泛型接口、泛型类、泛型约束等
+4. TypeScript模块和命名空间: 模块化开发/使用、命名空间的认识/使用等
+5. TypeScript类型声明: 类型查找规则、声明变量/函数/类/模块等
+6. TypeScript编译器的配置: 包括tsconfig.json文件的创建、tsconfig文件常见属性的详解
