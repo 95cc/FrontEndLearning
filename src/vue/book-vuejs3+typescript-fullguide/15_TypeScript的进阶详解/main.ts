@@ -213,6 +213,49 @@ console.log(Direction.LEFT, Direction.RIGHT, Direction.UP)
 turnDirection(Direction.LEFT)
 turnDirection(Direction.RIGHT)
 
+// 4. TypeScript泛型的应用
+// 4.1 认识泛型
+function foo1<T, E>(a1: T, a2: E) {
+  console.log(a1, a2)
+}
+foo1(1, '2')
+// 4.2 泛型接口
+interface IPersona1<T1 = string, T2 = number> {
+  name: T1
+  age: T2
+}
+const p1x: IPersona1 = { name: 'why', age: 18 }
+const p2x: IPersona1<string, string> = {
+  name: 'why',
+  age: '18',
+}
+// 4.3 泛型类
+class PointA<T> {
+  x: T
+  y: T
+  z: T
+
+  constructor(x: T, y: T, z: T) {
+    this.x = x
+    this.y = y
+    this.z = z
+  }
+}
+const point11 = new PointA('1.1', '2.2', '3.3')
+const point22 = new PointA<string>('4.4', '5.5', '6.6')
+const point33: PointA<string> = new PointA('7.7', '8.8', '9.9')
+// 4.4 泛型约束
+interface ILength {
+  length: number
+}
+function getLength<T extends ILength>(arg: T) {
+  return arg.length
+}
+getLength('1')
+getLength([1, 2])
+// Argument of type 'number' is not assignable to parameter of type 'ILength'.ts(2345)
+// getLength(1)
+
 console.log('------ 1. TypeScript类的使用 ------')
 console.log('1. 类的定义')
 console.log('2. 类的继承')
@@ -240,5 +283,10 @@ console.log('8. 字面量赋值')
 console.log('------ 3. TypeScript枚举类型 ------')
 console.log('1. 认识枚举')
 console.log('2. 枚举的值')
+console.log('------ 4. TypeScript泛型的应用 ------')
+console.log('1. 认识泛型')
+console.log('2. 泛型接口')
+console.log('3. 泛型类')
+console.log('4. 泛型约束')
 
 export {}
