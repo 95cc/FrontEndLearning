@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- Vue Router -->
     <div>
       <router-link to="/home">首页</router-link>
       <router-link class="tab" to="/about">关于</router-link>
@@ -13,15 +14,40 @@
         </transition>
       </router-view>
     </div>
+
+    <!-- Vuex -->
+    <div>当前计数: {{ counter }}</div>
+    <button @click="increment">+1</button>
+    <button @click="decrement">-1</button>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, computed } from 'vue'
+import { useStore } from 'vuex'
+// ---
+import type { IRootState } from './store'
 
 export default defineComponent({
   name: 'App',
   components: {},
+  computed: {
+    counter: () => {},
+  },
+  setup() {
+    const store = useStore<IRootState>()
+    const counter = computed(() => {
+      return store.state.counter
+    })
+    const increment = () => store.commit('increment')
+    const decrement = () => store.commit('decrement')
+
+    return {
+      counter,
+      increment,
+      decrement,
+    }
+  },
 })
 </script>
 

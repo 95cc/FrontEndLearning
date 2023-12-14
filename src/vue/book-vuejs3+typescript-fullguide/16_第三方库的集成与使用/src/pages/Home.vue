@@ -1,10 +1,9 @@
 <template>
   <div>
     Home Page
-    <router-link class="btn" to="/home/message">消息页</router-link>
+    <!-- <router-link class="btn" to="/home/message">消息页</router-link>
     <router-link class="btn" to="/home/shops">商品页</router-link>
-    <!-- 路由组件的占位 -->
-    <router-view></router-view>
+    <router-view></router-view> -->
   </div>
 </template>
 
