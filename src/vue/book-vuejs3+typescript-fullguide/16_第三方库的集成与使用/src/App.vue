@@ -19,18 +19,31 @@
     <div>当前计数: {{ counter }}</div>
     <button @click="increment">+1</button>
     <button @click="decrement">-1</button>
+
+    <!-- Element Plus -->
+    <el-button>Default</el-button>
+    <el-button type="primary">Primary</el-button>
+    <el-button type="success">Success</el-button>
+
+    <el-button @click="showMsg">使用Elmessage</el-button>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
 import { useStore } from 'vuex'
+// 手动导入 ElButton 组件
+import { ElButton } from 'element-plus'
+// 当使用了unplugin-element-plus插件，并且只使用组件的API时，我们还需手动导入样式
+import { ElMessage } from 'element-plus'
 // ---
 import type { IRootState } from './store'
 
 export default defineComponent({
   name: 'App',
-  components: {},
+  components: {
+    ElButton: ElButton, // 局部注册组件
+  },
   computed: {
     counter: () => {},
   },
@@ -41,11 +54,15 @@ export default defineComponent({
     })
     const increment = () => store.commit('increment')
     const decrement = () => store.commit('decrement')
+    const showMsg = () => {
+      ElMessage.success('成功')
+    }
 
     return {
       counter,
       increment,
       decrement,
+      showMsg,
     }
   },
 })
