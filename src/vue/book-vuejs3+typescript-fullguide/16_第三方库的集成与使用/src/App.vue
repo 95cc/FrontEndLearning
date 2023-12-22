@@ -35,6 +35,7 @@ import { useStore } from 'vuex'
 // 手动导入 ElButton 组件
 import { ElButton } from 'element-plus'
 // 当使用了unplugin-element-plus插件，并且只使用组件的API时，我们还需手动导入样式
+import 'element-plus/es/components/message/style/css'
 import { ElMessage } from 'element-plus'
 // ---
 import type { IRootState } from './store'
