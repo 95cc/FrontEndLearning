@@ -14,6 +14,7 @@ import './service/03_axios_config'
 import './service/04_axios_all'
 import './service/05_axios_interceptor'
 import './service/06_axios_instance'
+import './service/07_use_hyrequest.ts'
 
 const app = createApp(App)
 
