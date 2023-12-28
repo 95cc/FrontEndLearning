@@ -26,6 +26,8 @@
     <el-button type="success">Success</el-button>
 
     <el-button @click="showMsg">使用Elmessage</el-button>
+
+    <EchartDemo />
   </div>
 </template>
 
@@ -37,13 +39,16 @@ import { ElButton } from 'element-plus'
 // 当使用了unplugin-element-plus插件，并且只使用组件的API时，我们还需手动导入样式
 import 'element-plus/es/components/message/style/css'
 import { ElMessage } from 'element-plus'
+// --- UI
+import EchartDemo from './base-ui/echart-demo.vue'
 // ---
 import type { IRootState } from './store'
 
 export default defineComponent({
   name: 'App',
   components: {
-    ElButton: ElButton, // 局部注册组件
+    ElButton: ElButton, // 局部注册组件,
+    EchartDemo,
   },
   computed: {
     counter: () => {},
