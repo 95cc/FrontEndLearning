@@ -219,3 +219,14 @@
 4. TypeScript模块和命名空间: 模块化开发/使用、命名空间的认识/使用等
 5. TypeScript类型声明: 类型查找规则、声明变量/函数/类/模块等
 6. TypeScript编译器的配置: 包括tsconfig.json文件的创建、tsconfig文件常见属性的详解
+
+## 第16章 第三方库的集成与使用
+
+本章小结
+
+1. Vue ClI: 创建vue+ts项目
+2. Vue Router: 路由组件
+3. Vuex: 状态管理组件
+4. Element Plus: UI组件
+5. axios: 网络库
+6. ECharts: 图表库
