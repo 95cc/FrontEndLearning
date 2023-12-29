@@ -22,6 +22,7 @@ export default defineComponent({
         }
       )
 
+      // Echarts配置项手册: https://echarts.apache.org/zh/option.html#title
       const options: EChartsOption = {
         title: {
           text: 'Echarts 入门示例',
