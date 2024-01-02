@@ -230,3 +230,12 @@
 4. Element Plus: UI组件
 5. axios: 网络库
 6. ECharts: 图表库
+
+## 第17章 后台管理系统
+
+本章小结
+
+1. 项目创建: vue create xxx (+ ts)
+2. 开发规范: 编辑器规范、prettier代码格式化、ESLint 代码校验、编码规范等
+3. 集成3方库: Vue Router、Vuex、Element Plus 按需引入、axios封装等
+4. 功能模块: 登录面板、表单验证、菜单组件、动态注册路由、高级检索、表格列表组件等
