@@ -26,3 +26,75 @@
 6. [API风格](https://cn.vuejs.org/guide/introduction.html#api-styles)：选项式API（Options API）、组合式API（Composition API）
 
 ### 3. [使用 Vue 的多种方式](https://cn.vuejs.org/guide/extras/ways-of-using-vue.html)
+
+### 4. 快速上手
+
+1. 创建Vue应用
+
+   ```
+   npm create vue@latest # 会安装并执行 create-vue，后面就可以直接通过 create-vue xxx 来创建项目
+   ```
+
+2. 通过CDN使用Vue（全局构建版本）
+
+   ```
+      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+      <div id="app">{{ message }}</div>
+
+      <script>
+      const { createApp } = Vue
+
+      createApp({
+         data() {
+            return {
+            message: 'Hello Vue!'
+            }
+         }
+      }).mount('#app')
+      </script>
+   ```
+
+3. 通过CDN使用Vue（ES构建版本，[ES模块](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Modules)）
+
+   ```
+      <div id="app">{{ message }}</div>
+
+      <script type="module">
+      import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+      createApp({
+         data() {
+            return {
+            message: 'Hello Vue!'
+            }
+         }
+      }).mount('#app')
+      </script>
+   ```
+
+4. 通过CDN使用Vue（ES构建版本，启用Import maps, [caniuse-import-maps](https://caniuse.com/import-maps)）
+
+   ```
+      <script type="importmap">
+      {
+         "imports": {
+            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+         }
+      }
+      </script>
+
+      <div id="app">{{ message }}</div>
+
+      <script type="module">
+      import { createApp } from 'vue'
+
+      createApp({
+         data() {
+            return {
+            message: 'Hello Vue!'
+            }
+         }
+      }).mount('#app')
+      </script>
+   ```
