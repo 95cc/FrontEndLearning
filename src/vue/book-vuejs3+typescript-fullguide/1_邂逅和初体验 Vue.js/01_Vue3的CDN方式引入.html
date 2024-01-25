@@ -8,7 +8,10 @@
   <body>
     <div id="app"></div>
     <!-- 使用CDN方式引入Vue.js 3框架 -->
-    <script src="https://unpkg.com/vue@next"></script>
+    <!-- https://unpkg.com/vue@next 失效了: https://blog.darkthread.net/blog/unpkg-vue-next-broken/ -->
+    <!-- 换成这个: https://unpkg.com/vue@3 -->
+    <!-- 或者这个 https://cdn.jsdelivr.net/npm/vue@3 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
     <script>
       const cc = {
         template: '<h2>Hello World</h2>',
