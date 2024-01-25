@@ -26,6 +26,29 @@
 
 ## 第1章 邂逅和初体验 Vue.js
 
+1. Vue.js 2的缺点 (2023-12-31不再维护, [Vue.js2](https://github.com/vuejs/vue))
+   - 对TypeScript的支持不友好
+   - Mixin混入缺陷
+   - 响应式系统缺陷：Object.definedProperty无法劫持和监听对象添加或删除属性时的变化
+   - 逻辑零散：分散到多个属性中，代码复杂了，逻辑会变得零散
+2. Vue.js 3带来的新变化
+
+   1. monorepo源码管理(将许多项目的代码存储在同一个repository中)
+   2. 采用TypeScript进行重构
+   3. 采用Proxy进行数据劫持
+
+      - Vue.js 2使用的Object.definedProperty，无法劫持属性的添加/删除，必须用vm.$set和vm.$delete黑科技方法
+      - Vue.js 3使用Proxy，可以劫持set/set/in/delete
+
+   4. 编译阶段的优化
+
+      - 生成Block Tree: 一个基于模板静态分析的数据结构，用于描述模板和其子模板之间的关系，从而提高渲染效率。
+      - slot 编译优化: 对非动态slot中属性的更新，只会触发子组件的更新。
+      - diff 算法优化:
+
+   5. Composition API
+   6. 移除一些非必要API: $on、$off和$once，移除了filter和内联模板等特性。
+
 ### vscode插件推荐
 
 - Theme
