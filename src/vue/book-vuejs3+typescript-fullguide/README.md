@@ -1,6 +1,6 @@
 # [《Vue.js 3 + TypeScript 完全指南》](https://book.douban.com/subject/36560742/) 王红元、刘军 著
 
-## Vue.js CDN: https://unpkg.com/vue@3/dist/vue.global.js
+## Vue.js CDN: https://cdn.jsdelivr.net/npm/vue@3
 
 ## 章节概览
 
