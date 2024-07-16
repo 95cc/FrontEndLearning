@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <!-- 1 -->
+    <title>CSS</title>
+    <!-- 2 -->
+    <meta name="keywords" content="meta标签 name=keywords" />
+    <meta name="description" content="meta标签 name=description" />
+    <meta name="author" content="95cc" />
+    <meta name="copyright" content="xxx" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <!-- <meta http-equiv="refresh" content="2;url=http://www.baidu.com" /> -->
+    <!-- <meta charset="UTF-8" /> -->
+    <!-- 3 -->
+    <style></style>
+    <!-- 4 -->
+    <link rel="stylesheet" href="" />
+    <!-- 5 -->
+    <script></script>
+    <!-- 6 -->
+    <base href="" />
+
+    <style>
+      body {
+        margin: 0;
+        position: absolute;
+        width: 100vh;
+        width: 100vw;
+      }
+      .area-left {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: hidden;
+      }
+      .area-right {
+        position: absolute;
+        left: 20vw;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        overflow-y: scroll;
+      }
+      .border {
+        margin: 10px 0;
+        border: 1px solid gray;
+      }
+      .td-border {
+        border: 1px solid silver;
+      }
+      .bg-image {
+        width: 200px;
+        height: 100px;
+        font-size: 10px;
+        color: red;
+        background-image: url(https://th.bing.com/th/id/OIP.vRE0tGGZdKN4XXpyxL159QHaHa?w=30&h=30&c=7&r=0&o=5&pid=1.7);
+      }
+    </style>
+
+    <script>
+      window.onload = () => {
+        const el = document.getElementsByClassName('area-right')[0]
+        el.scrollTo(0, el.scrollHeight)
+      }
+    </script>
+  </head>
+  <body style="position: relative">
+    <div class="area-left">
+      <p><a href="#1">1. 引入方式</a></p>
+      <p><a href="#2">2. 选择器</a></p>
+      <p><a href="#3">3. 字体样式</a></p>
+      <p><a href="#4">4. CSS注释</a></p>
+      <p><a href="#5">5. 文本样式</a></p>
+      <p><a href="#6">6. 边框样式</a></p>
+      <p><a href="#7">7. 列表样式</a></p>
+      <p><a href="#8">8. 表格样式</a></p>
+      <p><a href="#9">9. 图片样式</a></p>
+      <p><a href="#10">10. 背景样式</a></p>
+      <p><a href="#11">11. 超链接样式</a></p>
+      <p><a href="#12">12. 盒子模型</a></p>
+      <p><a href="#13">13. 浮动布局</a></p>
+      <p><a href="#14">14. 定位布局</a></p>
+      <hr />
+      <p><a href="#15">15. HTML常用标签</a></p>
+    </div>
+    <div id="area-right" class="area-right">
+      <div id="1" class="border">
+        <h1>1. 引入方式</h1>
+        <p>外部样式表(link)</p>
+        <p>内部样式表(style)</p>
+        <p>行内样式表(标签内部style)</p>
+        <p style="color: red">
+          @import方式与外部样式表很相似。不过在实际开发中，我们极少使用@import方式，而更倾向于使用link方式（外部样式）。原因在于@import方式是先加载HTML后加载CSS，而link是先加载CSS后加载HTML。如果HTML在CSS之前加载，页面用户体验就会非常差。
+        </p>
+      </div>
+      <div id="2" class="border">
+        <h1>2. 选择器</h1>
+        常用的5种：
+        <ol>
+          <li>元素选择器</li>
+          <li>id选择器</li>
+          <li>class选择器</li>
+          <li>后代选择器</li>
+          <li>群组选择器</li>
+        </ol>
+      </div>
+      <div id="3" class="border">
+        <h1>3. 字体样式</h1>
+        <ol>
+          <li>
+            font-family:
+            <div>
+              <span style="font-family: 'Courier New', Courier, monospace"
+                >font-family</span
+              >
+              <span
+                style="
+                  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+                    sans-serif;
+                "
+                >font-family</span
+              >
+            </div>
+          </li>
+          <li>
+            font-size:
+            <span style="font-size: 10px">font-size: 10px</span>
+            <span style="font-size: 20px">font-size: 20px</span>
+          </li>
+          <li>
+            font-weight:
+            <p>
+              <span style="font-weight: normal">font-weight: normal(400)</span>
+            </p>
+            <p>
+              <span style="font-weight: lighter"
+                >font-weight: lighter(100)</span
+              >
+            </p>
+            <p><span style="font-weight: bold">font-weight: bold(700)</span></p>
+            <p>
+              <span style="font-weight: bolder">font-weight: bolder(900)</span>
+            </p>
+            <hr />
+            <p><span style="font-weight: 100">font-weight: 100</span></p>
+            <p><span style="font-weight: 200">font-weight: 200</span></p>
+            <p><span style="font-weight: 300">font-weight: 300</span></p>
+            <p><span style="font-weight: 400">font-weight: 400</span></p>
+            <p><span style="font-weight: 500">font-weight: 500</span></p>
+            <p><span style="font-weight: 600">font-weight: 600</span></p>
+            <p><span style="font-weight: 700">font-weight: 700</span></p>
+            <p><span style="font-weight: 800">font-weight: 800</span></p>
+            <p><span style="font-weight: 900">font-weight: 900</span></p>
+          </li>
+          <li>
+            font-style:
+            <p style="font-style: normal">font-style: normal</p>
+            <p style="font-style: italic">font-style: italic</p>
+            <p style="font-style: oblique">font-style: oblique</p>
+          </li>
+          <li>
+            color:
+            <p style="color: red">color: red</p>
+            <p style="color: #abcdee">color: #abcdee</p>
+            <p style="color: rgb(214, 214, 43)">color: rgb(214, 214, 43)</p>
+          </li>
+        </ol>
+      </div>
+      <div id="4" class="border">
+        <h1>4. CSS注释</h1>
+        <p>/*注释的内容*/</p>
+      </div>
+      <div id="5" class="border">
+        <h1>5. 文本样式</h1>
+        <ol>
+          <li>
+            text-indent(首行缩进):
+            <h3>爱莲说</h3>
+            <p style="text-indent: 20px; font-size: 10px">
+              水陆草木之花，可爱者甚蕃。晋陶渊明独爱菊。自李唐来，世人甚爱牡丹。予独爱莲之出淤泥而不染，濯清涟而不妖，中通外直，不蔓不枝，香远益清，亭亭净植，可远观而不可亵玩焉。
+            </p>
+            <p style="text-indent: 20px; font-size: 10px">
+              予谓菊，花之隐逸者也；牡丹，花之富贵者也；莲，花之君子者也。噫！菊之爱，陶后鲜有闻；莲之爱，同予者何人?
+              牡丹之爱，宜乎众矣。
+            </p>
+          </li>
+          <li>
+            text-align(水平对齐):
+            <p style="text-align: left">
+              <strong>左对齐(left)</strong>:好好学习，天天向上。
+            </p>
+            <p style="text-align: center">
+              <strong>居中对齐(center)</strong>:好好学习，天天向上。
+            </p>
+            <p style="text-align: right">
+              <strong>右对齐(right)</strong>:好好学习，天天向上。
+            </p>
+          </li>
+          <li>
+            text-decoration(文本修饰):
+            <p style="text-decoration: underline">这是“下划线”效果</p>
+            <p style="text-decoration: line-through">这是“删除线”效果</p>
+            <p style="text-decoration: overline">这是“顶划线”效果</p>
+          </li>
+          <li>
+            text-transform(大小写转换):
+            <p>
+              uppercase:
+              <span style="text-transform: uppercase"
+                >rome was't built in a day.</span
+              >
+            </p>
+            <p>
+              lowercase:
+              <span style="text-transform: lowercase"
+                >rome was't built in a day.</span
+              >
+            </p>
+            <p>
+              capitalize:
+              <span style="text-transform: capitalize"
+                >rome was't built in a day.</span
+              >
+            </p>
+          </li>
+          <li>
+            line-height(行高):
+            <p style="line-height: 10px">
+              水陆草木之花，可爱者甚蕃。晋陶渊明独爱菊。自李唐来，世人甚爱牡丹。予独爱莲之出淤泥而不染，濯清涟而不妖，中通外直，不蔓不枝，香远益清，亭亭净植，可远观而不可亵玩焉。
+            </p>
+            <hr />
+            <p style="line-height: 20px">
+              水陆草木之花，可爱者甚蕃。晋陶渊明独爱菊。自李唐来，世人甚爱牡丹。予独爱莲之出淤泥而不染，濯清涟而不妖，中通外直，不蔓不枝，香远益清，亭亭净植，可远观而不可亵玩焉。
+            </p>
+            <hr />
+            <p style="line-height: 30px">
+              水陆草木之花，可爱者甚蕃。晋陶渊明独爱菊。自李唐来，世人甚爱牡丹。予独爱莲之出淤泥而不染，濯清涟而不妖，中通外直，不蔓不枝，香远益清，亭亭净植，可远观而不可亵玩焉。
+            </p>
+          </li>
+          <li>
+            letter-spacing(字母间距)
+            <p style="letter-spacing: 0px">
+              Rome was't built in a day.罗马不是一天建成的。
+            </p>
+            <hr />
+            <p style="letter-spacing: 3px">
+              Rome was't built in a day.罗马不是一天建成的。
+            </p>
+            <hr />
+            <p style="letter-spacing: 5px">
+              Rome was't built in a day.罗马不是一天建成的。
+            </p>
+          </li>
+          <li>
+            word-spacing(词间距):
+            <p style="word-spacing: 0px">
+              Rome was't built in a day.罗马不是一天建成的。
+            </p>
+            <hr />
+            <p style="word-spacing: 3px">
+              Rome was't built in a day.罗马不是一天建成的。
+            </p>
+            <hr />
+            <p style="word-spacing: 5px">
+              Rome was't built in a day.罗马不是一天建成的。
+            </p>
+          </li>
+        </ol>
+      </div>
+      <div id="6" class="border">
+        <h1>6. 边框样式</h1>
+        <p style="border: 10px solid red">solid边框</p>
+        <p style="border: 10px dashed red">dashed边框</p>
+        <p
+          style="
+            border-top: 10px dashed red;
+            border-right: 10px solid blue;
+            border-bottom: 10px dotted gray;
+            border-left: 10px double orange;
+          "
+        >
+          四边单独设置边框
+        </p>
+      </div>
+      <div id="7" class="border">
+        <h1>7. 列表样式(list-style-type、list-style-image)</h1>
+        <h3>ol: list-style-type: lower-roman</h3>
+        <ol style="list-style-type: lower-roman">
+          <li>HTML</li>
+          <li>CSS</li>
+        </ol>
+        <h3>ul: list-style-type: circle</h3>
+        <ul style="list-style-type: circle">
+          <li>HTML</li>
+          <li>CSS</li>
+        </ul>
+        <h3>ul: list-style-type: none</h3>
+        <ul style="list-style-type: none">
+          <li>HTML</li>
+          <li>CSS</li>
+        </ul>
+        <hr />
+        <h3>list-style-image</h3>
+        <ul
+          style="
+            list-style-image: url(http://api.lvyestudy.com/upload/courses/696612g2b3565a15eeb4ged6.jpg);
+          "
+        >
+          <li>HTML</li>
+          <li>CSS</li>
+        </ul>
+      </div>
+      <div id="8" class="border">
+        <h1>8. 表格样式</h1>
+        <table class="border" style="caption-side: bottom">
+          <caption style="color: red">
+            表格标题在下方(caption-side: bottom)
+          </caption>
+          <tr>
+            <td class="border">表行单元格1</td>
+            <td class="border">表行单元格2</td>
+          </tr>
+        </table>
+        <hr />
+        <table class="border" style="border-collapse: collapse">
+          <caption style="color: red">
+            单元格合并(border-collapse: collapse;)
+          </caption>
+          <tr>
+            <td class="border">表行单元格1</td>
+            <td class="border">表行单元格2</td>
+          </tr>
+        </table>
+        <hr />
+        <table class="border" style="border-spacing: 10px">
+          <caption style="color: red">
+            单元格合并(border-spacing: 10px)
+          </caption>
+          <tr>
+            <td class="border">表行单元格1</td>
+            <td class="border">表行单元格2</td>
+          </tr>
+        </table>
+      </div>
+      <div id="9" class="border">
+        <h1>9. 图片样式</h1>
+        <ol>
+          <li>
+            图片宽高<img
+              style="width: 100px; height: 100px"
+              src="http://api.lvyestudy.com/upload/courses/696612g2b3565a15eeb4ged6.jpg"
+              alt=""
+            />
+          </li>
+          <li>
+            图片边框<img
+              style="width: 100px; height: 100px; border: 10px solid orange"
+              src="http://api.lvyestudy.com/upload/courses/696612g2b3565a15eeb4ged6.jpg"
+              alt=""
+            />
+          </li>
+          <li>
+            图片对齐（水平对齐）
+            <hr />
+            <p style="text-align: left">
+              <img
+                style="width: 100px; height: 100px"
+                src="http://api.lvyestudy.com/upload/courses/696612g2b3565a15eeb4ged6.jpg"
+                alt=""
+              />
+            </p>
+            <p style="text-align: center">
+              <img
+                style="width: 100px; height: 100px"
+                src="http://api.lvyestudy.com/upload/courses/696612g2b3565a15eeb4ged6.jpg"
+                alt=""
+              />
+            </p>
+            <p style="text-align: right">
+              <img
+                style="width: 100px; height: 100px; text-align: right"
+                src="http://api.lvyestudy.com/upload/courses/696612g2b3565a15eeb4ged6.jpg"
+                alt=""
+              />
+            </p>
+          </li>
+          <li>
+            <span style="color: red"
+              >图片对齐垂直对齐vertical-align属性定义周围的行内元素或文本相对于该元素的垂直方式</span
+            >
+            <hr />
+            测试文案<img
+              style="width: 100px; height: 100px; vertical-align: top"
+              src="http://api.lvyestudy.com/upload/courses/696612g2b3565a15eeb4ged6.jpg"
+              alt=""
+            />测试文案(top)
+            <hr />
+            测试文案<img
+              style="width: 100px; height: 100px; vertical-align: middle"
+              src="http://api.lvyestudy.com/upload/courses/696612g2b3565a15eeb4ged6.jpg"
+              alt=""
+            />测试文案(middle)
+            <hr />
+            测试文案<img
+              style="width: 100px; height: 100px; vertical-align: bottom"
+              src="http://api.lvyestudy.com/upload/courses/696612g2b3565a15eeb4ged6.jpg"
+              alt=""
+            />测试文案(bottom)
+            <hr />
+            测试文案<img
+              style="width: 100px; height: 100px; vertical-align: baseline"
+              src="http://api.lvyestudy.com/upload/courses/696612g2b3565a15eeb4ged6.jpg"
+              alt=""
+            />测试文案(baseline)
+          </li>
+          <li>
+            <span style="color: red"
+              >图片无法实现垂直居中
+              (vertical-align是CSS最复杂的一个属性，但功能也非常强大)</span
+            >
+            <div
+              class="border"
+              style="padding-bottom: 10px; vertical-align: top"
+            >
+              <img
+                style="width: 100px; height: 100px"
+                src="http://api.lvyestudy.com/upload/courses/696612g2b3565a15eeb4ged6.jpg"
+                alt=""
+              />
+            </div>
+            <div
+              class="border"
+              style="padding-bottom: 10px; vertical-align: middle"
+            >
+              <img
+                style="width: 100px; height: 100px"
+                src="http://api.lvyestudy.com/upload/courses/696612g2b3565a15eeb4ged6.jpg"
+                alt=""
+              />
+            </div>
+
+            <div
+              class="border"
+              style="padding-bottom: 10px; vertical-align: bottom"
+            >
+              <img
+                style="width: 100px; height: 100px; vertical-align: top"
+                src="http://api.lvyestudy.com/upload/courses/696612g2b3565a15eeb4ged6.jpg"
+                alt=""
+              />
+            </div>
+
+            <div
+              class="border"
+              style="padding-bottom: 10px; vertical-align: baseline"
+            >
+              <img
+                style="width: 100px; height: 100px; vertical-align: top"
+                src="http://api.lvyestudy.com/upload/courses/696612g2b3565a15eeb4ged6.jpg"
+                alt=""
+              />
+            </div>
+          </li>
+          <li>
+            <span>文字环绕 (float: left/right)</span>
+            <div>
+              <img
+                style="width: 100px; height: 100px; float: left"
+                src="http://api.lvyestudy.com/upload/courses/696612g2b3565a15eeb4ged6.jpg"
+                alt=""
+              />
+              <p>
+                水陆草木之花，可爱者甚蕃。晋陶渊明独爱菊。自李唐来，世人甚爱牡丹。予独爱莲之出淤泥而不染，濯清涟而不妖，中通外直，不蔓不枝，香远益清，亭亭净植，可远观而不可亵玩焉。予谓菊，花之隐逸者也；牡丹，花之富贵者也；莲，花之君子者也。噫！菊之爱，陶后鲜有闻；莲之爱，同予者何人?
+                牡丹之爱，宜乎众矣。
+              </p>
+            </div>
+            <hr />
+            <div>
+              <img
+                style="width: 100px; height: 100px; float: right"
+                src="http://api.lvyestudy.com/upload/courses/696612g2b3565a15eeb4ged6.jpg"
+                alt=""
+              />
+              <p>
+                水陆草木之花，可爱者甚蕃。晋陶渊明独爱菊。自李唐来，世人甚爱牡丹。予独爱莲之出淤泥而不染，濯清涟而不妖，中通外直，不蔓不枝，香远益清，亭亭净植，可远观而不可亵玩焉。予谓菊，花之隐逸者也；牡丹，花之富贵者也；莲，花之君子者也。噫！菊之爱，陶后鲜有闻；莲之爱，同予者何人?
+                牡丹之爱，宜乎众矣。
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div id="10" class="border">
+        <h1>
+          10.
+          背景样式(bckground-image、background-repeat、background-position、background-attachment)
+          <ol>
+            <li style="background-color: red">背景颜色</li>
+            <li>
+              背景(background-image、background-repeat)
+              <div class="bg-image" style="background-repeat: repeat">
+                background-repeat: repeat;
+              </div>
+              <div class="bg-image" style="background-repeat: repeat-x">
+                background-repeat: repeat-x;
+              </div>
+              <div class="bg-image" style="background-repeat: repeat-y">
+                background-repeat: repeat-y;
+              </div>
+            </li>
+            <li>
+              背景图片位置：background-posotion(像素值/关键字)
+              <div
+                class="bg-image"
+                style="
+                  background-repeat: no-repeat;
+                  background-color: blue;
+                  background-position: 40px 20px;
+                "
+              >
+                background-position: 40px 20px;
+              </div>
+              <div
+                class="bg-image"
+                style="
+                  width: 200px;
+                  height: 200px;
+                  background-image: url(https://res.weread.qq.com/wrepub/epub_30070658_334);
+                  background-position: center;
+                  background-size: 100% 100%;
+                  background-repeat: no-repeat;
+                "
+              ></div>
+            </li>
+            <li>
+              背景图片固定（background-attachment: scroll/fixed）
+              <div style="position: relative">
+                <div
+                  style="
+                    width: 500px;
+                    height: 300px;
+                    background-image: url(http://api.lvyestudy.com/upload/courses/696612g2b3565a15eeb4ged6.jpg);
+                    background-color: blue;
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                  "
+                >
+                  background-attachment: fixed;
+                </div>
+              </div>
+            </li>
+          </ol>
+        </h1>
+      </div>
+      <div id="11" class="border">
+        <h1>11. 超链接样式(a:link、a:visited、a:hover、a:active)</h1>
+        <ol>
+          <li>
+            <h3 style="color: red">:hover应用很广泛</h3>
+            <style>
+              a:link {
+                color: red;
+              }
+              a:visited {
+                color: purple;
+              }
+              a:hover {
+                color: yellow;
+              }
+              a:active {
+                color: blue;
+              }
+            </style>
+            <div>
+              <a href="https://www.baidu.com" target="_blank">百度</a>
+            </div>
+          </li>
+          <li>
+            <h3>
+              鼠标样式(cursor: pointer;
+              https://gitee.com/ngc13009/cursor-ngc13009)
+            </h3>
+            <img
+              style="cursor: url(./assets/1.cur), default"
+              width="500"
+              src="https://res.weread.qq.com/wrepub/epub_30070658_352"
+              alt=""
+            />
+          </li>
+        </ol>
+      </div>
+      <div id="12" class="border">
+        <h1>12. 盒子模型</h1>
+        <img
+          width="500"
+          src="https://res.weread.qq.com/wrepub/epub_30070658_356"
+          alt=""
+        />
+      </div>
+      <div id="13" class="border">
+        <h1>13. 浮动布局</h1>
+        <div style="width: 200px; background-color: red; padding: 20px">
+          <div
+            style="
+              float: left;
+              width: 30px;
+              height: 50px;
+              background-color: blue;
+            "
+          >
+            div1
+          </div>
+          <div style="height: 50px; background-color: yellow">div2</div>
+        </div>
+        <div
+          style="
+            width: 200px;
+
+            background-color: orange;
+            padding: 20px;
+          "
+        >
+          <div
+            style="
+              float: left;
+              width: 30px;
+              height: 50px;
+              background-color: blue;
+            "
+          >
+            div1
+          </div>
+          <div style="float: left; height: 50px; background-color: yellow">
+            div2
+          </div>
+        </div>
+        <div style="width: 200px; background-color: purple; padding: 20px">
+          <div
+            style="
+              float: left;
+              width: 30px;
+              height: 50px;
+              background-color: blue;
+            "
+          >
+            div1
+          </div>
+          <div style="float: right; height: 50px; background-color: yellow">
+            div2
+          </div>
+          <div style="clear: both">清除浮动 clear: both</div>
+        </div>
+        <div
+          style="
+            margin-top: 20px;
+            background-color: rebeccapurple;
+            padding: 10px;
+          "
+        >
+          <div style="height: 100px; background-color: #abcdee"></div>
+          <div
+            style="
+              width: 495px;
+              height: 300px;
+              margin-right: 10px;
+              float: left;
+              background-color: bisque;
+            "
+          ></div>
+          <div
+            style="
+              width: 200px;
+              height: 300px;
+              float: right;
+              background-color: antiquewhite;
+            "
+          ></div>
+          <div style="clear: both"></div>
+          <div
+            style="height: 100px; background-color: cadetblue; margin-top: 10px"
+          ></div>
+        </div>
+      </div>
+      <div id="14" class="border" style="position: relative">
+        <h1>14. 定位布局</h1>
+        <ol>
+          <li>静态定位: static（默认值）</li>
+          <li>绝对定位: absolute</li>
+          <li>相对定位: relative</li>
+          <li>固定定位: fixed</li>
+        </ol>
+        <div
+          style="
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            background-color: aquamarine;
+          "
+          onclick="document.getElementById('area-right').scrollTo(0,0)"
+        >
+          回到顶部(固定定位练习 fixed)
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: 0;
+            right: 150px;
+            background-color: aquamarine;
+          "
+          onclick="document.getElementById('area-right').scrollTo(0,0)"
+        >
+          回到顶部(固定定位练习 absolute)
+        </div>
+        <div style="width: 100px; height: 100px; border: 1px solid cadetblue">
+          <div
+            style="
+              width: 100px;
+              height: 100px;
+              background-color: brown;
+              position: relative;
+              left: 20px;
+              top: 20px;
+            "
+          >
+            相对定位(relative)
+          </div>
+        </div>
+      </div>
+      <div id="15" class="border">
+        <h1>15. HTML常用标签</h1>
+        <img
+          width="500"
+          src="https://res.weread.qq.com/wrepub/epub_30070658_409"
+          alt=""
+        />
+      </div>
+      <div id="16" class="border">
+        <h1>16. HTML常用表单标签</h1>
+        <img
+          width="500"
+          src="https://res.weread.qq.com/wrepub/epub_30070658_410"
+          alt=""
+        />
+      </div>
+      <div id="16" class="border">
+        <h1>17. CSS常用属性</h1>
+        <img
+          width="500"
+          src="https://res.weread.qq.com/wrepub/epub_30070658_411"
+          alt=""
+        />
+        <hr />
+        <img
+          width="500"
+          src="https://res.weread.qq.com/wrepub/epub_30070658_412"
+          alt=""
+        />
+      </div>
+    </div>
+  </body>
+</html>

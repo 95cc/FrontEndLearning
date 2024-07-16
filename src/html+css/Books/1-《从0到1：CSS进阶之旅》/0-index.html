@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.6.1/randomColor.js"></script>
+
+    <script>
+      $(function () {
+        console.log('loaded')
+        $('.random-color').each((index, ele) => {
+          $(ele).css('background-color', randomColor())
+        })
+        $('.height-20').css('height', '20')
+        $('.height-30').css('height', '30')
+        $('.width-50').css('width', '50')
+        $('.height-50').css('height', '50')
+      })
+    </script>
+    <style>
+      body {
+        padding: 20px;
+      }
+      .border {
+        border: 1px solid gray;
+      }
+      .padding-10 {
+        padding: 10px;
+      }
+      .padding-tip1 {
+        background-image: url(./images/bg.gif);
+        width: 72px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+        color: Red;
+        padding-left: 55px;
+      }
+      .div-margin-tip1 {
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-size: 30px;
+        color: white;
+        background-color: lightskyblue;
+      }
+      .div-table-cell-type1 {
+        display: table-cell;
+        vertical-align: middle;
+        width: 150px;
+        height: 150px;
+        border: 1px solid gray;
+        text-align: center;
+      }
+      .div-table-cell-type1 img {
+        vertical-align: middle;
+      }
+      .div-table-cell-type1 + .div-table-cell-type1 {
+        border-left: none;
+      }
+      .ul-table {
+        display: table;
+        list-style-type: none;
+        width: 300px;
+        padding: 0;
+        margin: 0;
+      }
+      .li-table-cell {
+        display: table-cell;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>第3章：盒子模型</h3>
+    <ul>
+      <li>
+        padding小应用：
+        <p class="padding-tip1">规章制度</p>
+      </li>
+      <li>
+        外边距叠加
+        <ul>
+          <li style="border: 1px solid gray">
+            同级元素
+            <div>
+              <div class="div-margin-tip1" style="margin-bottom: 20px">
+                A: margin-bottom: 20px
+              </div>
+              <div class="div-margin-tip1" style="margin-top: 30px">
+                B: margin-top: 30px
+              </div>
+            </div>
+          </li>
+          <hr />
+          <li style="background-color: antiquewhite; border: 1px solid gray">
+            <div
+              style="
+                height: 200px;
+                background-color: blueviolet;
+                margin-top: 10px;
+                /* padding-top: 1px; */
+              "
+            >
+              <div
+                style="
+                  background-color: skyblue;
+                  margin-top: 30px;
+                  height: 50px;
+                "
+              ></div>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li>
+        负margin
+        <ul>
+          <li>
+            margin-top、margin-bottom
+            <div class="border padding-10">
+              <div class="random-color height-30">1</div>
+              <div class="random-color height-30" style="margin-top: -10px">
+                margin-top: -10px
+              </div>
+              <div class="random-color height-30">3</div>
+            </div>
+
+            <div class="border padding-10">
+              <div class="random-color height-30">1</div>
+              <div class="random-color height-30" style="margin-bottom: -10px">
+                margin-bottom: -10px
+              </div>
+              <div class="random-color height-30">3</div>
+            </div>
+          </li>
+          <li>
+            margin-left、margin-right
+            <div class="border padding-10">
+              <div
+                style="display: inline-block"
+                class="random-color width-50 height-50"
+              ></div>
+              <div
+                style="
+                  display: inline-block;
+                  font-size: 12px;
+                  vertical-align: top;
+                  margin-left: -20px;
+                "
+                class="random-color width-50 height-50"
+              >
+                margin-left: -20px;
+              </div>
+              <div
+                style="display: inline-block"
+                class="random-color width-50 height-50"
+              ></div>
+            </div>
+            <div class="border padding-10">
+              <div
+                style="display: inline-block"
+                class="random-color width-50 height-50"
+              ></div>
+              <div
+                style="
+                  display: inline-block;
+                  font-size: 12px;
+                  vertical-align: top;
+                  margin-right: -20px;
+                "
+                class="random-color width-50 height-50"
+              >
+                margin-right: -20px;
+              </div>
+              <div
+                style="display: inline-block"
+                class="random-color width-50 height-50"
+              ></div>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li>
+        负margin的4个常用技巧
+        <ul>
+          <li>
+            1. 图片与文本对齐
+            <div class="border">
+              <img
+                style="margin: 0 3px -3px 0"
+                src="https://www.baidu.com/favicon.ico"
+                width="20px"
+              />百度一下，你就知道
+            </div>
+          </li>
+          <li>
+            2. 自适应两列布局
+            <div style="overflow-y: hidden">
+              <div
+                class="random-color"
+                style="float: left; width: 100%; margin-right: -200px"
+              >
+                <p
+                  style="
+                    margin-right: 210px; /*防止浏览器可视区域宽度不足时发生文本折叠*/
+                  "
+                >
+                  主体部分，自适应宽度
+                </p>
+              </div>
+              <div class="random-color" style="float: left; width: 200px">
+                <p>侧边栏，固定宽度</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            3. 元素垂直居中
+            <div class="border">
+              <div
+                class="random-color"
+                style="
+                  display: inline-block;
+                  width: 100px;
+                  height: 100px;
+                  text-align: center;
+                  position: relative;
+                "
+              >
+                <div
+                  class="random-color"
+                  style="
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin-top: -25px;
+                    margin-left: -25px;
+                    width: 50px;
+                    height: 50px;
+                  "
+                ></div>
+              </div>
+            </div>
+          </li>
+          <li>4. <a href="./1-tab.html" target="_blank">tab选项卡</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>第4章：display属性</h3>
+    <ul>
+      <li>
+        display: table-cell的使用
+        <ol>
+          <li>
+            图片垂直居中于元素
+            <div>
+              <div class="div-table-cell-type1">
+                <img
+                  width="100"
+                  src="https://th.bing.com/th/id/OIP.BmWI0PS4L9shL_yPP2movwAAAA?w=138&h=180&c=7&r=0&o=5&pid=1.7"
+                />
+              </div>
+              <div class="div-table-cell-type1">
+                <img
+                  width="120"
+                  src="https://th.bing.com/th/id/OIP.Q2joF3wWgWx-VycU7BeL0gHaF7?w=214&h=180&c=7&r=0&o=5&pid=1.7"
+                />
+              </div>
+              <div class="div-table-cell-type1">
+                <img
+                  width="80"
+                  src="https://th.bing.com/th/id/OIP.vkl6gYPEQB53CR9ykpOJEwHaJa?w=129&h=180&c=7&r=0&o=5&pid=1.7"
+                />
+              </div>
+            </div>
+          </li>
+          <li>
+            等高布局
+            <div style="display: table-row">
+              <div
+                style="
+                  display: table-cell;
+                  vertical-align: middle;
+                  text-align: center;
+                  width: 150px;
+                  border: 1px solid gray;
+                "
+              >
+                <img
+                  width="60"
+                  src="https://th.bing.com/th/id/OIP.BmWI0PS4L9shL_yPP2movwAAAA?w=138&h=180&c=7&r=0&o=5&pid=1.7"
+                />
+              </div>
+              <div
+                style="
+                  display: table-cell;
+                  width: 200px;
+                  border: 1px solid gray;
+                  padding: 10px;
+                "
+              >
+                <span
+                  >★书名：从0到1：CSS进阶之旅 ★书号：978-7-115-53590-0
+                  ★简介：本书分为2大部分：第1部分是CSS进阶，主要介绍CSS的基础知识、CSS规范、盒子模型、display属性、文本效果、表单效果、浮动布局、定位布局、CSS图形、性能优化等；第2部分是前端面试题。此外，还在附录附上了HTML进阶和语义化知识点。为了让读者更好地掌握，本书还专门配套了课件PPT以及各种工具手册，以便各大高校老师教学使用。</span
+                >
+              </div>
+            </div>
+          </li>
+          <li>
+            自动平均划分元素（实际不等宽，不知道为啥，待考究）
+            <div>
+              <ul class="ul-table">
+                <li class="li-table-cell random-color">1</li>
+                <li class="li-table-cell random-color">2</li>
+                <li class="li-table-cell random-color">3</li>
+                <li class="li-table-cell random-color">4</li>
+                <li class="li-table-cell random-color">5</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </li>
+      <li>去除inline-block元素间距，给父元素设置: font-size: 0;</li>
+    </ul>
+  </body>
+</html>

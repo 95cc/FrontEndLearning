@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <!-- 1 -->
+    <title>1. 标题</title>
+    <!-- 2 -->
+    <meta name="keywords" content="meta标签 name=keywords" />
+    <meta name="description" content="meta标签 name=description" />
+    <meta name="author" content="95cc" />
+    <meta name="copyright" content="xxx" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <!-- <meta http-equiv="refresh" content="2;url=http://www.baidu.com" /> -->
+    <!-- <meta charset="UTF-8" /> -->
+    <!-- 3 -->
+    <style></style>
+    <!-- 4 -->
+    <link rel="stylesheet" href="" />
+    <!-- 5 -->
+    <script></script>
+    <!-- 6 -->
+    <base href="" />
+
+    <style>
+      body {
+        margin: 0;
+        position: absolute;
+        width: 100vh;
+        width: 100vw;
+      }
+      .area-left {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: hidden;
+      }
+      .area-right {
+        position: absolute;
+        left: 20vw;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        overflow-y: scroll;
+      }
+      .border {
+        margin: 10px 0;
+        border: 1px solid gray;
+      }
+      .td-border {
+        border: 1px solid silver;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="area-left">
+      <p><a href="#1">1. 文本</a></p>
+      <p><a href="#2">2. 列表</a></p>
+      <p><a href="#3">3. HTML语义化</a></p>
+      <p><a href="#4">4. 表格</a></p>
+      <p><a href="#5">5. 图片</a></p>
+      <p><a href="#6">6. 超链接</a></p>
+      <p><a href="#7">7. 表单</a></p>
+      <p><a href="#8">8. 框架(iframe)</a></p>
+    </div>
+    <div class="area-right">
+      <div id="1" class="border">
+        <h1>1. h1 - h6</h1>
+        <h1>这是一级标题</h1>
+        <h2>这是二级标题</h2>
+        <h3>这是三级标题</h3>
+        <h4>这是四级标题</h4>
+        <h5>这是五级标题</h5>
+        <h6>这是六级标题</h6>
+        <h1>2. p</h1>
+        <h3>爱莲说</h3>
+        <p>
+          水陆草木之花，可爱者甚蕃。晋陶渊明独爱菊。自李唐来，世人甚爱牡丹。予独爱莲之出淤泥而不染，濯清涟而不妖，中通外直，不蔓不枝，香远益清，亭亭净植，可远观而不可亵玩焉。
+        </p>
+        <p>
+          予谓菊，花之隐逸者也；牡丹，花之富贵者也；莲，花之君子者也。噫！菊之爱，陶后鲜有闻；莲之爱，同予者何人?
+          牡丹之爱，宜乎众矣。
+        </p>
+        <h1>3. br</h1>
+        <h3>静夜思</h3>
+        <p>床前明月光，疑是地上霜。<br />举头望明月，低头思故乡。</p>
+        <h1>4. 文本</h1>
+        <p>粗体(strong/b)：<strong>strong</strong>、<b>b</b></p>
+        <p>斜体(i/em/cite)：<i>i</i>、<em>em</em>、<cite>cite</cite></p>
+        <p>上标(sup)：(a+b)<sup>2</sup>=a<sup>2</sup>+b<sup>2</sup>+2ab</p>
+        <p>下标(sub)：H<sub>2</sub>SO<sub>4</sub>指的是硫酸分子</p>
+        <p>中划线(s)：<s>s</s>、<s>原价: ¥6.50/kg</s></p>
+        <p>下划线(u)：<u>u</u></p>
+        <p>大字号(big)：<big>big</big></p>
+        <p>小字号(small)：<small>small</small></p>
+        <h1>5. 水平线(hr)</h1>
+        <h3>春晓</h3>
+        <p>春眠不觉晓，处处闻啼鸟。</p>
+        <hr />
+        <p>夜来风雨声，花落知多少。</p>
+        <h1>6. div</h1>
+        <div>这里的块级元素div</div>
+        <h1>7. 自闭和标签</h1>
+        <xmp>
+<meta />
+<link/>
+<br />
+<hr />
+<img />
+<input />
+    </xmp>
+        <h1 style="color: red">
+          8.
+          【重要】要知道：块元素、行内元素的区别（一个占据整行；一个和其他行内元素在一行）
+        </h1>
+        <h1>9. 字符实体</h1>
+        <p>版权符号：&copy;</p>
+        <p>注册商标：&reg;</p>
+        <p>度数：&deg;</p>
+        <p>
+          <a
+            href="https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references"
+            >https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references</a
+          >
+        </p>
+        <p>
+          <a href="https://developer.mozilla.org/zh-CN/docs/Glossary/Entity"
+            >https://developer.mozilla.org/zh-CN/docs/Glossary/Entity</a
+          >
+        </p>
+      </div>
+      <div id="2" class="border">
+        <h1>10. 3种列表：有序列表、无序列表、定义列表</h1>
+        <h3>1. 有序列表 (type: 1/a/A/I/i)</h3>
+        <div>
+          <ol>
+            <li>html/css/hs</li>
+          </ol>
+          <ol type="a">
+            <li>html/css/hs</li>
+          </ol>
+          <ol type="A">
+            <li>html/css/hs</li>
+          </ol>
+          <ol type="I">
+            <li>html/css/hs</li>
+          </ol>
+          <ol type="i">
+            <li>html/css/hs</li>
+          </ol>
+        </div>
+        <h3>2. 无序列表 (type: disc/circle/square)</h3>
+        <div>
+          <ul>
+            <li>html/css/hs</li>
+          </ul>
+          <ul type="circle">
+            <li>html/css/hs</li>
+          </ul>
+          <ul type="square">
+            <li>html/css/hs</li>
+          </ul>
+        </div>
+        <h3>3. 定义列表 (type: disc/circle/square)</h3>
+        <div>
+          <dl>
+            <dt>名词 (definition term)</dt>
+            <dd>描述 (definition description)</dd>
+          </dl>
+        </div>
+        <div style="border: 1px solid gray; width: 50vw; padding: 0 20px">
+          <h3>问卷调查</h3>
+          <h6>1、你是通过什么途径来到绿叶学习网的？</h6>
+          <ol type="A">
+            <li>百度搜索</li>
+            <li>谷歌搜索</li>
+            <li>其他途径</li>
+          </ol>
+          <h6>2、你觉得绿叶学习网页面设计怎么样？</h6>
+          <ol type="A">
+            <li>酷炫大方</li>
+            <li>比较普通</li>
+            <li>非常粗糙</li>
+          </ol>
+          <h6>3、你觉得这本书怎么样？</h6>
+          <ul>
+            <li>通俗易懂，轻松幽默</li>
+            <li>内容丰富，技巧贼多</li>
+            <li>三个字：好到爆！</li>
+          </ul>
+        </div>
+      </div>
+      <div id="3" class="border">
+        <h1>11. HTML语义化</h1>
+        <p>
+          <a href="HTML: 无障碍的良好家基础"
+            >https://developer.mozilla.org/zh-CN/docs/Learn/Accessibility/HTML#%E8%89%AF%E5%A5%BD%E7%9A%84%E8%AF%AD%E4%B9%89</a
+          >
+        </p>
+      </div>
+      <div id="4" class="border">
+        <h1>12. 表格</h1>
+        <table
+          style="
+            width: 300px;
+            border: 1px dashed gray;
+            padding: 20px;
+            margin: 10px;
+          "
+        >
+          <caption>
+            前端开发核心技术
+          </caption>
+          <thead>
+            <tr style="background-color: aquamarine">
+              <th>技术</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>HTML</td>
+              <td>网页的结构</td>
+            </tr>
+            <tr style="background-color: cyan">
+              <td>CSS</td>
+              <td>网页的外观</td>
+            </tr>
+            <tr>
+              <td>JavaScript</td>
+              <td>网页的行为</td>
+            </tr>
+            <tr style="background-color: red">
+              <td rowspan="2">这里演示rowspan</td>
+              <td>另一列1</td>
+            </tr>
+            <tr>
+              <td>另一列2</td>
+            </tr>
+            <tr>
+              <td colspan="2" style="background-color: antiquewhite">
+                这里演示colspan -----------
+              </td>
+            </tr>
+            <tr>
+              <td>另一行</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>th: 表脚1</th>
+              <td>td: 表脚2</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <table style="border: 1px solid gray">
+          <caption>
+            学成成绩表
+          </caption>
+          <thead>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>成绩</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-border">张三</td>
+              <td class="td-border">男</td>
+              <td class="td-border">66</td>
+            </tr>
+            <tr>
+              <td class="td-border">李四</td>
+              <td class="td-border">男</td>
+              <td class="td-border">99</td>
+            </tr>
+            <tr>
+              <td class="td-border">平均分</td>
+              <td colspan="2" class="td-border">82.5</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="5" class="border">
+        <h1>13. 图片</h1>
+        <div>
+          1. 位图
+          <p>
+            jpg:
+            <img
+              width="200px"
+              src="https://img95.699pic.com/photo/50059/8720.jpg_wh860.jpg"
+              alt="哈哈"
+              title="哈哈title"
+            />
+          </p>
+          <p>
+            png:
+            <img
+              width="200px"
+              src="https://ts1.cn.mm.bing.net/th/id/R-C.c105782760255c8c917f16e18bc62188?rik=oPIWUoft19kO5g&riu=http%3a%2f%2fwww.kuaipng.com%2fUploads%2fpic%2fw%2f2018%2f09-04%2f46419%2fwater_46419_698_698_.png&ehk=QbsUJSSSxFCkMQHvPXUi1KHvTmpKqTWCjP8Ao0Xaz%2fQ%3d&risl=&pid=ImgRaw&r=0"
+              alt=""
+            />
+          </p>
+          <p>
+            git:<img
+              width="200px"
+              src="https://img95.699pic.com/photo/40158/1890.gif_wh860.gif"
+              alt=""
+            />
+          </p>
+        </div>
+        <div>
+          2.矢量图
+          <a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a>
+        </div>
+      </div>
+      <div id="6" class="border">
+        <h1>14. 超链接</h1>
+        <p>
+          <a href="http://www.lvyestudy.com" target="_blank"
+            >绿叶学习网_blank</a
+          >
+        </p>
+        <p>
+          <a href="http://www.lvyestudy.com" target="_parent"
+            >绿叶学习网_parent</a
+          >
+        </p>
+        <p>
+          <a href="http://www.lvyestudy.com" target="_self">绿叶学习网_self</a>
+        </p>
+        <p>
+          <a href="http://www.lvyestudy.com" target="_top">绿叶学习网_top</a>
+        </p>
+        <p>
+          <a href="#1">去文本章节</a>
+        </p>
+        <p>
+          git:
+          <a
+            href="https://img95.699pic.com/photo/40158/1890.gif_wh860.gif"
+            target="_blank"
+            ><img
+              width="200px"
+              src="https://img95.699pic.com/photo/40158/1890.gif_wh860.gif"
+              alt=""
+          /></a>
+        </p>
+      </div>
+      <div id="7" class="border">
+        <h1>15. 表单</h1>
+        <!-- enctype用于指定表单数据提交的编码方式，一般情况下，不需要设置，除非用到上传文件功能 -->
+        <form
+          name="myForm"
+          method="get"
+          action="https://www.baidu.com"
+          target="_blank"
+          enctype="text/plain"
+        >
+          <p>
+            单行文本框text(包含属性: value、size、maxlength)：<input
+              type="text"
+            />
+          </p>
+          <p>密码文本框password：<input type="password" /></p>
+          <p>
+            单选框radio：
+            <label for="gender"
+              ><input type="radio" name="gender" value="男" checked />男</label
+            >
+            <label for="gender"
+              ><input type="radio" name="gender" value="女" />女</label
+            >
+          </p>
+          <p>
+            复选框checkbox:
+            <input type="checkbox" name="fruit" value="苹果" checked />苹果
+            <input type="checkbox" name="fruit" value="香蕉" />香蕉
+            <input type="checkbox" name="fruit" value="西瓜" checked />西瓜
+          </p>
+          <p>
+            按钮(button/submit/reset)：
+            <input type="button" value="普通按钮" onclick="alert('普通按钮')" />
+            <input type="submit" value="提交按钮" />
+            <input type="reset" value="重置按钮" />
+          </p>
+          <p>
+            文件上传 file
+            <input type="file" />
+          </p>
+          <p>
+            多行文本框 textarea:
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+          </p>
+          <p>
+            下拉列表(特殊的无序列表) select：
+            <!-- multiple -->
+            <select name="course" id="" size="1">
+              <option value="HTML" selected>HTML</option>
+              <option value="CSS">CSS</option>
+              <option value="JavaScript">JavaScript</option>
+            </select>
+          </p>
+
+          <p style="border: 1px solid gray"></p>
+          <p>
+            <label for="nickname"
+              >昵称: <input id="nickname" type="text" name="nickname"
+            /></label>
+          </p>
+          <p>
+            <label for="password"
+              >密码: <input id="password" type="password" name="password"
+            /></label>
+          </p>
+          <p>
+            <label for="email"
+              >邮箱: <input id="email" type="text" name="email"
+            /></label>
+            <select name="email-suffix">
+              <option value="@qq.com">@qq.com</option>
+              <option value="@163.com">@163.com</option>
+            </select>
+          </p>
+          <p>
+            <label
+              >性别： <input name="gender" type="radio" value="男" />男
+              <input name="gender" type="radio" value="女" />女
+            </label>
+          </p>
+          <p>
+            <label
+              >爱好： <input name="hobby" type="checkbox" value="旅游" />旅游
+              <input name="hobby" type="checkbox" value="摄影" />摄影
+              <input name="hobby" type="checkbox" value="运动" />运动
+            </label>
+          </p>
+          <p>
+            个人简介：<br />
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+          </p>
+          <p>
+            上传个人照片 <br />
+            <input type="file" />
+          </p>
+          <hr />
+          <p><input type="submit" value="立即注册" /></p>
+        </form>
+      </div>
+      <div id="8" class="border">
+        <iframe
+          src="http://www.lvyestudy.com"
+          frameborder="0"
+          width="300"
+          height="300"
+        ></iframe>
+      </div>
+    </div>
+  </body>
+</html>

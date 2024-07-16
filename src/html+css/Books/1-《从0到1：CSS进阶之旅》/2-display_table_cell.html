@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        display: table;
+        width: 100%;
+      }
+
+      .cell {
+        display: table-cell;
+      }
+
+      .cell:nth-child(1) {
+        background-color: red;
+      }
+      .cell:nth-child(2) {
+        background-color: blue;
+      }
+      .cell:nth-child(3) {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="cell">元素 1</div>
+      <div class="cell">元素 2</div>
+      <div class="cell">元素 3</div>
+    </div>
+  </body>
+</html>

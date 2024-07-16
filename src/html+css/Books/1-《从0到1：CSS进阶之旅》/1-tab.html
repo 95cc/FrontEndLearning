@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .tab {
+        width: 500px;
+        height: 300px;
+        border: 1px solid silver;
+        margin: 10px auto;
+      }
+      ul {
+        list-style-type: none;
+        overflow: hidden;
+      }
+      ul li {
+        float: left;
+        width: 25%;
+        line-height: 35px;
+        text-align: center;
+        box-sizing: border-box;
+        border-right: 1px solid silver;
+        border-bottom: 1px solid silver;
+        /* margin-top: -1px; */
+        font-weight: bold;
+        cursor: pointer;
+      }
+      li:last-child {
+        border-right: none;
+      }
+      .active {
+        background-color: #fff;
+        border-bottom: none;
+      }
+      .tab div {
+        width: 100%;
+        height: 300px;
+        display: none;
+      }
+    </style>
+    <script>
+      $(function () {
+        let divs = $('.tab div')
+        let tabs = $('.tab ul li')
+        console.log(divs, tabs)
+        tabs.each((index, elem) => {
+          elem.index = index
+          $(elem).mouseover((event) => {
+            const liIndex = event.target.index
+            divs.each((i, ele) => {
+              $(ele).css('display', 'none')
+              $(tabs[i]).removeClass('active')
+            })
+            $(divs[liIndex]).css('display', 'block')
+
+            $(event.target).addClass('active')
+          })
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <h1>tab选项卡</h1>
+    <div class="tab">
+      <ul>
+        <li class="active">娱乐</li>
+        <li>经济</li>
+        <li>科技</li>
+        <li>时事</li>
+      </ul>
+      <div>娱乐的内容...</div>
+      <div>经济的内容...</div>
+      <div>科技的内容...</div>
+      <div>时事的内容...</div>
+    </div>
+  </body>
+</html>
