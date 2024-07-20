@@ -7,7 +7,6 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue'
 import VInfo from './cmps/info.vue'
 import VText from './cmps/text.vue'
 import VList from './cmps/list.vue'

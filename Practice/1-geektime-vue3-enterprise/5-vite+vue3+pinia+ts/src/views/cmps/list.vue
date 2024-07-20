@@ -1,6 +1,10 @@
 <template>
   <div class="v-list">
-    <div class="v-list-item" v-for="(item, index) in myStore.list">
+    <div
+      class="v-list-item"
+      v-for="(item, index) in myStore.list"
+      :key="item.name"
+    >
       <span class="text">{{ item.name }}</span>
       <span class="text">单价: {{ item.price }}</span>
       <button class="btn" v-on:click="myStore.decrease(index)">-</button>
